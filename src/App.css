@@ -2,19 +2,62 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+  font-family:monospace,
     'Lucida Sans', Arial, sans-serif;
+    --mainThemeColor: #7e7e7e;
+    --mainBodyColor: #3b3b3b;
+    --WhiteText: #fafafa;
 }
 
 /* ----------------------mainComponents---------------------- */
 
-.title-style{
+.header-Style{
   padding: 8px;
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--mainThemeColor);
+}
+
+.footer-Style{
+  padding: 8px;
+  border-top: 1px solid black;
+  background-color: var(--mainThemeColor);
+}
+
+.wt{
+  color: var(--WhiteText);
+}
+
+.hidden-element {
+  visibility: hidden;
+}
+
+.warningTextForm{
+  font-size: 15px;
+  color: red;
+}
+
+.lbox-style{
+  padding: 25px;
+  background-color: var(--mainThemeColor);
+}
+
+.title-style{
+  padding-left: 8px;
+  color: white;
+  font-weight: bold;
+  font-weight: 900;
+  font-family:sans-serif;
   text-decoration: wavy;
 }
 
+.nav-style{
+  padding: 8px;
+  background-color: black;
+  color: white;
+  max-height: 4vh;
+}
+
 .Outlet-Style{
+  background-color: var(--mainBodyColor);
   min-height: 60vh;
 }
 
@@ -34,11 +77,36 @@
   padding-right: 10px;
 }
 
+.nav-active{
+  text-decoration: underline;
+  background: var(--mainThemeColor);
+  color: var(--white);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.nav-button{
+  text-decoration: underline;
+  background: var(--mainThemeColor);
+  color: var(--white);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.nav-button:hover{
+  text-decoration: underline;
+  background: var(--mainThemeColor);
+  color: var(--white);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+
 
 /* ----------------------Below is for testing only---------------------- */
 .visualize-Test-Area{
   padding: 20px;
-  background-color: rgb(112, 112, 112);
+  background-color: rgb(255, 203, 203);
   border: 1px solid rgb(0, 0, 0);
   color: rgb(255, 255, 255);
 }
