@@ -15,15 +15,16 @@ const lessonSchema = new Schema({
     lowercase: true,
   },
   content: {
-    type: {}, // Ensure this type is correctly defined as per your requirements
+    type: String,
     minlength: 200,
   },
+  // Optional for this iteration, can be implemented later
   video: {}, // Ensure this type is correctly defined as per your requirements
+  // Optional for this iteration, can be implemented later
   free_preview: {
     type: Boolean,
     default: false,
   },
-  
 }, { timestamps: true });
 
 const courseSchema = new Schema({
@@ -39,20 +40,27 @@ const courseSchema = new Schema({
     lowercase: true,
   },
   description: {
-    type: {}, // Ensure this type is correctly defined as per your requirements
-    minlength: 200,
+    type: String, // Ensure this type is correctly defined as per your requirements
+    minlength: 20, // Increase limit for production
     required: true,
   },
+  // Price of the course
   price: {
     type: Number,
     default: 9.99,
   },
-  image: {}, // Ensure this type is correctly defined as per your requirements
+  // Thumbnail for the course
+  image: {
+    type: String,
+    default: '/avatar.png'
+  },
+  // Tech, cooking, etc.
   category: String,
   published: {
     type: Boolean,
     default: false,
   },
+  // Defines if the course is free or paid
   paid: {
     type: Boolean,
     default: true,
@@ -62,9 +70,7 @@ const courseSchema = new Schema({
     ref: 'User',
     required: true,
   },
-
-  completed: [{ type: ObjectId, ref: 'Completed' }],
-  lessons: [lessonSchema],
+  lessons: [ lessonSchema ],
 }, { timestamps: true });
 
 module.exports = model('Course', courseSchema);
