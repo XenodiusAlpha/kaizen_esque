@@ -1,6 +1,5 @@
 import React from 'react';
 import { useState } from "react";
-import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [formInput, setformInput] = useState({
@@ -44,7 +43,7 @@ const Login = () => {
         </div>
         <form className='flex-container-columns center-content'
         onSubmit={handleSubmit}>
-          <p className='wt'>Username:</p>
+          <p className='wt'>Name:</p>
           <label>
             <input
               type='text'
@@ -56,6 +55,7 @@ const Login = () => {
             />
             <h4 id='warningTextNameID' className='wt warningTextForm hidden-element'>*Please insert a userame</h4>
           </label>
+
           <p className='wt'>Password:</p>
           <label>
             <input
@@ -68,11 +68,9 @@ const Login = () => {
             />
               <h4 id='warningTextpassword' className='wt warningTextForm hidden-element'>*Please insert a password</h4>
           </label>
-          <button type='submit'>Log in</button>
+
+          <button type='submit'>Sign up</button>
         </form>
-        <Link to="/LearnMore">
-          <p className='dpl dpt wt'>New to KaizenEsque? Sign up!</p>
-          </Link>
       </div>
     </>
   );

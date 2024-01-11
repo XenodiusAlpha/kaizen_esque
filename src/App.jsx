@@ -7,9 +7,9 @@ import Footer from './components/mainComponents/Footer'
 function App() {
   return (
     <div>
-      <div><Header/></div>
+      <><Header/></>
       <><NavBar/></>
-      <div className='Outlet-Style'><Outlet/></div>
+      <><Outlet/></>
       <><Footer/></>
     </div>
   );
