@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 const { ObjectId } = Schema;
 
 // defining a lesson schema to be used from the User model
-const lessonSchema = new Schema(
+const enrolledLessonSchema = new Schema(
   {
     // slug is used to provide better for the user to comprehend the url (readability)
       slug: {
@@ -25,14 +25,14 @@ const lessonSchema = new Schema(
 );
 
 // defining a enrolledSchema if a user is enrolled, and  what lessons are completed
-const enrolledSchema = new Schema(
+const enrolledCourseSchema = new Schema(
   {
     slug: {
       type: String,
       required: true
     },
     // lessons that the user is enrolled in
-    lessons: [ lessonSchema ],
+    lessons: [ enrolledLessonSchema ],
     // lessons marked as completed
     completed: {
         type: Boolean,
@@ -96,7 +96,7 @@ const userSchema = new Schema({
     enum: ['user', 'instructor', 'admin'],
   },
   courses: [{ type: ObjectId, ref: 'Course' }],
-  enrolled: [ enrolledSchema ],
+  enrolled: [ enrolledCourseSchema ],
   stripe: [ stripeSchema ],
 },
 // timestamp used for whenever something is created
