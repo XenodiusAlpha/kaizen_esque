@@ -37,7 +37,7 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div className=' flex-container-row center-content'>
       <div className='lbox-style flex-container-columns Outlet-Style center-content'>
         <div className='flex-container-columns center-content'>
         <h2 className='wt'>Login</h2>
@@ -74,7 +74,7 @@ const Login = () => {
           <p className='dpl dpt wt'>New to KaizenEsque? Sign up!</p>
           </Link>
       </div>
-    </>
+    </div>
   );
 };
 

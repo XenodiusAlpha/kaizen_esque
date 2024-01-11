@@ -7,6 +7,7 @@
     --mainThemeColor: #7e7e7e;
     --mainBodyColor: #3b3b3b;
     --WhiteText: #fafafa;
+    --navBarColor: rgba(17, 12, 12, 0.404);
 }
 
 #root{
@@ -46,14 +47,13 @@
   align-items: center;
   border: 25px;
   padding: 25px;
-  width: 25%;
+  min-width: 25%;
+  max-width: 35%;
   height: 250px;
   background-color: var(--mainThemeColor);
-  margin-left: 40%;
-  margin-right: 40%;
   margin-top: 1%;
   margin-bottom: 1%;
-  border-radius: 110px;
+  border-radius: 25px 0px 25px 0px;
 }
 
 .title-style{
@@ -67,9 +67,12 @@
 
 .nav-style{
   padding: 8px;
-  background-color: black;
   color: white;
   max-height: 4vh;
+}
+.nav-fill{
+  background-color: var(--navBarColor);
+  width: 100%;
 }
 
 .Outlet-Style{

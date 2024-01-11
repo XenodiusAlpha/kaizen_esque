@@ -12,10 +12,11 @@ export default function NavBar(){
   };
 // Divider
     return (
-      <div className='flex-container-columns'>
+      <div className='flex-container-row nav-fill'>
+        <div className='nav-style'>
+          <p>navBars</p>
+        </div>
         <nav className='nav-style flex-container-row'>
-
-
           <div className='nav-Button'>
         <Link
           to="/"
