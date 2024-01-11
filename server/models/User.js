@@ -97,15 +97,16 @@ const userSchema = new Schema({
   },
   courses: [{ type: ObjectId, ref: 'Course' }],
   enrolled: [ enrolledSchema ],
-  stripe: [stripeSchema],
-}, 
+  stripe: [ stripeSchema ],
+},
 // timestamp used for whenever something is created
-{ 
-    timestamps: true, 
+{
+    timestamps: true,
     toJSON: {
         getters: true
-    } 
+    }
 });
+
 // hook to create or update a password
 userSchema.pre('save', async function(next) {
   if (this.isNew || this.isModified('password')) {
