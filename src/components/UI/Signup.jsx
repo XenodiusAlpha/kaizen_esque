@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from "react";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [formInput, setformInput] = useState({
@@ -36,26 +37,25 @@ const Login = () => {
   };
 
   return (
-    <>
+    <div className=' flex-container-row center-content'>
       <div className='lbox-style flex-container-columns Outlet-Style center-content'>
         <div className='flex-container-columns center-content'>
-        <h2 className='wt'>Login</h2>
+        <h2 className='wt'>Sign up</h2>
         </div>
-        <form className='flex-container-columns center-content'
+        <form className='flex-container-columns center-content dpb dpt'
         onSubmit={handleSubmit}>
-          <p className='wt'>Name:</p>
+          <p className='wt'>First Name:</p>
           <label>
             <input
               type='text'
               name='name'
               value={formInput.name}
               onChange={handleChange}
-              placeholder="Enter your username"
+              placeholder="Enter your First Name"
               onBlur={handleBlurName}
             />
             <h4 id='warningTextNameID' className='wt warningTextForm hidden-element'>*Please insert a userame</h4>
           </label>
-
           <p className='wt'>Password:</p>
           <label>
             <input
@@ -68,11 +68,13 @@ const Login = () => {
             />
               <h4 id='warningTextpassword' className='wt warningTextForm hidden-element'>*Please insert a password</h4>
           </label>
-
-          <button type='submit'>Sign up</button>
+          <button className='button-Style' type='submit'>Sign up</button>
         </form>
+        <Link to="/Login">
+          <p className='signUp_Link dpl dpt wt'>Already have an account? Sign in!</p>
+          </Link>
       </div>
-    </>
+    </div>
   );
 };
 

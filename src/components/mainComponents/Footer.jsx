@@ -15,7 +15,7 @@ export default function Footer(){
           <p className='header-Text dpl'>Copyright Kaizen-Esque 2024©</p>
 
           <Link to="/LearnMore">
-          <h4 className='dpl'>Learn More</h4>
+          <h4 className='learnMore_Link dpl'>Learn More</h4>
           </Link>
 
           </div>

@@ -8,6 +8,7 @@ import HomeDefault from './components/mainComponents/HomeDefault.jsx'
 import Courses from './components/mainComponents/Courses.jsx'
 import Login from './components/mainComponents/Login.jsx'
 import LearnMore from './components/mainComponents/LearnMore.jsx'
+import Signup from './components/UI/Signup.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const router = createBrowserRouter([
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: 'Login',
         element: <Login />,
+      },
+      {
+        path: 'Signup',
+        element: <Signup />,
       },
       {
         path: 'LearnMore',

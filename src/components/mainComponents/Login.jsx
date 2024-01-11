@@ -68,10 +68,10 @@ const Login = () => {
             />
               <h4 id='warningTextpassword' className='wt warningTextForm hidden-element'>*Please insert a password</h4>
           </label>
-          <button type='submit'>Log in</button>
+          <button className='button-Style' type='submit'>Log in</button>
         </form>
-        <Link to="/LearnMore">
-          <p className='dpl dpt wt'>New to KaizenEsque? Sign up!</p>
+        <Link to="/Signup">
+          <p className='signUp_Link dpl dpt wt'>New to KaizenEsque? Sign up!</p>
           </Link>
       </div>
     </div>
