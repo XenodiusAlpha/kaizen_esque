@@ -1,0 +1,29 @@
+[
+    {
+      "name": "Introduction to Programming",
+      "slug": "intro-to-programming",
+      "description": "Learn the basics of programming.",
+      "image": {"url": "/avatar.png"},
+      "category": "Programming",
+      "published": true,
+      "paid": true,
+      "price": 19.99,
+      "instructor": "Jane Smith",
+      "completed": [],
+      "lessons": [] 
+    },
+    {
+      "name": "Advanced Web Development",
+      "slug": "advanced-web-dev",
+      "description": "Dive deep into web development technologies.",
+      "price": 49.99,
+      "image": {"url": "/avatar.png"},
+      "category": "Web Development",
+      "published": false,
+      "paid": true,
+      "instructor": "Jane Smith",
+      "completed": [],
+      "lessons": []
+    }
+  ]
+  

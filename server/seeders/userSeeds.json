@@ -1,0 +1,24 @@
+[
+    {
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "johndoe@example.com",
+      "password": "Test1234!",
+      "picture": "/avatar1.png",
+      "role": ["user"],
+      "courses": [],
+      "uenrolled": [],
+     
+    },
+    {
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "janesmith@example.com",
+      "password": "Test1234!",
+      "picture": "/avatar2.png",
+      "role": ["user", "instructor"],
+      "courses": [],
+      "uenrolled": [],
+      
+    }
+  ]
