@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faCircleUser } from '@fortawesome/free-solid-svg-icons'
 
 export default function NavBar(){
     const currentPage = useLocation().pathname;
@@ -14,7 +16,7 @@ export default function NavBar(){
     return (
       <div className='flex-container-row nav-fill'>
         <div className='nav-style'>
-          <p>navBars</p>
+          <FontAwesomeIcon icon={faBars} />
         </div>
         <nav className='nav-style flex-container-row'>
           <div className='nav-Button'>
@@ -45,6 +47,16 @@ export default function NavBar(){
           onClick={handleLinkClick}
         >
           <p>Login</p>
+        </Link>
+        </div>
+
+        <div className='nav-Button dpl'>
+        <Link
+          to="/Profile"
+          className={currentPage === '/Profile' ? 'nav-active' : 'nav-link'}
+          onClick={handleLinkClick}
+        >
+        <FontAwesomeIcon icon={faCircleUser} />
         </Link>
         </div>
 

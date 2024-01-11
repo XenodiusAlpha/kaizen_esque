@@ -42,7 +42,7 @@ const Login = () => {
         <div className='flex-container-columns center-content'>
         <h2 className='wt'>Login</h2>
         </div>
-        <form className='flex-container-columns center-content'
+        <form className='flex-container-columns center-content dpb dpt'
         onSubmit={handleSubmit}>
           <p className='wt'>Username:</p>
           <label>
