@@ -15,7 +15,7 @@ const lessonSchema = new Schema({
     lowercase: true,
   },
   content: {
-    type: {}, // Ensure this type is correctly defined as per your requirements
+    type: String,
     minlength: 200,
   },
   // Optional for this iteration, can be implemented later
@@ -54,6 +54,7 @@ const courseSchema = new Schema({
     type: String,
     default: '/avatar.png'
   },
+  // Tech, cooking, etc.
   category: String,
   published: {
     type: Boolean,
