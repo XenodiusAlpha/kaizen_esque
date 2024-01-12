@@ -8,7 +8,7 @@ const db = require('./config/connection');
 const { expressMiddleware } = require('@apollo/server/express4');
 
 
-const PORT = process.env.PORT || 3006;
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 
