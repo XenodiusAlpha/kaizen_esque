@@ -1,0 +1,72 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "johndoe@example.com",
+        "password": "Test1234!",
+        "picture": "/avatar1.png",
+        "role": ["user"],
+        "courses": [],
+        "enrolled": []
+    },
+    {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "email": "janesmith@example.com",
+        "password": "Test1234!",
+        "picture": "/avatar2.png",
+        "role": ["user", "instructor"],
+        "courses": [],
+        "enrolled": []
+    },
+    {
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "email": "alicejohnson@example.com",
+        "password": "Password123!",
+        "picture": "/avatar3.png",
+        "role": ["user"],
+        "courses": [],
+        "enrolled": []
+    },
+    {
+        "firstName": "Bob",
+        "lastName": "Anderson",
+        "email": "bobanderson@example.com",
+        "password": "SecurePass456!",
+        "picture": "/avatar4.png",
+        "role": ["user", "instructor"],
+        "courses": [],
+        "enrolled": []
+    },
+    {
+        "firstName": "Eva",
+        "lastName": "Miller",
+        "email": "evamiller@example.com",
+        "password": "SecretPass789!",
+        "picture": "/avatar5.png",
+        "role": ["user"],
+        "courses": [],
+        "enrolled": []
+    },
+    {
+        "firstName": "Charlie",
+        "lastName": "Brown",
+        "email": "charliebrown@example.com",
+        "password": "Pass123Word!",
+        "picture": "/avatar6.png",
+        "role": ["user", "instructor"],
+        "courses": [],
+        "enrolled": []
+    },
+    {
+        "firstName": "Grace",
+        "lastName": "Davis",
+        "email": "gracedavis@example.com",
+        "password": "SecurePassword789!",
+        "picture": "/avatar7.png",
+        "role": ["user"],
+        "courses": [],
+        "enrolled": []
+    }    
+]
