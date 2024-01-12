@@ -4,11 +4,11 @@
       "slug": "intro-to-programming",
       "description": "Learn the basics of programming.",
       "price": 19.99,
-      "image": {"url": "/avatar.png"},
+      "image": "/avatar.png",
       "category": "Programming",
       "published": true,
       "paid": true,
-      "instructor": "Jane Smith",
+      "instructor": "8832F265FBDC234CDEAD5926",
       "lessons": []
     },
     {
@@ -16,11 +16,11 @@
       "slug": "advanced-web-dev",
       "description": "Dive deep into web development technologies.",
       "price": 49.99,
-      "image": {"url": "/avatar.png"},
+      "image": "/avatar.png",
       "category": "Web Development",
       "published": false,
       "paid": true,
-      "instructor": "Jane Smith",
+      "instructor": "8832F265FBDC234CDEAD5926",
       "lessons": []
     },
     {
@@ -28,11 +28,11 @@
         "slug": "data-science-fundamentals",
         "description": "Explore the world of data science and analytics.",
         "price": 29.99,
-        "image": {"url": "/avatar.png"},
+        "image": "/avatar.png",
         "category": "Data Science",
         "published": true,
         "paid": true,
-        "instructor": "Bob Anderson",
+        "instructor": "8832F265FBDC234CDEAD5927",
         "lessons": []
     },
     {
@@ -40,11 +40,11 @@
         "slug": "mobile-app-development",
         "description": "Create mobile applications for iOS and Android.",
         "price": 39.99,
-        "image": {"url": "/avatar.png"},
+        "image": "/avatar.png",
         "category": "Mobile Development",
         "published": true,
         "paid": true,
-        "instructor": "Alice Johnson",
+        "instructor": "8832F265FBDC234CDEAD5928",
         "lessons": []
     },
     {
@@ -52,11 +52,11 @@
         "slug": "machine-learning-basics",
         "description": "Introduction to the fundamental concepts of machine learning.",
         "price": 34.99,
-        "image": {"url": "/avatar.png"},
+        "image": "/avatar.png",
         "category": "Machine Learning",
         "published": true,
         "paid": true,
-        "instructor": "Grace Davis",
+        "instructor": "8832F265FBDC234CDEAD5929",
         "lessons": []
     },
     {
@@ -64,11 +64,11 @@
         "slug": "cybersecurity-essentials",
         "description": "Learn the essential principles of cybersecurity.",
         "price": 44.99,
-        "image": {"url": "/avatar.png"},
+        "image": "/avatar.png",
         "category": "Cybersecurity",
         "published": true,
         "paid": true,
-        "instructor": "Charlie Brown",
+        "instructor": "8832F265FBDC234CDEAD5930",
         "lessons": []
     },
     {
@@ -76,11 +76,11 @@
         "slug": "game-development-fundamentals",
         "description": "Discover the basics of game development.",
         "price": 24.99,
-        "image": {"url": "/avatar.png"},
+        "image": "/avatar.png",
         "category": "Game Development",
         "published": true,
         "paid": true,
-        "instructor": "Eva Miller",
+        "instructor": "8832F265FBDC234CDEAD5931",
         "lessons": []
     }
 ]
