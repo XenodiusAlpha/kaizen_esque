@@ -1,0 +1,38 @@
+
+@import "../../App.css";
+
+.nav-style{
+    padding: 8px;
+    color: white;
+    max-height: 4vh;
+  }
+  .nav-fill{
+    background-color: var(--navBarColor);
+    width: 100%;
+  }
+
+.nav-active{
+    text-decoration: underline;
+    background: var(--mainThemeColor);
+    color: var(--white);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  .nav-button{
+    text-decoration: underline;
+    background: var(--mainThemeColor);
+    color: var(--white);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  
+  .nav-button:hover{
+    text-decoration: underline;
+    background: var(--mainThemeColor);
+    color: var(--white);
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+
+    /* t */
