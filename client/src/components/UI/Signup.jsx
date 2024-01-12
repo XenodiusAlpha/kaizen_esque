@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const Login = () => {
   const [formInput, setformInput] = useState({
-    Firstname: '',
-    Lastname: '',
-    Email: '',
-    Password: '',
-    VerifyPassword: '',
+    firstname: '',
+    lastname: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
   });
   
 
@@ -23,7 +23,7 @@ const Login = () => {
 
   const handleBlurFirstName = () => {
     var inputElement = document.getElementById("warningTextFirstNameID");
-    if (formInput.Firstname.trim() === '') {
+    if (formInput.firstname.trim() === '') {
       inputElement.classList.remove("hidden-element");
     } else {
       inputElement.classList.add("hidden-element");
@@ -32,7 +32,7 @@ const Login = () => {
 
   const handleBlurLastName = () => {
     var inputElement = document.getElementById("warningTextLastNameID");
-    if (formInput.Password.trim() === '') {
+    if (formInput.lastname.trim() === '') {
       inputElement.classList.remove("hidden-element");
     } else {
       inputElement.classList.add("hidden-element");
@@ -41,7 +41,7 @@ const Login = () => {
 
   const handleBlurEmail = () => {
     var inputElement = document.getElementById("warningTextEmailID");
-    if (formInput.Email.trim() === '') {
+    if (formInput.email.trim() === '') {
       inputElement.classList.remove("hidden-element");
     } else {
       inputElement.classList.add("hidden-element");
@@ -50,7 +50,7 @@ const Login = () => {
 
   const handleBlurPassWord = () => {
     var inputElement = document.getElementById("warningTextPasswordID");
-    if (formInput.Password.trim() === '') {
+    if (formInput.password.trim() === '') {
       inputElement.classList.remove("hidden-element");
     } else {
       inputElement.classList.add("hidden-element");
@@ -59,10 +59,10 @@ const Login = () => {
 
   const handleBlurConfirmPassWord = () => {
     var inputElement = document.getElementById("warningTextConfirmPasswordID");
-    if (formInput.Password.trim() === handleBlurPassWord) {
-      inputElement.classList.remove("hidden-element");
-    } else {
+    if (formInput.confirmPassword.trim() === formInput.password.trim()) {
       inputElement.classList.add("hidden-element");
+    } else {
+      inputElement.classList.remove("hidden-element");
     }
   };
 
@@ -82,7 +82,7 @@ const Login = () => {
             <input
               type='text'
               name='firstName'
-              value={formInput.name}
+              value={formInput.Firstname}
               onChange={handleChange}
               placeholder="Enter your First Name"
               onBlur={handleBlurFirstName}
@@ -96,7 +96,7 @@ const Login = () => {
             <input
               type='text'
               name='lastName'
-              value={formInput.password}
+              value={formInput.Lastname}
               onChange={handleChange}
               placeholder="Enter your Last Name"
               onBlur={handleBlurLastName}
@@ -122,9 +122,9 @@ const Login = () => {
 
           <label>
             <input
-              type='text'
+              type='password'
               name='password'
-              value={formInput.Email}
+              value={formInput.Password}
               onChange={handleChange}
               placeholder="Enter your Password"
               onBlur={handleBlurPassWord}
@@ -136,9 +136,9 @@ const Login = () => {
 
           <label>
             <input
-              type='text'
-              name='confirmpassword'
-              value={formInput.Email}
+              type='password'
+              name='confirmPassword'
+              value={formInput.ConfirmPassword}
               onChange={handleChange}
               placeholder="Confirm Password"
               onBlur={handleBlurConfirmPassWord}

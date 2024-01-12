@@ -42,8 +42,10 @@ const Login = () => {
         <div className='flex-container-columns center-content'>
         <h2 className='wt'>Login</h2>
         </div>
+
         <form className='flex-container-columns center-content dpb dpt'
         onSubmit={handleSubmit}>
+
           <p className='wt'>Username:</p>
           <label>
             <input
@@ -56,6 +58,7 @@ const Login = () => {
             />
             <h4 id='warningTextNameID' className='wt warningTextForm hidden-element'>*Please insert a userame</h4>
           </label>
+
           <p className='wt'>Password:</p>
           <label>
             <input
@@ -68,6 +71,7 @@ const Login = () => {
             />
               <h4 id='warningTextpassword' className='wt warningTextForm hidden-element'>*Please insert a password</h4>
           </label>
+          
           <button className='button-Style' type='submit'>Log in</button>
         </form>
         <Link to="/Signup">
