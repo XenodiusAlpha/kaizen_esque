@@ -19,6 +19,9 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log('Submit button pressed')
+    // Add logic for passing data here. 1. Pass user input 2. Switch user to logged in status. 2.5: Logged in status removes login option and replaces it with logout. Shows Profile option. Gives access to dashboards.
+
   };
 
   const handleBlurFirstName = () => {
