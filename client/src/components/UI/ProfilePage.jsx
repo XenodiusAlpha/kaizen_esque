@@ -7,7 +7,7 @@ import userCourses from '../../assets/img/PlaceholderImage.png'
 import { Link } from 'react-router-dom';
 
 
-export default function Footer(){
+export default function ProfilePage(){
     return (
       <div className='flex-container-row footer-Style'>
         <div className='flex-container-columns center-content'>

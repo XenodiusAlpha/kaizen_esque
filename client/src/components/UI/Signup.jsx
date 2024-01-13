@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Signup = () => {
   const [formInput, setformInput] = useState({
     firstname: '',
     lastname: '',
@@ -159,4 +159,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;
