@@ -18,6 +18,11 @@ const Login = () => {
     e.preventDefault();
   };
 
+  const [isChecked, setIsChecked] = useState(false);
+  const handleOnChange = () => {
+    setIsChecked(!isChecked);
+  };
+
   const handleBlurName = () => {
     var inputElement = document.getElementById("warningTextNameID");
     if (formInput.Username.trim() === '') {
@@ -42,20 +47,23 @@ const Login = () => {
         <div className='flex-container-columns center-content'>
         <h2 className='wt'>Login</h2>
         </div>
+
         <form className='flex-container-columns center-content dpb dpt'
         onSubmit={handleSubmit}>
-          <p className='wt'>Username:</p>
+
+          <p className='wt'>Email:</p>
           <label>
             <input
               type='text'
               name='name'
               value={formInput.name}
               onChange={handleChange}
-              placeholder="Enter your username"
+              placeholder="Enter your email"
               onBlur={handleBlurName}
             />
-            <h4 id='warningTextNameID' className='wt warningTextForm hidden-element'>*Please insert a userame</h4>
+            <h4 id='warningTextNameID' className='wt warningTextForm hidden-element'>*Please insert an email</h4>
           </label>
+
           <p className='wt'>Password:</p>
           <label>
             <input
@@ -68,6 +76,23 @@ const Login = () => {
             />
               <h4 id='warningTextpassword' className='wt warningTextForm hidden-element'>*Please insert a password</h4>
           </label>
+
+
+      <div className='flex-container-row'>
+          <input
+          type="checkbox"
+          id="topping"
+          name="topping"
+          value="Paneer"
+          checked={isChecked}
+          onChange={handleOnChange}
+        />
+      <div className="result dpl dpb wt">
+        Log in as instructor {isChecked}
+        </div>
+      </div>
+
+
           <button className='button-Style' type='submit'>Log in</button>
         </form>
         <Link to="/Signup">
@@ -79,3 +104,7 @@ const Login = () => {
 };
 
 export default Login;
+
+
+// Reference for checkbox
+// https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/

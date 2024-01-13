@@ -14,9 +14,16 @@ export default function NavBar(){
   };
 // Divider
     return (
-      <div className='flex-container-row nav-fill'>
-        <div className='nav-style'>
-          <FontAwesomeIcon icon={faBars} />
+      <div className='flex-container-row '>
+        <div className='Profile-Icon'>
+        <Link
+          to="/"
+          className='wt'
+          onClick={handleLinkClick}
+        >
+        <FontAwesomeIcon icon={faBars} />
+        </Link>
+          
         </div>
         <nav className='nav-style flex-container-row'>
           <div className='nav-Button'>
@@ -50,18 +57,22 @@ export default function NavBar(){
         </Link>
         </div>
 
-        <div className='nav-Button dpl'>
+
+
+
+        </nav>
+        <div className='Profile-Icon'>
         <Link
           to="/Profile"
-          className={currentPage === '/Profile' ? 'nav-active' : 'nav-link'}
+          className='wt'
           onClick={handleLinkClick}
         >
         <FontAwesomeIcon icon={faCircleUser} />
         </Link>
         </div>
-
-
-        </nav>
       </div>
     );
   }
+
+  //Note that Profile-Icon will use hidden-element and only be accessable if the
+  //user is logged in
