@@ -5,6 +5,7 @@ import userDisplayName from '../../assets/img/PlaceholderImage.png'
 import userCourses from '../../assets/img/PlaceholderImage.png'
 //Above will have the courses that the users signed up for
 import { Link } from 'react-router-dom';
+// This will be used later.
 
 
 export default function ProfilePage(){

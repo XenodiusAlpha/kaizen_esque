@@ -61,7 +61,7 @@ const Login = () => {
               placeholder="Enter your email"
               onBlur={handleBlurName}
             />
-            <h4 id='warningTextNameID' className='wt warningTextForm hidden-element'>*Please insert a email</h4>
+            <h4 id='warningTextNameID' className='wt warningTextForm hidden-element'>*Please insert an email</h4>
           </label>
 
           <p className='wt'>Password:</p>
