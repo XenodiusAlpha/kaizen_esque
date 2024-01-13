@@ -49,13 +49,13 @@ const enrolledCourseSchema = new Schema(
 // defining as stripeSchema to use Stripe as onboarding for the user/seller validation
 const stripeSchema = new Schema({
     stripe_account_id: String,
-    stripe_seller: {},
-    stripeSession: {},
+    stripe_seller: String,
+    stripeSession: String,
     passwordResetCode: {
-    data: {
+    
       type: String,
       default: '',
-    },
+    
   },
 });
 
@@ -97,7 +97,7 @@ const userSchema = new Schema({
   },
   courses: [{ type: ObjectId, ref: 'Course' }],
   enrolled: [ enrolledCourseSchema ],
-  stripe: [ stripeSchema ],
+  stripe:  stripeSchema ,
 },
 // timestamp used for whenever something is created
 {

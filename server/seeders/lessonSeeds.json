@@ -1,0 +1,37 @@
+[
+    {
+        "title": "Getting Started with Python",
+        "slug": "getting-started-python",
+        "content": "Introduction to Python programming."
+    },
+    {
+        "title": "JavaScript Basics",
+        "slug": "javascript-basics",
+        "content": "Learn the basics of JavaScript."
+    },
+    {
+        "title": "HTML and CSS Fundamentals",
+        "slug": "html-css-fundamentals",
+        "content": "Understanding the basics of HTML and CSS for web development."
+    },
+    {
+        "title": "Introduction to Databases",
+        "slug": "intro-to-databases",
+        "content": "Explore the fundamentals of databases and database management."
+    },
+    {
+        "title": "React.js for Beginners",
+        "slug": "reactjs-beginners",
+        "content": "Getting started with React.js for building modern user interfaces."
+    },
+    {
+        "title": "Networking Essentials",
+        "slug": "networking-essentials",
+        "content": "Learn the basics of computer networking and protocols."
+    },
+    {
+        "title": "Introduction to Artificial Intelligence",
+        "slug": "intro-to-ai",
+        "content": "An overview of artificial intelligence and its applications."
+    }
+]

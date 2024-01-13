@@ -19,13 +19,8 @@ const lessonSchema = new Schema({
     minlength: 200,
   },
   // Optional for this iteration, can be implemented later
-  video: {}, // Ensure this type is correctly defined as per your requirements
-  // Optional for this iteration, can be implemented later
-  free_preview: {
-    type: Boolean,
-    default: false,
-  },
-}, { timestamps: true });
+  
+} );
 
 const courseSchema = new Schema({
   name: {
@@ -71,6 +66,8 @@ const courseSchema = new Schema({
     required: true,
   },
   lessons: [ lessonSchema ],
-}, { timestamps: true });
+});
 
-module.exports = model('Course', courseSchema);
+const Course = mongoose.model('course', courseSchema);
+
+module.exports = Course;
