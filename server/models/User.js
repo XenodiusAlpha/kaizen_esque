@@ -119,6 +119,6 @@ userSchema.pre('save', async function(next) {
 userSchema.methods.isCorrectPassword = async function(password) {
   return await bcrypt.compare(password, this.password);
 };
-const User = mongoose.model('user', userSchema);
+const User = mongoose.model('User', userSchema);
 // exports the user model to be used in the project
 module.exports = User;

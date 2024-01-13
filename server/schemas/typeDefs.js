@@ -1,27 +1,24 @@
+
 const typeDefs = `
 type enrolledLesson {
-
     slug: String!
     completed: Boolean
 }
 
-
-  
-  type enrolledCourse {
+type enrolledCourse {
     slug: String!
     lessons: [enrolledLesson]
     completed: Boolean
-  }
+}
 
-  type Stripe {
+type Stripe {
     stripe_account_id: String
     stripe_seller: String
     stripeSession: String
     passwordResetCode: String
+}
 
-  }
-
-  type User {
+type User {
     _id: ID!
     firstName: String!
     lastName: String!
@@ -32,18 +29,16 @@ type enrolledLesson {
     courses: [Course]
     enrolled: [enrolledCourse]
     stripe: Stripe
+}
 
-    }
-
-  type Lesson {
+type Lesson {
     _id: ID!
     title: String!
     slug: String!
     content: String!
-  }
-  
- 
-  type Course {
+}
+
+type Course {
     _id: ID!
     name: String!
     slug: String!
@@ -55,45 +50,32 @@ type enrolledLesson {
     paid: Boolean
     instructor: User!
     lessons: [Lesson]
-    
-  }
-  
- 
-  type Auth {
+}
+
+type Auth {
     token: ID!
     user: User!
-  }
-  
-  type StripeAccountResponse {
-    url: String
-  }
-  
+}
 
-  
-  type Query {
+type StripeAccountResponse {
+    url: String
+}
+
+type Query {
     users: [User]
     user(_id: ID!): User
     courses: [Course]
     course(_id: ID!): Course
-  }
-  
-  type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
-    updateUser(_id: ID!, firstName: String, lastName: String, email: String, password: String): User
-    addCourse(name: String!, description: String!, price: Float!, category: String!, instructorId: ID!): Course
-    publishStatus(courseId: ID!): Course
-    addLesson(courseId: ID!, title: String!, content: String!): Course
-    updateLesson(courseId: ID!, lessonId: ID!, title: String!, content: String!): Course
-    deleteLesson(courseId: ID!, lessonId: ID!): Course
-    markLessonCompleted (userId:ID!, courseId: ID!, lessonId: ID!): User
-    createStripeAccount: StripeAccountResponse
-    handleStripeCallback: User
-    enrollInCourse(userId: ID!, courseId: ID!): User
-  }
-  
-  
-`;
-module.exports = typeDefs;
+    checkEnrollment(userId: ID!, courseId: ID!): Boolean
+    checkCourseCompleted(userId: ID!, courseId: ID!): Boolean
+    checkLessonCompleted(userId: ID!, courseId: ID!, lessonSlug: String!): Boolean
+}
 
+
+      
+      
+  `;
+
+      module.exports = typeDefs;
+      
 
