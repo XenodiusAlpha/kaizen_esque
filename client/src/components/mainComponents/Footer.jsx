@@ -1,12 +1,6 @@
-<<<<<<< HEAD
 import React from "react";
-import image from "../../assets/img/PlaceholderImage.png";
+import image from "../../assets/img/LogoNew.png";
 import { Link } from "react-router-dom";
-=======
-import React from 'react';
-import image from '../../assets/img/LogoNew.png'
-import { Link } from 'react-router-dom';
->>>>>>> 55855a22c2d586fc80c17798c95d8575053008c6
 
 export default function Footer() {
   return (

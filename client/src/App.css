@@ -2,22 +2,12 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-<<<<<<< HEAD
   font-family: monospace, "Lucida Sans", Arial, sans-serif;
-  --mainThemeColor: #e2f7fb;
-  --mainBodyColor: #73cad9;
+  --mainThemeColor: #ffffff;
+  --mainBodyColor: #67a86a;
   --WhiteText: #fafafa;
   --navBarColor: rgba(17, 12, 12, 0.404);
   --Black: #000000;
-=======
-  font-family:monospace,
-    'Lucida Sans', Arial, sans-serif;
-    --mainThemeColor: #ffffff;
-    --mainBodyColor: #67a86a;
-    --WhiteText: #fafafa;
-    --navBarColor: rgba(17, 12, 12, 0.404);
-    --Black: #000000;
->>>>>>> 55855a22c2d586fc80c17798c95d8575053008c6
 }
 
 #root {

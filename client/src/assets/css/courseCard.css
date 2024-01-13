@@ -1,0 +1,15 @@
+.CourseCard img {
+  width: 50%;
+  border: solid black;
+}
+
+.CourseCard {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  border-radius: 15px;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  border: solid black;
+}

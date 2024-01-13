@@ -1,4 +1,4 @@
-import "../../styles/CoursePage.css";
+import "../../assets/css/CoursePage.css";
 import image from "../../assets/img/CookingCourse.png";
 
 export default function CoursePage() {
