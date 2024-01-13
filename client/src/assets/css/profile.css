@@ -1,0 +1,24 @@
+
+@import "../../App.css";
+
+.box-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 25px;
+    padding: 25px;
+    min-width: 800px;
+    max-width: 50%;
+    height: 100%;
+    background-color: var(--mainThemeColor);
+    margin-top: 3%;
+    margin-bottom: 3%;
+    border-radius: 25px 0px 25px 0px;
+    text-shadow: 2px 2px 4px #000000;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  }
+
+  .ProfileIconBorder{
+    padding: 8px;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  }

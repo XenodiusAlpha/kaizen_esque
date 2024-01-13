@@ -17,6 +17,11 @@ const Login = () => {
     e.preventDefault();
   };
 
+  const [isChecked, setIsChecked] = useState(false);
+  const handleOnChange = () => {
+    setIsChecked(!isChecked);
+  };
+
   const handleBlurName = () => {
     var inputElement = document.getElementById("warningTextNameID");
     if (formInput.Username.trim() === "") {
@@ -41,20 +46,29 @@ const Login = () => {
         <div className="flex-container-columns center-content">
           <h2 className="wt">Login</h2>
         </div>
+<<<<<<< HEAD
         <form
           className="flex-container-columns center-content dpb dpt"
           onSubmit={handleSubmit}
         >
           <p className="wt">Username:</p>
+=======
+
+        <form className='flex-container-columns center-content dpb dpt'
+        onSubmit={handleSubmit}>
+
+          <p className='wt'>Email:</p>
+>>>>>>> 55855a22c2d586fc80c17798c95d8575053008c6
           <label>
             <input
               type="text"
               name="name"
               value={formInput.name}
               onChange={handleChange}
-              placeholder="Enter your username"
+              placeholder="Enter your email"
               onBlur={handleBlurName}
             />
+<<<<<<< HEAD
             <h4
               id="warningTextNameID"
               className="wt warningTextForm hidden-element"
@@ -63,6 +77,12 @@ const Login = () => {
             </h4>
           </label>
           <p className="wt">Password:</p>
+=======
+            <h4 id='warningTextNameID' className='wt warningTextForm hidden-element'>*Please insert an email</h4>
+          </label>
+
+          <p className='wt'>Password:</p>
+>>>>>>> 55855a22c2d586fc80c17798c95d8575053008c6
           <label>
             <input
               type="text"
@@ -79,9 +99,30 @@ const Login = () => {
               *Please insert a password
             </h4>
           </label>
+<<<<<<< HEAD
           <button className="button-Style" type="submit">
             Log in
           </button>
+=======
+
+
+      <div className='flex-container-row'>
+          <input
+          type="checkbox"
+          id="topping"
+          name="topping"
+          value="Paneer"
+          checked={isChecked}
+          onChange={handleOnChange}
+        />
+      <div className="result dpl dpb wt">
+        Log in as instructor {isChecked}
+        </div>
+      </div>
+
+
+          <button className='button-Style' type='submit'>Log in</button>
+>>>>>>> 55855a22c2d586fc80c17798c95d8575053008c6
         </form>
         <Link to="/Signup">
           <p className="signUp_Link dpl dpt wt">New to KaizenEsque? Sign up!</p>
@@ -92,3 +133,10 @@ const Login = () => {
 };
 
 export default Login;
+<<<<<<< HEAD
+=======
+
+
+// Reference for checkbox
+// https://www.freecodecamp.org/news/how-to-work-with-multiple-checkboxes-in-react/
+>>>>>>> 55855a22c2d586fc80c17798c95d8575053008c6
