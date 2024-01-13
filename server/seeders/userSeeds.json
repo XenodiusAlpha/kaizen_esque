@@ -6,8 +6,25 @@
         "password": "Test1234!",
         "picture": "/avatar1.png",
         "role": ["user"],
-        "courses": [],
-        "enrolled": []
+        "enrolled": [
+            {
+                "slug": "intro-to-programming",
+                "lessons": [
+                    { "slug": "getting-started", "completed": false },
+                    { "slug": "variables-and-data-types", "completed": false }
+                ],
+                "completed": false
+            },
+            {
+                "slug": "advanced-web-dev",
+                "lessons": [
+                    { "slug": "intro-to-html", "completed": false },
+                    { "slug": "intro-to-css", "completed": false },
+                    { "slug": "intro-to-js", "completed": false }
+                ],
+                "completed": false
+            }
+        ]
     },
     {
         "firstName": "Jane",
@@ -16,9 +33,18 @@
         "password": "Test1234!",
         "picture": "/avatar2.png",
         "role": ["user", "instructor"],
-        "courses": [],
-        "enrolled": []
+        "enrolled": [
+            {
+                "slug": "data-science-fundamentals",
+                "lessons": [
+                    { "slug": "intro-to-data-science", "completed": false },
+                    { "slug": "intro-to-data-analytics", "completed": false }
+                ],
+                "completed": false
+            }
+        ]
     },
+
     {
         "firstName": "Alice",
         "lastName": "Johnson",
@@ -26,8 +52,24 @@
         "password": "Password123!",
         "picture": "/avatar3.png",
         "role": ["user"],
-        "courses": [],
-        "enrolled": []
+        "enrolled": [
+            {
+                "slug": "game-development-fundamentals",
+                "lessons": [
+                    { "slug": "intro-to-game-dev", "completed": false },
+                    { "slug": "intro-to-unity", "completed": false }
+                ],
+                "completed": false
+            },
+            {
+                "slug": "mobile-app-development",
+                "lessons": [
+                    { "slug": "intro-to-ios", "completed": false },
+                    { "slug": "intro-to-android", "completed": false }
+                ],
+                "completed": false
+            }
+        ]
     },
     {
         "firstName": "Bob",
@@ -36,7 +78,6 @@
         "password": "SecurePass456!",
         "picture": "/avatar4.png",
         "role": ["user", "instructor"],
-        "courses": [],
         "enrolled": []
     },
     {
@@ -46,8 +87,24 @@
         "password": "SecretPass789!",
         "picture": "/avatar5.png",
         "role": ["user"],
-        "courses": [],
-        "enrolled": []
+        "enrolled": [
+            {
+                "slug": "data-science-fundamentals",
+                "lessons": [
+                    { "slug": "intro-to-data-science", "completed": false },
+                    { "slug": "intro-to-data-analytics", "completed": false }
+                ],
+                "completed": false
+            },
+            {
+                "slug": "mobile-app-development",
+                "lessons": [
+                    { "slug": "intro-to-ios", "completed": false },
+                    { "slug": "intro-to-android", "completed": false }
+                ],
+                "completed": false
+            }
+        ]
     },
     {
         "firstName": "Charlie",
@@ -56,7 +113,6 @@
         "password": "Pass123Word!",
         "picture": "/avatar6.png",
         "role": ["user", "instructor"],
-        "courses": [],
         "enrolled": []
     },
     {
@@ -66,7 +122,23 @@
         "password": "SecurePassword789!",
         "picture": "/avatar7.png",
         "role": ["user"],
-        "courses": [],
-        "enrolled": []
-    }    
+        "enrolled": [
+            {
+                "slug": "game-development-fundamentals",
+                "lessons": [
+                    { "slug": "intro-to-game-dev", "completed": false },
+                    { "slug": "intro-to-unity", "completed": false }
+                ],
+                "completed": false
+            },
+            {
+                "slug": "cybersecurity-essentials",
+                "lessons": [
+                    { "slug": "intro-to-cybersecurity", "completed": false },
+                    { "slug": "intro-to-cryptography", "completed": false }
+                ],
+                "completed": false
+            }
+        ]
+    }
 ]
