@@ -73,3 +73,6 @@ export default function NavBar(){
       </div>
     );
   }
+
+  //Note that Profile-Icon will use hidden-element and only be accessable if the
+  //user is logged in

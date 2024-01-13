@@ -7,7 +7,7 @@
     align-items: center;
     border: 25px;
     padding: 25px;
-    min-width: 25%;
+    min-width: 800px;
     max-width: 50%;
     height: 250px;
     background-color: var(--mainThemeColor);
