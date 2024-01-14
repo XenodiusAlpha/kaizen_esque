@@ -4,7 +4,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 100px;
   margin: 50px;
-  /* background-color: blue; */
+  background-color: blue;
   height: fit-content;
   z-index: 5;
 }

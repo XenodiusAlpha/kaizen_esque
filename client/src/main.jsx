@@ -4,23 +4,14 @@ import App from "./App.jsx";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-<<<<<<< HEAD
 import HomeDefault from "./components/mainComponents/HomeDefault.jsx";
 import Courses from "./components/mainComponents/CoursesContainer.jsx";
 import Login from "./components/mainComponents/Login.jsx";
 import LearnMore from "./components/mainComponents/LearnMore.jsx";
 import Signup from "./components/UI/Signup.jsx";
 import ProfilePage from "./components/UI/ProfilePage.jsx";
-=======
-import HomeDefault from './components/mainComponents/HomeDefault.jsx'
-import Courses from './components/mainComponents/Courses.jsx'
-import Login from './components/mainComponents/Login.jsx'
-import LearnMore from './components/mainComponents/LearnMore.jsx'
-import Signup from './components/UI/Signup.jsx'
-import ProfilePage from './components/UI/ProfilePage.jsx'
-import Checkout from './components/UI/Checkout.jsx'
-import 'bootstrap/dist/css/bootstrap.min.css'
->>>>>>> 5308efc0d5c24174f2eb782713675d3de8619273
+import Checkout from "./components/UI/Checkout.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const router = createBrowserRouter([
   {
@@ -52,7 +43,7 @@ const router = createBrowserRouter([
         element: <ProfilePage />,
       },
       {
-        path: 'Checkout',
+        path: "Checkout",
         element: <Checkout />,
       },
       // {
