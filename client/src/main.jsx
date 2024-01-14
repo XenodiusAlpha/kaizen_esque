@@ -10,6 +10,7 @@ import Login from './components/mainComponents/Login.jsx'
 import LearnMore from './components/mainComponents/LearnMore.jsx'
 import Signup from './components/UI/Signup.jsx'
 import ProfilePage from './components/UI/ProfilePage.jsx'
+import Checkout from './components/UI/Checkout.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const router = createBrowserRouter([
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: 'Profile',
         element: <ProfilePage />,
+      },
+      {
+        path: 'Checkout',
+        element: <Checkout />,
       },
       // {
       //   path: 'createCourse',

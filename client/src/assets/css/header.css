@@ -25,4 +25,10 @@
     color: #cefab1;
   }
 
-    /* t */
+
+    @media screen and (max-width: 250px) {
+      .header-Logo {
+        visibility: hidden;
+        max-width: 1px;
+      }
+    }

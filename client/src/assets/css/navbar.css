@@ -42,3 +42,21 @@
     padding-right: 8px;
     background-color: var(--navBarColor);
   }
+
+  @media screen and (max-width: 300px) {
+    .nav-active {
+      visibility: hidden;
+      max-width: 1px;
+    }
+    .nav-style{
+      color: white;
+      max-height: 4vh;
+      padding-right: 42%;
+      width: 0%;
+      background-color: var(--navBarColor);
+    }
+    .nav-link {
+      visibility: hidden;
+      max-width: 1px;
+    }
+  }
