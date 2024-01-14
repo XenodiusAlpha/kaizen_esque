@@ -66,21 +66,6 @@ const typeDefs = `
     courses: [Course]
     course(_id: ID!): Course
   }
-
-  type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
-    updateUser(_id: ID!, firstName: String, lastName: String, email: String, password: String): User
-    addCourse(name: String!, description: String!, price: Float!, category: String!, instructorId: ID!): Course
-    publishStatus(courseId: ID!): Course
-    addLesson(courseId: ID!, title: String!, content: String!): Course
-    updateLesson(courseId: ID!, lessonId: ID!, title: String!, content: String!): Course
-    deleteLesson(courseId: ID!, lessonId: ID!): Course
-    markLessonCompleted(userId:ID!, courseId: ID!, lessonId: ID!): User
-    createStripeAccount: StripeAccountResponse
-    handleStripeCallback: User
-    enrollInCourse(userId: ID!, courseId: ID!): User
-  }
 `;
 
 module.exports = typeDefs;
