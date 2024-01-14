@@ -1,3 +1,4 @@
+
 const typeDefs = `
   type enrolledLesson {
     slug: String!
@@ -8,9 +9,9 @@ const typeDefs = `
     slug: String!
     lessons: [enrolledLesson]
     completed: Boolean
-  }
+}
 
-  type Stripe {
+type Stripe {
     stripe_account_id: String
     stripe_seller: String
     stripeSession: String
@@ -65,7 +66,15 @@ const typeDefs = `
     user(_id: ID!): User
     courses: [Course]
     course(_id: ID!): Course
-  }
-`;
+    checkEnrollment(userId: ID!, courseId: ID!): Boolean
+    checkCourseCompleted(userId: ID!, courseId: ID!): Boolean
+    checkLessonCompleted(userId: ID!, courseId: ID!, lessonSlug: String!): Boolean
+}
+
+
+      
+      
+  `;
+      
 
 module.exports = typeDefs;
