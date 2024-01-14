@@ -8,7 +8,6 @@
       "category": "Programming",
       "published": true,
       "paid": true,
-      "instructor": "8832F265FBDC234CDEAD5926",
       "lessons": [
         { "title": "Getting Started with Programming", "slug": "getting-started", "content": "Introduction to programming concepts." },
         { "title": "Variables and Data Types", "slug": "variables-and-data-types", "content": "Understanding variables and data types in programming." }
@@ -23,7 +22,6 @@
       "category": "Web Development",
       "published": false,
       "paid": true,
-      "instructor": "8832F265FBDC234CDEAD5926",
         "lessons": [
             { "title": "Introduction to HTML", "slug": "intro-to-html", "content": "Introduction to HTML." },
             { "title": "Introduction to CSS", "slug": "intro-to-css", "content": "Introduction to CSS." },
@@ -39,7 +37,6 @@
         "category": "Data Science",
         "published": true,
         "paid": true,
-        "instructor": "8832F265FBDC234CDEAD5927",
         "lessons": [
             { "title": "Introduction to Data Science", "slug": "intro-to-data-science", "content": "Introduction to data science." },
             { "title": "Introduction to Data Analytics", "slug": "intro-to-data-analytics", "content": "Introduction to data analytics." }
@@ -54,7 +51,6 @@
         "category": "Mobile Development",
         "published": true,
         "paid": true,
-        "instructor": "8832F265FBDC234CDEAD5928",
         "lessons": [
             { "title": "Introduction to iOS Development", "slug": "intro-to-ios", "content": "Introduction to iOS development." },
             { "title": "Introduction to Android Development", "slug": "intro-to-android", "content": "Introduction to Android development." }
@@ -69,7 +65,6 @@
         "category": "Machine Learning",
         "published": true,
         "paid": true,
-        "instructor": "8832F265FBDC234CDEAD5929",
         "lessons": [
             { "title": "Introduction to Machine Learning", "slug": "intro-to-ml", "content": "Introduction to machine learning." },
             { "title": "Introduction to Deep Learning", "slug": "intro-to-dl", "content": "Introduction to deep learning." }
@@ -84,7 +79,6 @@
         "category": "Cybersecurity",
         "published": true,
         "paid": true,
-        "instructor": "8832F265FBDC234CDEAD5930",
         "lessons": [
             { "title": "Introduction to Cybersecurity", "slug": "intro-to-cybersecurity", "content": "Introduction to cybersecurity." },
             { "title": "Introduction to Cryptography", "slug": "intro-to-cryptography", "content": "Introduction to cryptography." }
@@ -99,7 +93,6 @@
         "category": "Game Development",
         "published": true,
         "paid": true,
-        "instructor": "8832F265FBDC234CDEAD5931",
         "lessons": [
             { "title": "Introduction to Game Development", "slug": "intro-to-game-dev", "content": "Introduction to game development." },
             { "title": "Introduction to Unity", "slug": "intro-to-unity", "content": "Introduction to Unity." }

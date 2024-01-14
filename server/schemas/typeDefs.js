@@ -1,11 +1,11 @@
 
 const typeDefs = `
-type enrolledLesson {
+  type enrolledLesson {
     slug: String!
     completed: Boolean
-}
+  }
 
-type enrolledCourse {
+  type enrolledCourse {
     slug: String!
     lessons: [enrolledLesson]
     completed: Boolean
@@ -16,9 +16,9 @@ type Stripe {
     stripe_seller: String
     stripeSession: String
     passwordResetCode: String
-}
+  }
 
-type User {
+  type User {
     _id: ID!
     firstName: String!
     lastName: String!
@@ -29,16 +29,16 @@ type User {
     courses: [Course]
     enrolled: [enrolledCourse]
     stripe: Stripe
-}
+  }
 
-type Lesson {
+  type Lesson {
     _id: ID!
     title: String!
     slug: String!
     content: String!
-}
+  }
 
-type Course {
+  type Course {
     _id: ID!
     name: String!
     slug: String!
@@ -50,18 +50,18 @@ type Course {
     paid: Boolean
     instructor: User!
     lessons: [Lesson]
-}
+  }
 
-type Auth {
+  type Auth {
     token: ID!
     user: User!
-}
+  }
 
-type StripeAccountResponse {
+  type StripeAccountResponse {
     url: String
-}
+  }
 
-type Query {
+  type Query {
     users: [User]
     user(_id: ID!): User
     courses: [Course]
@@ -75,7 +75,6 @@ type Query {
       
       
   `;
-
-      module.exports = typeDefs;
       
 
+module.exports = typeDefs;
