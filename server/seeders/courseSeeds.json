@@ -1,27 +1,25 @@
 [
     {
-      "name": "Introduction to Programming",
-      "slug": "intro-to-programming",
-      "description": "Learn the basics of programming.",
-      "price": 19.99,
-      "image": "/avatar.png",
-      "category": "Programming",
-      "published": true,
-      "paid": true,
-      "instructor": "8832F265FBDC234CDEAD5926",
-      "lessons": []
+        "name": "Introduction to Programming",
+        "slug": "intro-to-programming",
+        "description": "Learn the basics of programming.",
+        "price": 19.99,
+        "image": "/avatar.png",
+        "category": "Programming",
+        "published": true,
+        "paid": true,
+        "lessons": []
     },
     {
-      "name": "Advanced Web Development",
-      "slug": "advanced-web-dev",
-      "description": "Dive deep into web development technologies.",
-      "price": 49.99,
-      "image": "/avatar.png",
-      "category": "Web Development",
-      "published": false,
-      "paid": true,
-      "instructor": "8832F265FBDC234CDEAD5926",
-      "lessons": []
+        "name": "Advanced Web Development",
+        "slug": "advanced-web-dev",
+        "description": "Dive deep into web development technologies.",
+        "price": 49.99,
+        "image": "/avatar.png",
+        "category": "Web Development",
+        "published": false,
+        "paid": true,
+        "lessons": []
     },
     {
         "name": "Data Science Fundamentals",
@@ -32,7 +30,6 @@
         "category": "Data Science",
         "published": true,
         "paid": true,
-        "instructor": "8832F265FBDC234CDEAD5927",
         "lessons": []
     },
     {
@@ -44,7 +41,6 @@
         "category": "Mobile Development",
         "published": true,
         "paid": true,
-        "instructor": "8832F265FBDC234CDEAD5928",
         "lessons": []
     },
     {
@@ -56,7 +52,6 @@
         "category": "Machine Learning",
         "published": true,
         "paid": true,
-        "instructor": "8832F265FBDC234CDEAD5929",
         "lessons": []
     },
     {
@@ -68,7 +63,6 @@
         "category": "Cybersecurity",
         "published": true,
         "paid": true,
-        "instructor": "8832F265FBDC234CDEAD5930",
         "lessons": []
     },
     {
@@ -80,7 +74,6 @@
         "category": "Game Development",
         "published": true,
         "paid": true,
-        "instructor": "8832F265FBDC234CDEAD5931",
         "lessons": []
     }
 ]
