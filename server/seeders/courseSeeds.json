@@ -1,25 +1,32 @@
 [
     {
-        "name": "Introduction to Programming",
-        "slug": "intro-to-programming",
-        "description": "Learn the basics of programming.",
-        "price": 19.99,
-        "image": "/avatar.png",
-        "category": "Programming",
-        "published": true,
-        "paid": true,
-        "lessons": []
+      "name": "Introduction to Programming",
+      "slug": "intro-to-programming",
+      "description": "Learn the basics of programming.",
+      "price": 19.99,
+      "image": "/avatar.png",
+      "category": "Programming",
+      "published": true,
+      "paid": true,
+      "lessons": [
+        { "title": "Getting Started with Programming", "slug": "getting-started", "content": "Introduction to programming concepts." },
+        { "title": "Variables and Data Types", "slug": "variables-and-data-types", "content": "Understanding variables and data types in programming." }
+      ]
     },
     {
-        "name": "Advanced Web Development",
-        "slug": "advanced-web-dev",
-        "description": "Dive deep into web development technologies.",
-        "price": 49.99,
-        "image": "/avatar.png",
-        "category": "Web Development",
-        "published": false,
-        "paid": true,
-        "lessons": []
+      "name": "Advanced Web Development",
+      "slug": "advanced-web-dev",
+      "description": "Dive deep into web development technologies.",
+      "price": 49.99,
+      "image": "/avatar.png",
+      "category": "Web Development",
+      "published": false,
+      "paid": true,
+        "lessons": [
+            { "title": "Introduction to HTML", "slug": "intro-to-html", "content": "Introduction to HTML." },
+            { "title": "Introduction to CSS", "slug": "intro-to-css", "content": "Introduction to CSS." },
+            { "title": "Introduction to JavaScript", "slug": "intro-to-js", "content": "Introduction to JavaScript." }
+        ]
     },
     {
         "name": "Data Science Fundamentals",
@@ -30,7 +37,10 @@
         "category": "Data Science",
         "published": true,
         "paid": true,
-        "lessons": []
+        "lessons": [
+            { "title": "Introduction to Data Science", "slug": "intro-to-data-science", "content": "Introduction to data science." },
+            { "title": "Introduction to Data Analytics", "slug": "intro-to-data-analytics", "content": "Introduction to data analytics." }
+        ]
     },
     {
         "name": "Mobile App Development",
@@ -41,7 +51,10 @@
         "category": "Mobile Development",
         "published": true,
         "paid": true,
-        "lessons": []
+        "lessons": [
+            { "title": "Introduction to iOS Development", "slug": "intro-to-ios", "content": "Introduction to iOS development." },
+            { "title": "Introduction to Android Development", "slug": "intro-to-android", "content": "Introduction to Android development." }
+        ]
     },
     {
         "name": "Machine Learning Basics",
@@ -52,7 +65,10 @@
         "category": "Machine Learning",
         "published": true,
         "paid": true,
-        "lessons": []
+        "lessons": [
+            { "title": "Introduction to Machine Learning", "slug": "intro-to-ml", "content": "Introduction to machine learning." },
+            { "title": "Introduction to Deep Learning", "slug": "intro-to-dl", "content": "Introduction to deep learning." }
+        ]
     },
     {
         "name": "Cybersecurity Essentials",
@@ -63,7 +79,10 @@
         "category": "Cybersecurity",
         "published": true,
         "paid": true,
-        "lessons": []
+        "lessons": [
+            { "title": "Introduction to Cybersecurity", "slug": "intro-to-cybersecurity", "content": "Introduction to cybersecurity." },
+            { "title": "Introduction to Cryptography", "slug": "intro-to-cryptography", "content": "Introduction to cryptography." }
+        ]
     },
     {
         "name": "Game Development Fundamentals",
@@ -74,7 +93,10 @@
         "category": "Game Development",
         "published": true,
         "paid": true,
-        "lessons": []
+        "lessons": [
+            { "title": "Introduction to Game Development", "slug": "intro-to-game-dev", "content": "Introduction to game development." },
+            { "title": "Introduction to Unity", "slug": "intro-to-unity", "content": "Introduction to Unity." }
+        ]
     }
 ]
 

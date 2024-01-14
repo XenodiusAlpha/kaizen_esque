@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const { Schema, model } = mongoose;
+const { Schema } = mongoose;
 const { ObjectId } = Schema;
 
 const lessonSchema = new Schema({
@@ -16,7 +16,7 @@ const lessonSchema = new Schema({
   },
   content: {
     type: String,
-    minlength: 200,
+    minlength: 20,
   },
   // Optional for this iteration, can be implemented later
   
@@ -68,6 +68,6 @@ const courseSchema = new Schema({
   lessons: [ lessonSchema ],
 });
 
-const Course = mongoose.model('course', courseSchema);
+const Course = mongoose.model('Course', courseSchema);
 
 module.exports = Course;

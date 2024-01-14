@@ -5,11 +5,10 @@
     padding: 8px;
     color: white;
     max-height: 4vh;
-  }
-  .nav-fill{
-    background-color: var(--navBarColor);
     width: 100%;
+    background-color: var(--navBarColor);
   }
+
 
 .nav-active{
     text-decoration: underline;
@@ -35,4 +34,11 @@
     border-bottom-right-radius: 15px;
   }
 
-    /* t */
+  .Profile-Icon{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    padding-left: 8px;
+    padding-right: 8px;
+    background-color: var(--navBarColor);
+  }
