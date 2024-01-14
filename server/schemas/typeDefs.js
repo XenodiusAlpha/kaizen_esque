@@ -9,9 +9,9 @@ const typeDefs = `
     slug: String!
     lessons: [enrolledLesson]
     completed: Boolean
-}
+  }
 
-type Stripe {
+  type Stripe {
     stripe_account_id: String
     stripe_seller: String
     stripeSession: String
@@ -69,21 +69,23 @@ type Stripe {
     checkEnrollment(userId: ID!, courseId: ID!): Boolean
     checkCourseCompleted(userId: ID!, courseId: ID!): Boolean
     checkLessonCompleted(userId: ID!, courseId: ID!, lessonSlug: String!): Boolean
-}
-type Mutation {
-  addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-  login(email: String!, password: String!): Auth
-  addCourse(name: String!, description: String!, price: Float!, category: String!, instructorId: ID!): Course
-  publishCourse(courseId: ID!): Course
-  unpublishCourse(courseId: ID!): Course
-  enrollInCourse(userId: ID!, courseId: ID!): User
-  
-  
-}
+  }
 
-      
-      
-  `;
-      
+  type Mutation {
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    addCourse(name: String!, description: String!, price: Float!, category: String!, instructorId: ID!): Course
+    publishCourse(courseId: ID!): Course
+    unpublishCourse(courseId: ID!): Course
+    enrollInCourse(userId: ID!, courseId: ID!): User
+    addLesson(courseId: ID!, title: String!, content: String!): Course
+    updateLesson(courseId: ID!, lessonId: ID!, title: String!, content: String!): Course
+
+    deleteLesson(courseId: ID!, lessonId: ID!): Course
+    markLessonCompleted(userId: ID!, courseId: ID!, lessonId: ID!): User
+    createStripeAccount: StripeAccountResponse
+    handleStripeCallback: User
+  }
+`;
 
 module.exports = typeDefs;
