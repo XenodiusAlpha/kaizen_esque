@@ -53,9 +53,15 @@ const Login = () => {
         >
           <p className="wt">Email:</p>
           <label>
+<<<<<<< HEAD
             <input
               type="text"
               name="name"
+=======
+            <input id='userInputEmail'
+              type='text'
+              name='name'
+>>>>>>> 5308efc0d5c24174f2eb782713675d3de8619273
               value={formInput.name}
               onChange={handleChange}
               placeholder="Enter your email"
@@ -69,8 +75,13 @@ const Login = () => {
             </h4>
           </label>
 
+<<<<<<< HEAD
           <p className="wt">Password:</p>
           <label>
+=======
+          <p className='wt'>Password:</p>
+          <label id='userInputPassword'>
+>>>>>>> 5308efc0d5c24174f2eb782713675d3de8619273
             <input
               type="text"
               name="password"

@@ -6,6 +6,7 @@
   background-color: var(--mainThemeColor);
 }
 
+<<<<<<< HEAD
 .learnMore_Link {
   background-color: var(--Black);
   font-size: 25px;
@@ -29,3 +30,29 @@
   margin: 0;
 }
 /* t */
+=======
+  .learnMore_Link{
+    background-color: var(--Black);
+    font-size: 25px;
+    text-decoration: none;
+    color: var(--WhiteText);
+    font-style: italic;
+    border-radius: 8px;
+    padding-bottom: 5px;
+    padding-right: 8px;
+  }
+  
+
+
+  /* t */
+
+  @media screen and (max-width: 400px) {
+    .footer-logo{
+      visibility: hidden;
+      max-width: 1px;
+    }
+    .learnMore_Link{
+      visibility: hidden;
+    }
+  }
+>>>>>>> 5308efc0d5c24174f2eb782713675d3de8619273

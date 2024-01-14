@@ -1,5 +1,6 @@
 @import "../../App.css";
 
+<<<<<<< HEAD
 .box-style {
   display: flex;
   justify-content: center;
@@ -26,3 +27,33 @@
   display: flex;
   height: 65vh;
 }
+=======
+.box-style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 800px;
+    max-width: 50%;
+    height: 800px;
+    background-color: var(--mainThemeColor);
+    margin-bottom: 3%;
+    border-radius: 0px 0px 25px 25px;
+    text-shadow: 2px 2px 4px #000000;
+    box-shadow: 0px 8px 20px 5px rgba(0,0,0,.8);
+  }
+
+  .ProfileIconBorder{
+    padding: 8px;
+    margin: 30px 30px 30px 60px;
+    width: 150px;
+    height: 150px;
+    box-shadow: 5px 5px 10px 2px rgba(0,0,0,.8);
+  }
+
+  .ProfilePageFlex{
+    display: flex;
+    flex-direction: row;
+    padding: 0px 20px 20px 20px;
+    width: 100%;
+  }
+>>>>>>> 5308efc0d5c24174f2eb782713675d3de8619273

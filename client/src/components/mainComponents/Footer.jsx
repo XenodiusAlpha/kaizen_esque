@@ -10,12 +10,30 @@ export default function Footer() {
         <img src={image} alt="" />
       </Link>
 
+<<<<<<< HEAD
       <div className="flex-container-columns center-content">
         <p className="header-Text dpl">Copyright Kaizen-Esque 2024©</p>
 
         <Link to="/LearnMore">
           <h4 className="learnMore_Link dpl">Learn More</h4>
         </Link>
+=======
+export default function Footer(){
+    return (
+      <div className='footer-Style flex-container-row keepBottom center-content'>
+          <Link className='footer-logo' to="/">
+            <img src={image} alt="Kaisen-Esque-Logo-Return-to-home" />
+          </Link>
+
+          <div className='flex-container-columns center-content'>
+          <p className='header-Text dpl'>Copyright Kaizen-Esque 2024©</p>
+
+          <Link to="/LearnMore">
+          <h4 className='learnMore_Link dpl'>Learn More</h4>
+          </Link>
+
+          </div>
+>>>>>>> 5308efc0d5c24174f2eb782713675d3de8619273
       </div>
     </div>
   );
