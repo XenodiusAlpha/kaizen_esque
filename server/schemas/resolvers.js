@@ -173,6 +173,14 @@ const resolvers = {
       const slug = title.toLowerCase().replace(/\s+/g, '-');
       course.lessons.push({ title, slug, content });
       await course.save();
+
+      let users = await User.find({ 'enrolled.slug': course.slug });
+      for (let user of users) {
+        let userCourse = user.enrolled.find((enrolledCourse) => enrolledCourse.slug == course.slug);
+        userCourse.lessons = [ ...userCourse.lessons, { slug, completed: false } ];
+        await user.save();
+      }
+
       return course;
     },
 
