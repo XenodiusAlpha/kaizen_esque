@@ -43,20 +43,14 @@
     background-color: var(--navBarColor);
   }
 
-  @media screen and (max-width: 300px) {
-    .nav-active {
-      visibility: hidden;
-      max-width: 1px;
-    }
+  @media screen and (max-width: 400px) {
     .nav-style{
+      display: flex;
       color: white;
       max-height: 4vh;
-      padding-right: 42%;
+      padding-right: 62%;
+      padding-bottom: 12%;
       width: 0%;
       background-color: var(--navBarColor);
-    }
-    .nav-link {
-      visibility: hidden;
-      max-width: 1px;
     }
   }
