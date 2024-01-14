@@ -1,12 +1,10 @@
-const typeDefs = `
-type enrolledLesson {
 
+const typeDefs = `
+  type enrolledLesson {
     slug: String!
     completed: Boolean
-}
+  }
 
-
-  
   type enrolledCourse {
     slug: String!
     lessons: [enrolledLesson]
@@ -18,7 +16,6 @@ type enrolledLesson {
     stripe_seller: String
     stripeSession: String
     passwordResetCode: String
-
   }
 
   type User {
@@ -32,8 +29,7 @@ type enrolledLesson {
     courses: [Course]
     enrolled: [enrolledCourse]
     stripe: Stripe
-
-    }
+  }
 
   type Lesson {
     _id: ID!
@@ -41,8 +37,7 @@ type enrolledLesson {
     slug: String!
     content: String!
   }
-  
- 
+
   type Course {
     _id: ID!
     name: String!
@@ -55,45 +50,99 @@ type enrolledLesson {
     paid: Boolean
     instructor: User!
     lessons: [Lesson]
-    
   }
-  
- 
+
   type Auth {
     token: ID!
     user: User!
   }
-  
+
   type StripeAccountResponse {
     url: String
   }
-  
 
-  
   type Query {
     users: [User]
     user(_id: ID!): User
     courses: [Course]
     course(_id: ID!): Course
+    checkEnrollment(userId: ID!, courseId: ID!): Boolean
+    checkCourseCompleted(userId: ID!, courseId: ID!): Boolean
+    checkLessonCompleted(userId: ID!, courseId: ID!, lessonSlug: String!): Boolean
   }
-  
+
   type Mutation {
-    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    login(email: String!, password: String!): Auth
-    updateUser(_id: ID!, firstName: String, lastName: String, email: String, password: String): User
-    addCourse(name: String!, description: String!, price: Float!, category: String!, instructorId: ID!): Course
-    publishStatus(courseId: ID!): Course
-    addLesson(courseId: ID!, title: String!, content: String!): Course
-    updateLesson(courseId: ID!, lessonId: ID!, title: String!, content: String!): Course
-    deleteLesson(courseId: ID!, lessonId: ID!): Course
-    markLessonCompleted (userId:ID!, courseId: ID!, lessonId: ID!): User
+    addUser(
+      firstName: String!,
+      lastName: String!,
+      email: String!,
+      password: String!
+    ): Auth
+
+    login(
+      email: String!,
+      password: String!
+    ): Auth
+
+    addCourse(
+      name: String!,
+      description: String!,
+      price: Float!,
+      category: String!,
+      instructorId: ID!
+    ): Course
+
+    publishCourse(
+      courseId: ID!
+    ): Course
+
+    unpublishCourse(
+      courseId: ID!
+    ): Course
+
+    enrollInCourse(
+      userId: ID!,
+      courseId: ID!
+    ): User
+
+    addLesson(
+      courseId: ID!,
+      title: String!,
+      content: String!
+    ): Course
+
+    updateLesson(
+      courseId: ID!,
+      lessonId: ID!,
+      title: String!,
+      content: String!
+    ): Course
+
+    deleteLesson(
+      courseId: ID!,
+      lessonId: ID!
+    ): Course
+
+    markLessonCompleted(
+      userId: ID!,
+      courseSlug: String!,
+      lessonSlug: String!
+    ): User
+
+    updateCourse(
+      courseId: ID!,
+      name: String,
+      description: String,
+      price: Float,
+      category: String,
+      published: Boolean,
+      paid: Boolean,
+      image: String
+    ): Course
+
     createStripeAccount: StripeAccountResponse
     handleStripeCallback: User
-    enrollInCourse(userId: ID!, courseId: ID!): User
   }
-  
-  
 `;
+
 module.exports = typeDefs;
-
-

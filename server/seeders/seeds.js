@@ -1,8 +1,8 @@
 const db = require('../config/connection');
-const Course = require('../models/course');
+const Course = require('../models/Course');
 const User = require('../models/User');
 const userSeeds = require('./userSeeds.json');
-const courseSeeds = require('./courseSeeds.json');
+let courseSeeds = require('./courseSeeds.json');
 const lessonSeeds = require('./lessonSeeds.json');
 const cleanDB = require('./cleanDB');
 
@@ -14,9 +14,18 @@ db.once('open', async () => {
     console.log('user----------------')
     await cleanDB('Course', 'courses');
     console.log('course ---------------------')
-  //  await cleanDB('Lesson', 'lessons');
+    //  await cleanDB('Lesson', 'lessons');
+
     // Seed the data
-    await User.create(userSeeds);
+    const users = await User.create(userSeeds);
+
+    courseSeeds = courseSeeds.map((course) => {
+      return ({
+        ...course,
+        instructor: users[Math.floor(Math.random() * users.length)]._id
+      })
+    });
+
     await Course.create(courseSeeds);
     // await Lesson.create(lessonSeeds);
     console.log('All done! Database seeded.');

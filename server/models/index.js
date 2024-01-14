@@ -1,6 +1,6 @@
 const User = require('./User');
 
-const Course = require('./course.js');
+const Course = require('./Course');
 
 
 module.exports= {User, Course};
