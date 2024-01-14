@@ -9,6 +9,7 @@ export default function CourseCard(props) {
       {/* This is just a placeholder picture until we can get the database setup */}
       <p>{props.desc}</p>
       <p>{props.price}</p>
+      <a>learn More!</a>
     </div>
   );
 }

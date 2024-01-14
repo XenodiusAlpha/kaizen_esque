@@ -9,6 +9,7 @@ import Courses from "./components/mainComponents/CoursesContainer.jsx";
 import Login from "./components/mainComponents/Login.jsx";
 import LearnMore from "./components/mainComponents/LearnMore.jsx";
 import Signup from "./components/UI/Signup.jsx";
+import ProfilePage from "./components/UI/ProfilePage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "LearnMore",
         element: <LearnMore />,
+      },
+      {
+        path: "Profile",
+        element: <ProfilePage />,
       },
       // {
       //   path: 'createCourse',

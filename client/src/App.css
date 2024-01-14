@@ -87,5 +87,5 @@
 .keepBottom {
   display: flex;
   position: static;
-  min-height: 25vh;
+  min-height: 20vh;
 }

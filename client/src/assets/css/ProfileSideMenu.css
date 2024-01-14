@@ -1,0 +1,13 @@
+.SideMenuContainer {
+  margin: 0;
+  background-color: darkGreen;
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 65vh;
+  border-radius: 0px 25px 25px 0px;
+}
+
+.hidden {
+  display: none;
+}

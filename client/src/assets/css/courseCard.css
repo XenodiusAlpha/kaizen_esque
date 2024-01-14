@@ -13,3 +13,7 @@
   padding: 15px;
   border: solid black;
 }
+
+.CourseCard * {
+  margin: 10px;
+}
