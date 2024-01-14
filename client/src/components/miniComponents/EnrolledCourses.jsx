@@ -4,7 +4,7 @@ import "../../assets/css/EnrolledCourses.css";
 
 export default function EnrolledCourses(props) {
   return (
-    <div className="EnrolledCourses">
+    <div className="EnrolledCourses" id={props.id}>
       {coursesInfo.map((course, key) => (
         <CourseCard
           key={key}
