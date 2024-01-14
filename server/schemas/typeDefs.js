@@ -70,7 +70,16 @@ type Stripe {
     checkCourseCompleted(userId: ID!, courseId: ID!): Boolean
     checkLessonCompleted(userId: ID!, courseId: ID!, lessonSlug: String!): Boolean
 }
-
+type Mutation {
+  addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+  login(email: String!, password: String!): Auth
+  addCourse(name: String!, description: String!, price: Float!, category: String!, instructorId: ID!): Course
+  publishCourse(courseId: ID!): Course
+  unpublishCourse(courseId: ID!): Course
+  enrollInCourse(userId: ID!, courseId: ID!): User
+  
+  
+}
 
       
       
