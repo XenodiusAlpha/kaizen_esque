@@ -4,7 +4,8 @@ import { useState } from "react";
 export default function SideMenu(props) {
   return (
     <div className={props.className}>
-      <p>Test</p>
+      <a>Settings</a>
+      <a>Enrolled Courses</a>
     </div>
   );
 }

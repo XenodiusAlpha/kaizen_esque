@@ -3,7 +3,7 @@ import placeholder from "../../assets/img/CookingCourse.png";
 
 export default function CourseCard(props) {
   return (
-    <div className="CourseCard">
+    <div className={`CourseCard ${props.className}`}>
       <h1>{props.title}</h1>
       <img src={placeholder}></img>
       {/* This is just a placeholder picture until we can get the database setup */}
