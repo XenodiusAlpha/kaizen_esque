@@ -29,7 +29,7 @@
 
 .SideMenu {
   background-color: darkGreen;
-
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -38,13 +38,6 @@
   position: static;
   padding: 100px;
 }
-
-/* .ProfilePageFlex {
-  display: flex;
-  flex-direction: row;
-  padding: 0px 20px 20px 20px;
-  width: 100%;
-} */
 
 #hidden {
   display: none;
@@ -60,4 +53,11 @@ figure {
   align-items: center;
   justify-content: center;
   background-color: blue;
+}
+
+.ContentArea {
+  background-color: #000000;
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }

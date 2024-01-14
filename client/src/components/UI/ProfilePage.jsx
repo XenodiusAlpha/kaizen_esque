@@ -40,9 +40,11 @@ export default function ProfilePage() {
         <button onClick={() => SetVis("courses")}>Enrolled Courses</button>
         <button>Close menu</button>
       </div>
-      <EnrolledCourses className="ProfileCourse" id="hidden" />
-      <Dashboard className="ProfileDash" id="hidden" />
-      <Settings className="ProfileSettings" id="hidden" />
+      <div className="ContentArea">
+        <EnrolledCourses className="ProfileEnrolled" id="hidden" />
+        <Dashboard className="ProfileDash" id="hidden" />
+        <Settings className="ProfileSettings" id="hidden" />
+      </div>
     </div>
   );
 }

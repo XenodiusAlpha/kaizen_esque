@@ -5,7 +5,7 @@ import "../../assets/css/CourseContainer.css";
 
 export default function Courses() {
   return (
-    <div className="CourseContainer ProfileCourse">
+    <div className="CourseContainer">
       {coursesInfo.map((course, key) => (
         <CourseCard
           key={key}

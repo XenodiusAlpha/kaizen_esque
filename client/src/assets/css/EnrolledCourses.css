@@ -3,8 +3,7 @@
 
   grid-template-columns: repeat(3, 1fr);
   gap: 100px;
-  margin: 50px;
-  background-color: blue;
+  padding: 50px;
   height: fit-content;
   z-index: 5;
 }

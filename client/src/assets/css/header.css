@@ -1,34 +1,32 @@
-
 @import "../../App.css";
 
-.header-Style{
-    padding: 8px;
-    background-color: var(--mainThemeColor);
-    text-shadow: 2px 2px 4px #000000;
+.header-Style {
+  padding: 8px;
+  background-color: var(--mainThemeColor);
+  text-shadow: 2px 2px 4px #000000;
+}
+
+.header-Logo {
+  width: 100px;
+  height: 100px;
+}
+
+.title-style {
+  padding-left: 8px;
+  color: white;
+  font-weight: bold;
+  font-weight: 900;
+  font-family: sans-serif;
+  text-decoration: wavy;
+}
+
+.color-green {
+  color: #cefab1;
+}
+
+@media screen and (max-width: 250px) {
+  .header-Logo {
+    visibility: hidden;
+    max-width: 1px;
   }
-
-  .header-Logo{
-    width: 100px;
-    height: 100px;
-  }
-
-  .title-style{
-    padding-left: 8px;
-    color: white;
-    font-weight: bold;
-    font-weight: 900;
-    font-family:sans-serif;
-    text-decoration: wavy;
-  }
-
-  .color-green{
-    color: #cefab1;
-  }
-
-
-    @media screen and (max-width: 250px) {
-      .header-Logo {
-        visibility: hidden;
-        max-width: 1px;
-      }
-    }
+}

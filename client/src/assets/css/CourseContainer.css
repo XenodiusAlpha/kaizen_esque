@@ -2,15 +2,8 @@
   padding: 60px;
   display: grid;
   grid-template-columns: repeat(2, 1.5fr);
-  /* height: 100vh; */
+  height: 100vh;
   gap: 25px;
-}
-
-.ProfileCourse {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  background-color: yellow;
 }
 
 @media screen and (max-width: 1200px) {

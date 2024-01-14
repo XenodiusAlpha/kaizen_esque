@@ -1,15 +1,1 @@
-.SideMenu {
-  background-color: darkGreen;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 65vh;
-  position: static;
-  padding: 100px;
-}
-
-.ProfileContainer {
-  height: fit-content;
-}
