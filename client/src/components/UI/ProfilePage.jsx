@@ -38,7 +38,6 @@ export default function ProfilePage() {
         <button onClick={() => SetVis("dash")}>Dashboard</button>
         <button onClick={() => SetVis("settings")}>Settings </button>
         <button onClick={() => SetVis("courses")}>Enrolled Courses</button>
-        <button>Close menu</button>
       </div>
       <div className="ContentArea">
         <EnrolledCourses className="ProfileEnrolled" id="hidden" />

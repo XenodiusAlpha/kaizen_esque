@@ -7,3 +7,10 @@
   height: fit-content;
   z-index: 5;
 }
+
+@media screen and (max-width: 1200px) {
+  .EnrolledCourses {
+    display: flex;
+    flex-direction: column;
+  }
+}
