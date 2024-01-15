@@ -17,6 +17,10 @@
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
 }
 
+.background {
+  background-color: black;
+}
+
 .button-Style {
   border-radius: 8px;
 }
@@ -117,6 +121,4 @@
     text-shadow: 2px 2px 4px #000000;
     box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.8);
   }
-
 }
-

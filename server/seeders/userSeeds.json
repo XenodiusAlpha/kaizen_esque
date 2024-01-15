@@ -1,9 +1,9 @@
 [
     {
-        "firstName": "John",
-        "lastName": "Doe",
-        "email": "johndoe@example.com",
-        "password": "Test1234!",
+        "firstName": "Josh",
+        "lastName": "Dedam",
+        "email": "joshuajordyn@hotmail.com",
+        "password": "password",
         "picture": "/avatar1.png",
         "role": ["user"],
         "enrolled": [
