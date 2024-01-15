@@ -18,4 +18,16 @@
     padding-right: 8px;
   }
   
+
+
   /* t */
+
+  @media screen and (max-width: 400px) {
+    .footer-logo{
+      visibility: hidden;
+      max-width: 1px;
+    }
+    .learnMore_Link{
+      visibility: hidden;
+    }
+  }

@@ -82,7 +82,7 @@ const Signup = () => {
           <p className='wt'>First Name:</p>
 
           <label>
-            <input
+            <input id='userInputFirstName'
               type='text'
               name='firstName'
               value={formInput.Firstname}
@@ -96,7 +96,7 @@ const Signup = () => {
           <p className='wt'>Last Name:</p>
 
           <label>
-            <input
+            <input id='userInputLastName'
               type='text'
               name='lastName'
               value={formInput.Lastname}
@@ -110,7 +110,7 @@ const Signup = () => {
           <p className='wt'>Email:</p>
 
           <label>
-            <input
+            <input id='userInputEmailSignup'
               type='text'
               name='email'
               value={formInput.Email}
@@ -124,7 +124,7 @@ const Signup = () => {
           <p className='wt'>Password:</p>
 
           <label>
-            <input
+            <input id='userInputPasswordSignup'
               type='password'
               name='password'
               value={formInput.Password}
@@ -138,7 +138,7 @@ const Signup = () => {
           <p className='wt'>Confirm Password:</p>
 
           <label>
-            <input
+            <input id='userInputPasswordSignupConfirmation'
               type='password'
               name='confirmPassword'
               value={formInput.ConfirmPassword}
