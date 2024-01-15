@@ -7,7 +7,7 @@ const returnUrl = `${localBaseUrl}/instructor/dashboard`;
 const resolvers = {
   Query: {
     users: async () => {
-      return await User.find({});
+      return await User.find({}).populate('courses').populate('enrolled');
     },
 
     user: async (_, { _id }) => {
