@@ -17,7 +17,7 @@ db.once('open', async () => {
     //  await cleanDB('Lesson', 'lessons');
 
     // Seed the data
-    const users = await User.create(userSeeds);
+    let users = await User.create(userSeeds);
 
     courseSeeds = courseSeeds.map((course) => {
       return ({
@@ -26,7 +26,17 @@ db.once('open', async () => {
       })
     });
 
-    await Course.create(courseSeeds);
+    let courses = await Course.create(courseSeeds);
+
+    // Populate courses attribute of each user
+    for (let user of users) {
+      for (let enrolledCourse of user.enrolled) {
+        let course = courses.find((course) => course.slug == enrolledCourse.slug);
+        user.courses.push(course._id);
+        await user.save();
+      }
+    }
+
     // await Lesson.create(lessonSeeds);
     console.log('All done! Database seeded.');
     process.exit(0);

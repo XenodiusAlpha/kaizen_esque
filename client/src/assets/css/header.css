@@ -24,9 +24,11 @@
   color: #cefab1;
 }
 
+
 @media screen and (max-width: 250px) {
   .header-Logo {
     visibility: hidden;
     max-width: 1px;
   }
 }
+

@@ -53,6 +53,7 @@ const Login = () => {
         >
           <p className="wt">Email:</p>
           <label>
+
             <input
               id="userInputEmail"
               type="text"
@@ -70,8 +71,8 @@ const Login = () => {
             </h4>
           </label>
 
-          <p className="wt">Password:</p>
-          <label id="userInputPassword">
+          <p className='wt'>Password:</p>
+          <label id='userInputPassword'>
             <input
               type="text"
               name="password"

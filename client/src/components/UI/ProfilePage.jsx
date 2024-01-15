@@ -14,6 +14,7 @@ export default function ProfilePage() {
     const Settings = document.querySelector(".ProfileSettings");
     const Courses = document.querySelector(".EnrolledCourses");
 
+
     if (name === "dash") {
       Dashboard.setAttribute("id", "");
       Settings.setAttribute("id", "hidden");
@@ -37,7 +38,8 @@ export default function ProfilePage() {
       <div className="SideMenu">
         <button onClick={() => SetVis("dash")}>Dashboard</button>
         <button onClick={() => SetVis("settings")}>Settings </button>
-        <button onClick={() => SetVis("courses")}>Enrolled Courses</button>
+        <button onClick={() => SetVis("courses")}>Enrolled Courses</button> 
+
       </div>
       <div className="ContentArea">
         <EnrolledCourses className="ProfileEnrolled" id="hidden" />

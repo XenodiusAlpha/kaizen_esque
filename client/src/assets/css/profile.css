@@ -55,6 +55,17 @@
   width: 35%;
 }
 
+ .ProfilePageFlex{
+    display: flex;
+    flex-direction: row;
+    padding: 0px 20px 20px 20px;
+    width: 100%;
+  }
+
+  .right-element {
+    margin-left: auto;
+  }
+
 figure {
   display: flex;
   flex-direction: column;
@@ -72,6 +83,7 @@ figure {
 @media screen and (max-width: 1200px) {
   .ProfileContainer {
     display: flex;
+
     flex-direction: column;
   }
 
@@ -91,3 +103,6 @@ figure {
     margin: 5px;
   }
 }
+
+ 
+

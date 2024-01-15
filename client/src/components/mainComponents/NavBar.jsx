@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,6 +7,7 @@ import {
   faCircleUser,
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
+
 
 export default function NavBar() {
   const currentPage = useLocation().pathname;
@@ -53,6 +55,7 @@ export default function NavBar() {
             <p>Login</p>
           </Link>
         </div>
+
       </nav>
       <div className="Profile-Icon dpl ">
         <div className="dpr fa-2x">
@@ -64,6 +67,17 @@ export default function NavBar() {
           <Link to="/Checkout" className="wt" onClick={handleLinkClick}>
             <FontAwesomeIcon icon={faCartShopping} />
           </Link>
+
+        </div>
+        <div className='dpr fa-2x'>
+        <Link
+          to="/Checkout"
+          className='wt'
+          onClick={handleLinkClick}
+        >
+        <FontAwesomeIcon icon={faCartShopping} />
+        </Link>
+        </div>
         </div>
       </div>
     </div>
