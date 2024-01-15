@@ -12,20 +12,22 @@ export default function CoursesContainer() {
   useEffect(() => {
     if (data) {
       setCourses(data.courses);
-      console.log(data.courses[1].name);
+      console.log(data.courses);
     }
-  }, [data, courses]);
+  }, [data]);
 
-  return (
-    <div className="CourseContainer">
-      {courses.map((course, key) => (
-        <CourseCards
-          key={key}
-          title={course.name}
-          desc={course.description}
-          price={course.price}
-        />
-      ))}
-    </div>
-  );
+  if (courses) {
+    return (
+      <div className="CourseContainer">
+        {courses.map((course, key) => (
+          <CourseCards
+            key={key}
+            title={course.name}
+            desc={course.description}
+            price={course.price}
+          />
+        ))}
+      </div>
+    );
+  }
 }
