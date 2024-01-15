@@ -1,21 +1,23 @@
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import App from './App.jsx';
-import './index.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import App from "./App.jsx";
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-import HomeDefault from './components/mainComponents/HomeDefault.jsx'
-import Courses from './components/mainComponents/Courses.jsx'
-import Login from './components/mainComponents/Login.jsx'
-import LearnMore from './components/mainComponents/LearnMore.jsx'
-import Signup from './components/UI/Signup.jsx'
-import ProfilePage from './components/UI/ProfilePage.jsx'
-import Checkout from './components/UI/Checkout.jsx'
-import 'bootstrap/dist/css/bootstrap.min.css'
+
+import HomeDefault from "./components/mainComponents/HomeDefault.jsx";
+import CoursesContainer from "./components/mainComponents/CoursesContainer.jsx";
+import Login from "./components/mainComponents/Login.jsx";
+import LearnMore from "./components/mainComponents/LearnMore.jsx";
+import Signup from "./components/UI/Signup.jsx";
+import ProfilePage from "./components/UI/ProfilePage.jsx";
+import Checkout from "./components/UI/Checkout.jsx";
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <App />,
     children: [
       {
@@ -23,27 +25,27 @@ const router = createBrowserRouter([
         element: <HomeDefault />,
       },
       {
-        path: 'Courses',
-        element: <Courses />,
+        path: "Courses",
+        element: <CoursesContainer />,
       },
       {
-        path: 'Login',
+        path: "Login",
         element: <Login />,
       },
       {
-        path: 'Signup',
+        path: "Signup",
         element: <Signup />,
       },
       {
-        path: 'LearnMore',
+        path: "LearnMore",
         element: <LearnMore />,
       },
       {
-        path: 'Profile',
+        path: "Profile",
         element: <ProfilePage />,
       },
       {
-        path: 'Checkout',
+        path: "Checkout",
         element: <Checkout />,
       },
       // {
@@ -53,7 +55,6 @@ const router = createBrowserRouter([
     ],
   },
 ]);
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <RouterProvider router={router} />
 );
-

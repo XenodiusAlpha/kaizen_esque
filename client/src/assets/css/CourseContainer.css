@@ -1,0 +1,14 @@
+.CourseContainer {
+  padding: 60px;
+  display: grid;
+  grid-template-columns: repeat(2, 1.5fr);
+  height: 100vh;
+  gap: 25px;
+}
+
+@media screen and (max-width: 1200px) {
+  .CourseContainer {
+    display: flex;
+    flex-direction: column;
+  }
+}
