@@ -53,7 +53,7 @@ export default function InstructorDashboard() {
       <div className="ContentArea">
         <EnrolledCourses className="ProfileEnrolled" id="hidden" />
         <MyCreatedCourses className="ProfileMyCourses" id="hidden" />
-        <UserInfo className="ProfileDash" id="hidden" />
+        <UserInfo className="ProfileDash" id="" />
         <SettingsPage className="ProfileSettings" id="hidden" />
       </div>
     </div>
