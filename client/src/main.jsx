@@ -5,7 +5,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomeDefault from "./components/mainComponents/HomeDefault.jsx";
-import Courses from "./components/mainComponents/CoursesContainer.jsx";
+import CourseContainer from "./components/mainComponents/CoursesContainer.jsx";
 import Login from "./components/mainComponents/Login.jsx";
 import LearnMore from "./components/mainComponents/LearnMore.jsx";
 import Signup from "./components/UI/Signup.jsx";
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: "Courses",
-        element: <Courses />,
+        element: <CourseContainer />,
       },
       {
         path: "Login",

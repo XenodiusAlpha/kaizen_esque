@@ -1,13 +1,13 @@
 import React from "react";
 import coursesInfo from "../../utils/courseTest";
-import CourseCard from "../miniComponents/CourseCards";
+import CourseCards from "../miniComponents/CourseCards";
 import "../../assets/css/CourseContainer.css";
 
-export default function Courses() {
+export default function CourseContainer() {
   return (
     <div className="CourseContainer">
       {coursesInfo.map((course, key) => (
-        <CourseCard
+        <CourseCards
           key={key}
           title={course.name}
           desc={course.description}

@@ -1,7 +1,7 @@
 import "../../assets/css/courseCard.css";
 import placeholder from "../../assets/img/CookingCourse.png";
 
-export default function CourseCard(props) {
+export default function CourseCards(props) {
   return (
     <div className={`CourseCard ${props.className}`}>
       <h1>{props.title}</h1>

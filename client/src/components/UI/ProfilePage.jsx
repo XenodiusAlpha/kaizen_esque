@@ -6,7 +6,7 @@ import EnrolledCourses from "../miniComponents/EnrolledCourses";
 import "../../assets/css/profile.css";
 import "../../assets/css/hidden.css";
 import Dashboard from "../miniComponents/Dashboard";
-import Settings from "../miniComponents/SettingsPage";
+import SettingsPage from "../miniComponents/SettingsPage";
 
 export default function ProfilePage() {
   const SetVis = (name) => {
@@ -42,7 +42,7 @@ export default function ProfilePage() {
       <div className="ContentArea">
         <EnrolledCourses className="ProfileEnrolled" id="hidden" />
         <Dashboard className="ProfileDash" id="hidden" />
-        <Settings className="ProfileSettings" id="hidden" />
+        <SettingsPage className="ProfileSettings" id="hidden" />
       </div>
     </div>
   );
