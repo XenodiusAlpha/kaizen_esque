@@ -10,13 +10,13 @@ import { Link } from 'react-router-dom';
 
 export default function ProfilePage(){
     return (
-      <div className='flex-container-row footer-Style'>
-        <div className='flex-container-columns center-content'>
-        <img className='ProfileIconBorder dpb' src={profileimage} alt="ProfileImage" />
-        <p>{userDisplayName}</p>
+      <div className='ProfilePageFlex footer-Style'>
 
+        <div className='flex-container-columns dpr'>
+        <img className='ProfileIconBorder' src={profileimage} alt="ProfileImage" />
+        <p>{userDisplayName}</p>
         </div>
-        <div className='box-style'>
+        <div className='box-style right-element'>
           {userCourses}
         </div>
       </div>
