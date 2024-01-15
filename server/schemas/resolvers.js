@@ -60,6 +60,10 @@ const resolvers = {
       }
       return lesson.completed;
     },
+
+    findCoursesByInstructor: async (_, { instructorId }) => {
+      return await Course.find({ instructor: instructorId });
+    },
   },
 
 
