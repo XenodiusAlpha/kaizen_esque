@@ -173,6 +173,14 @@ const resolvers = {
       const slug = title.toLowerCase().replace(/\s+/g, '-');
       course.lessons.push({ title, slug, content });
       await course.save();
+
+      let users = await User.find({ 'enrolled.slug': course.slug });
+      for (let user of users) {
+        let userCourse = user.enrolled.find((enrolledCourse) => enrolledCourse.slug == course.slug);
+        userCourse.lessons = [ ...userCourse.lessons, { slug, completed: false } ];
+        await user.save();
+      }
+
       return course;
     },
 
@@ -186,22 +194,16 @@ const resolvers = {
         throw new Error('Lesson not found');
       }
 
+      // Update all users enrolled in this course
       if(title !== lesson.title) {
         lesson.title = title;
         const updatedSlug = title.toLowerCase().replace(/\s+/g, '-');
-
-        let users = await User.find({ enrolled: course.slug });
-        for (let user of users) {
-          for (let i = 0; i < user.enrolled.lessons.length; i++) {
-            if (user.enrolled.lessons[i].slug === lesson.slug) {
-              user.enrolled.lessons[i].slug = updatedSlug;
-              break;
-            }
-          }
-          await user.save();
-        };
-
         lesson.slug = updatedSlug;
+
+        await User.updateMany(
+          { 'enrolled.slug': course.slug },
+          { $set: { 'enrolled.$.lessons': { slug: updatedSlug } } }
+        );
       }
 
       lesson.content = content;
@@ -233,6 +235,46 @@ const resolvers = {
 
       await course.save();
       return course;
+    },
+
+    markLessonCompleted: async (_, { userId, courseSlug, lessonSlug }) => {
+      let user = await User.findById(userId);
+      if (!user) {
+        throw new Error('User not found');
+      }
+
+      let enrolledCourse = user.enrolled.find((course) => course.slug == courseSlug);
+
+      let enrolledLesson = enrolledCourse.lessons.find((lesson) => lesson.slug == lessonSlug);
+      enrolledLesson.completed = true;
+
+      let completed = true;
+      enrolledCourse.lessons.forEach((lesson) => {
+        completed = completed && lesson.completed;
+      });
+      enrolledCourse.completed = completed;
+
+      await user.save();
+
+      return user;
+    },
+
+    updateCourse: async (_, { courseId, name, description, price, category, published, paid, image }) => {
+      try {
+        // Find the course by ID and update it
+        const updatedCourse = await Course.findByIdAndUpdate(
+          courseId,
+          { name, description, price, category, published, paid, image },
+          { new: true, omitUndefined: true }
+        );
+        if (!updatedCourse) {
+          throw new Error('Course not found');
+        }
+        return updatedCourse;
+      } catch (error) {
+        console.error(error);
+        throw new Error('Error updating course');
+      }
     },
 
     createStripeAccount: async (_, args, { user }) => {
