@@ -66,9 +66,11 @@ const typeDefs = `
     user(_id: ID!): User
     courses: [Course]
     course(_id: ID!): Course
+    publishedCourses: [Course]
     checkEnrollment(userId: ID!, courseId: ID!): Boolean
     checkCourseCompleted(userId: ID!, courseId: ID!): Boolean
     checkLessonCompleted(userId: ID!, courseId: ID!, lessonSlug: String!): Boolean
+    findCoursesByInstructor(instructorId: ID!): [Course]
   }
 
   type Mutation {

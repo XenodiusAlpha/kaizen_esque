@@ -7,7 +7,7 @@ const returnUrl = `${localBaseUrl}/instructor/dashboard`;
 const resolvers = {
   Query: {
     users: async () => {
-      return await User.find({});
+      return await User.find({}).populate('courses').populate('enrolled');
     },
 
     user: async (_, { _id }) => {
@@ -20,6 +20,10 @@ const resolvers = {
 
     course: async (_, { _id }) => {
       return await Course.findById(_id).populate('instructor').populate('lessons');
+    },
+
+    publishedCourses: async (_, args) => {
+      return await Course.find({ published: true }).populate('instructor').populate('lessons');
     },
 
     checkEnrollment: async (_, { userId, courseId }) => {
@@ -59,6 +63,10 @@ const resolvers = {
         return false; // Lesson not found in the course enrollment
       }
       return lesson.completed;
+    },
+
+    findCoursesByInstructor: async (_, { instructorId }) => {
+      return await Course.find({ instructor: instructorId }).populate('instructor').populate('lessons');
     },
   },
 
