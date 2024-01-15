@@ -20,7 +20,8 @@ import LearnMore from "./components/mainComponents/LearnMore.jsx";
 import Signup from "./components/UI/Signup.jsx";
 import ProfilePage from "./components/UI/ProfilePage.jsx";
 import Checkout from "./components/UI/Checkout.jsx";
-
+import CreateCourse from "./components/miniComponents/createCourse.jsx";
+import LessonsComponent from "./components/miniComponents/LessonsComponent.jsx";
 // const errorLink = onError(({ graphqlErrors, networkError }) => {
 //   if (graphqlErrors) {
 //     graphqlErrors.map(({ message, location, path }) => {
@@ -78,6 +79,10 @@ const router = createBrowserRouter([
       {
         path: 'createCourse',
         element: <CreateCourse />,
+      },
+      {
+        path: 'LessonsComponent',
+        element: <LessonsComponent />,
       },
     ],
   },
