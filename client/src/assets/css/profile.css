@@ -45,26 +45,24 @@
 
 .SideMenu button {
   background-color: darkgreen;
-}
-
-#hidden {
-  display: none;
+  font-size: 23px;
+  font-family: Arial;
 }
 
 .UserPic {
   width: 35%;
 }
 
- .ProfilePageFlex{
-    display: flex;
-    flex-direction: row;
-    padding: 0px 20px 20px 20px;
-    width: 100%;
-  }
+.ProfilePageFlex {
+  display: flex;
+  flex-direction: row;
+  padding: 0px 20px 20px 20px;
+  width: 100%;
+}
 
-  .right-element {
-    margin-left: auto;
-  }
+.right-element {
+  margin-left: auto;
+}
 
 figure {
   display: flex;
@@ -103,6 +101,3 @@ figure {
     margin: 5px;
   }
 }
-
- 
-

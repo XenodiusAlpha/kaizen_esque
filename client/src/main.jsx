@@ -3,7 +3,15 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  ApolloClient,
+  ApolloProvider,
+  InMemoryCache,
+  HttpLink,
+  from,
+} from "@apollo/client";
 
+import { onError } from "@apollo/client/link/error";
 
 import HomeDefault from "./components/mainComponents/HomeDefault.jsx";
 import CoursesContainer from "./components/mainComponents/CoursesContainer.jsx";
@@ -12,8 +20,27 @@ import LearnMore from "./components/mainComponents/LearnMore.jsx";
 import Signup from "./components/UI/Signup.jsx";
 import ProfilePage from "./components/UI/ProfilePage.jsx";
 import Checkout from "./components/UI/Checkout.jsx";
-import "bootstrap/dist/css/bootstrap.min.css";
 
+// const errorLink = onError(({ graphqlErrors, networkError }) => {
+//   if (graphqlErrors) {
+//     graphqlErrors.map(({ message, location, path }) => {
+//       alert(`GraphQL error ${message}`);
+//       console.log("hi");
+//     });
+//   }
+// });
+
+// const link = from([
+//   errorLink,
+//   new HttpLink({ uri: "http://localhost:3003/graphql" }),
+// ]);
+
+const client = new ApolloClient({
+  uri: "http://localhost:3003/graphql",
+  cache: new InMemoryCache(),
+  name: "web-workshop-client",
+  version: "0.1",
+});
 
 const router = createBrowserRouter([
   {
@@ -56,5 +83,7 @@ const router = createBrowserRouter([
   },
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <RouterProvider router={router} />
+  <ApolloProvider client={client}>
+    <RouterProvider router={router} />
+  </ApolloProvider>
 );

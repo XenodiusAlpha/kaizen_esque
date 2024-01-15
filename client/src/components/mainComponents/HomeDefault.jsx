@@ -18,9 +18,6 @@ export default function HomeDefault() {
           </p>
         </div>
       </div>
-      <div>
-        <p>Preview courses go here</p>
-      </div>
     </div>
   );
 }

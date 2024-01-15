@@ -1,4 +1,4 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_PROFILES = gql`
   query allProfiles {
@@ -33,13 +33,14 @@ export const QUERY_USER = gql`
 `;
 
 export const QUERY_ALL_COURSE = gql`
-  query allCourses {
-    me {
-      _id
+  query Courses {
+    courses {
       name
       description
-      cost
-      author
+      instructor {
+        _id
+      }
+      price
     }
   }
 `;
@@ -55,6 +56,5 @@ export const QUERY_SINGLE_COURSE = gql`
     }
   }
 `;
-
 
 // UserActivation, USERID, COURSES, COURSESID, LESSONS, LESSONID

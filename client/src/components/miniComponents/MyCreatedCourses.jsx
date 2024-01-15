@@ -1,10 +1,10 @@
-import coursesInfo from "../../GraphQL/courseTest";
 import CourseCards from "./CourseCards";
-import "../../assets/css/EnrolledCourses.css";
+import coursesInfo from "../../GraphQL/courseTest";
+import "../../assets/css/MyCourses.css";
 
-export default function EnrolledCourses(props) {
+export default function MyCreatedCourses(props) {
   return (
-    <div className="EnrolledCourses" id={props.id}>
+    <div className="MyCourses" id={props.id}>
       {coursesInfo.map((course, key) => (
         <CourseCards
           key={key}
