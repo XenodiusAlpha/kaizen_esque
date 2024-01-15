@@ -1,7 +1,6 @@
 import placeHolder from "../../assets/img/UserImg.png";
 import "../../assets/css/profile.css";
-
-export default function Dashboard(props) {
+export default function UserInfo(props) {
   return (
     <div className={props.className} id={props.id}>
       <figure>
