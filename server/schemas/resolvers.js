@@ -267,21 +267,62 @@ const resolvers = {
       return user;
     },
 
+    // Update a course in both the course model, and in the users' course and enrolled fields.
     updateCourse: async (_, { courseId, name, description, price, category, published, paid, image }) => {
       try {
-        // Find the course by ID and update it
-        const updatedCourse = await Course.findByIdAndUpdate(
-          courseId,
-          { name, description, price, category, published, paid, image },
-          { new: true, omitUndefined: true }
-        );
-        if (!updatedCourse) {
+        let updateFields = { name, description, price, category, published, paid, image };
+        let updateSlug = false;
+        const course = await Course.findById(courseId);
+        if (!course) {
           throw new Error('Course not found');
         }
+        if (name && name !== course.name) {
+          updateFields.slug = name.toLowerCase().replace(/\s+/g, '-');
+          updateSlug = true;
+        }
+        // Update the course
+        const updatedCourse = await Course.findByIdAndUpdate(courseId, updateFields, { new: true, omitUndefined: true });
+        if (!updatedCourse) {
+        throw new Error('Course not found');
+        }
+        // If the course slug is updated, we reflect this change in the enrolled courses of all users
+        if (updateSlug) {
+          await User.updateMany(
+            { 'enrolled.slug': course.slug },
+            { $set: { 'enrolled.$.slug': updateFields.slug } }
+          );
+        }
+        
         return updatedCourse;
       } catch (error) {
         console.error(error);
         throw new Error('Error updating course');
+      }
+    },
+
+    // Delete the course from the course model and from the users' courses and enrolled fields
+    deleteCourse: async (_, { courseId }) => {
+      try {
+        const course = await Course.findById(courseId);
+        if (!course) {
+          console.error('Course not found');
+          return false;
+        }
+        await Course.findByIdAndDelete(courseId);
+        // Remove this course from any users' 'courses' and 'enrolled' arrays
+        await User.updateMany(
+          {},
+          {
+            $pull: {
+              courses: courseId,
+              enrolled: { slug: course.slug }
+            }
+          }
+        );
+        return true;
+      } catch (error) {
+        console.error('Error deleting course:', error);
+        return false;
       }
     },
 

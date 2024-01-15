@@ -142,6 +142,7 @@ const typeDefs = `
       image: String
     ): Course
 
+    deleteCourse(courseId: ID!):Boolean
     createStripeAccount: StripeAccountResponse
     handleStripeCallback: User
   }
