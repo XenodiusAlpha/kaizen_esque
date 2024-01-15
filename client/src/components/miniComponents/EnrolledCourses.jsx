@@ -1,4 +1,4 @@
-import coursesInfo from "../../utils/courseTest";
+import coursesInfo from "../../GraphQL/courseTest";
 import CourseCards from "./CourseCards";
 import "../../assets/css/EnrolledCourses.css";
 

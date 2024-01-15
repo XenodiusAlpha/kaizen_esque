@@ -1,5 +1,5 @@
 import CourseCards from "./CourseCards";
-import coursesInfo from "../../utils/courseTest";
+import coursesInfo from "../../GraphQL/courseTest";
 import "../../assets/css/MyCourses.css";
 
 export default function MyCreatedCourses(props) {
