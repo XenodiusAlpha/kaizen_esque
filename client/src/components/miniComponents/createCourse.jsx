@@ -23,14 +23,22 @@ const CourseForm = () => {
     setLessons(newLessons);
   };
 
+
   const handleSubmit = () => {
-    // Add logic here to handle the form submission
-    console.log({
+    const submitPackageNewCourse = {
       courseTitle,
       courseDescription,
       lessons
-    });
+    };
+    const jsonData = JSON.stringify(submitPackageNewCourse);
+    sendDataToDatabase(jsonData);
+    return jsonData;
   };
+  const sendDataToDatabase = (jsonData) => {
+    //Need database logic here to recieve json.
+    console.log(jsonData);
+  };
+
 
   return (
     <div className='ccbox-style'>
