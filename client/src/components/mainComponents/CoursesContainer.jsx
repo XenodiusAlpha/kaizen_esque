@@ -3,7 +3,7 @@ import coursesInfo from "../../utils/courseTest";
 import CourseCards from "../miniComponents/CourseCards";
 import "../../assets/css/CourseContainer.css";
 
-export default function CourseContainer() {
+export default function CoursesContainer() {
   return (
     <div className="CourseContainer">
       {coursesInfo.map((course, key) => (
