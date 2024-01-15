@@ -4,14 +4,16 @@ import { Link } from "react-router-dom";
 // import SideMenu from "../miniComponents/ProfileSideMenu";
 import "../../assets/css/profile.css";
 import "../../assets/css/hidden.css";
-import { UserDashboard } from "../miniComponents/UserDashboard";
+import UserDashboard from "../miniComponents/UserDashboard";
+import InstructorDashboard from "../miniComponents/InstructorDashboard";
 
-function IsInstructor(IsInstructor) {
+function IsInstructor({ IsInstructor }) {
   if (IsInstructor) {
     console.log("Is instructor");
-    return UserDashboard;
+    return <InstructorDashboard />;
   } else if (!IsInstructor) {
     console.log("Not Instructor");
+    return <UserDashboard />;
   }
 }
 

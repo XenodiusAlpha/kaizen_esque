@@ -4,7 +4,6 @@ import App from "./App.jsx";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 import HomeDefault from "./components/mainComponents/HomeDefault.jsx";
 import CoursesContainer from "./components/mainComponents/CoursesContainer.jsx";
 import Login from "./components/mainComponents/Login.jsx";
@@ -12,8 +11,6 @@ import LearnMore from "./components/mainComponents/LearnMore.jsx";
 import Signup from "./components/UI/Signup.jsx";
 import ProfilePage from "./components/UI/ProfilePage.jsx";
 import Checkout from "./components/UI/Checkout.jsx";
-import "bootstrap/dist/css/bootstrap.min.css";
-
 
 const router = createBrowserRouter([
   {
