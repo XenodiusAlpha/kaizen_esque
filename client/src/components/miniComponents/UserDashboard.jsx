@@ -4,7 +4,7 @@ import UserInfo from "../miniComponents/UserInfo";
 import SettingsPage from "../miniComponents/SettingsPage";
 import "../../assets/css/profile.css";
 import "../../assets/css/hidden.css";
-
+import UserSettings from "../miniComponents/UserSettings.jsx"
 export default function UserDashboard() {
   //This function is just for setting the visibility of each area of the dashboard -JKD
   const SetVis = (name) => {
@@ -40,7 +40,7 @@ export default function UserDashboard() {
       <div className="ContentArea">
         <EnrolledCourses className="ProfileEnrolled" id="hidden" />
         <UserInfo className="ProfileDash" id="" />
-        <SettingsPage className="ProfileSettings" id="hidden" />
+        <UserSettings className="ProfileSettings" id="hidden" />
       </div>
     </div>
   );

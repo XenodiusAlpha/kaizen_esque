@@ -5,7 +5,7 @@ import thumbnail from '../../assets/img/PlaceholderImage.png';
 import { Link } from 'react-router-dom';
 import '../../assets/css/usersettings.css'
 
-export default function LessonsComponent(props) {
+export default function UserSettings(props) {
   const [isEditing, setIsEditing] = useState(false);
   const [editedUsername, setEditedUsername] = useState(props.username);
   const [editedDescription, setEditedDescription] = useState(props.userDescription);
@@ -32,7 +32,7 @@ export default function LessonsComponent(props) {
   };
 
   return (
-    <>
+    <div id={props.id} className={props.className}>
         <div className='flex-container-row'>
         <div className='flex-container-columns profilebox-style'>
           {isEditing ? (
@@ -65,6 +65,6 @@ export default function LessonsComponent(props) {
         )}
         </div>
         </div>
-    </>
+    </div>
   );
 }
