@@ -18,5 +18,5 @@ function IsInstructor({ IsInstructor }) {
 }
 
 export default function ProfilePage() {
-  return <IsInstructor IsInstructor={true} />;
+  return <IsInstructor IsInstructor={false} />;
 }

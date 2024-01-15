@@ -1,10 +1,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Link, unstable_useViewTransitionState } from "react-router-dom";
+import {
+  Link,
+  unstable_useViewTransitionState,
+  useNavigate,
+} from "react-router-dom";
 import { LOGIN_USER } from "../../GraphQL/mutations";
 import { useMutation } from "@apollo/client";
 
 const Login = () => {
+  const [isLoggedIn, SetisLoggedIn] = useState(false);
+
   const [userInfo, SetUserInfo] = useState({
     firstname: "",
     lastname: "",
@@ -12,17 +18,22 @@ const Login = () => {
     id: "",
     token: "",
   });
-  const [login, { error }] = useMutation(LOGIN_USER);
+
   const [formInput, setformInput] = useState({
     email: "",
     password: "",
   });
 
   useEffect(() => {
-    let userInfoJSON = JSON.stringify(userInfo);
-    console.log(userInfoJSON);
-    window.localStorage.setItem("user", userInfoJSON);
-  }, [userInfo]);
+    if (isLoggedIn === true) {
+      let userInfoJSON = JSON.stringify(userInfo);
+      console.log(userInfoJSON);
+      window.sessionStorage.setItem("user", userInfoJSON);
+      window.sessionStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
+    }
+  }, [userInfo, isLoggedIn]);
+
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,6 +41,9 @@ const Login = () => {
     setformInput((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const navigate = useNavigate();
+  //when the form is submited it updates the forminput vairable and
+  //tries to do the login mutation
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (formInput) {
@@ -48,6 +62,14 @@ const Login = () => {
         id: data.login.user._id,
         token: data.login.token,
       });
+      //if data is presented to us from a successfull login, we will change the localstorage login var to true
+      //and navigate to the /profile page
+
+      SetisLoggedIn(true);
+
+      if (isLoggedIn) {
+        navigate("/Profile");
+      }
     }
   };
 
