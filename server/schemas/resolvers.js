@@ -22,6 +22,10 @@ const resolvers = {
       return await Course.findById(_id).populate('instructor').populate('lessons');
     },
 
+    publishedCourses: async (_, args) => {
+      return await Course.find({ published: true }).populate('instructor').populate('lessons');
+    },
+
     checkEnrollment: async (_, { userId, courseId }) => {
       const user = await User.findById(userId);
       if (!user) {
@@ -62,7 +66,7 @@ const resolvers = {
     },
 
     findCoursesByInstructor: async (_, { instructorId }) => {
-      return await Course.find({ instructor: instructorId });
+      return await Course.find({ instructor: instructorId }).populate('instructor').populate('lessons');
     },
   },
 
