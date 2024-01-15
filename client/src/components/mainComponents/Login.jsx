@@ -1,20 +1,54 @@
 import React from "react";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, unstable_useViewTransitionState } from "react-router-dom";
 import { LOGIN_USER } from "../../GraphQL/mutations";
 import { useMutation } from "@apollo/client";
 
 const Login = () => {
-  const [formInput, setformInput] = useState();
+  const [userInfo, SetUserInfo] = useState({
+    firstname: "",
+    lastname: "",
+    typename: "",
+    id: "",
+    token: "",
+  });
+  const [login, { error }] = useMutation(LOGIN_USER);
+  const [formInput, setformInput] = useState({
+    email: "",
+    password: "",
+  });
+
+  useEffect(() => {
+    let userInfoJSON = JSON.stringify(userInfo);
+    console.log(userInfoJSON);
+    window.localStorage.setItem("user", userInfoJSON);
+  }, [userInfo]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    console.log(name, value);
     setformInput((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formInput.email, formInput.password);
+    if (formInput) {
+      const { data } = await login({
+        variables: {
+          email: formInput.email,
+          password: formInput.password,
+        },
+      });
+
+      SetUserInfo({
+        ...userInfo,
+        firstname: data.login.user.firstName,
+        lastname: data.login.user.lastName,
+        typename: data.login.user.__typename,
+        id: data.login.user._id,
+        token: data.login.token,
+      });
+    }
   };
 
   const [isChecked, setIsChecked] = useState(false);
