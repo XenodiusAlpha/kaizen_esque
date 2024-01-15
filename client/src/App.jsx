@@ -9,6 +9,7 @@ import './assets/css/home.css'
 import './assets/css/profile.css'
 import './assets/css/createCourse.css'
 import './assets/css/lessonComponenet.css'
+
 import Header from './components/mainComponents/Header'
 import NavBar from './components/mainComponents/NavBar'
 import Footer from './components/mainComponents/Footer'

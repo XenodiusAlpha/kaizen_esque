@@ -15,9 +15,9 @@ export default function LessonsComponent(props) {
     <p>{props.description}</p>
     <p>{props.author}</p>
     <p>{props.hyperlink}</p>
-    <Link className='lessonButton' to="/">
-          <p>Start Lesson</p>
-          </Link>
+        <Link className='lessonButton' to="/">
+        <p>Start Lesson</p>
+        </Link>
     </div>
     </>
     )

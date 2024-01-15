@@ -35,7 +35,7 @@ const CourseForm = () => {
     return jsonData;
   };
   const sendDataToDatabase = (jsonData) => {
-    //Need database logic here to recieve json.
+    //Need database logic here to recieve json. How do I pass this?
     console.log(jsonData);
   };
 
