@@ -1,0 +1,16 @@
+.MyCourses {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 100px;
+  padding: 50px;
+  height: fit-content;
+  z-index: 5;
+  text-align: center;
+}
+
+@media screen and (max-width: 1200px) {
+  .MyCourses {
+    display: flex;
+    flex-direction: column;
+  }
+}

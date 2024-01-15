@@ -1,0 +1,38 @@
+.CoursePage {
+  box-shadow: -15px 15px 5px 5px black;
+  display: flex;
+  flex-direction: column;
+  border: solid black;
+  align-items: center;
+  margin: 350px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 50px;
+  background-color: #0b0b28;
+  color: white;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.CoursePage * {
+  margin: 10px;
+}
+
+.CoursePage button {
+  border-radius: 5px;
+  border: solid black;
+}
+.CourseImg {
+  width: 500px;
+  border-radius: 5px;
+  border: solid black;
+}
+
+@media screen and (max-width: 1200px) {
+  .CoursePage {
+    margin: 0;
+  }
+  .CourseImg {
+    width: 350px;
+  }
+}
