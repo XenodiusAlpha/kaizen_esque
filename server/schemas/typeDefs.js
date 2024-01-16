@@ -27,6 +27,7 @@ const typeDefs = `
     _id: ID!
     firstName: String!
     lastName: String!
+    fullName: String
     email: String!
     password: String!
     picture: String
@@ -35,6 +36,7 @@ const typeDefs = `
     enrolled: [enrolledCourse]
     stripe: Stripe
     percentageComplete: [CourseProgress]
+    signupDate: String
   }
 
   type Lesson {
@@ -74,6 +76,7 @@ const typeDefs = `
     course(_id: ID!): Course
     publishedCourses: [Course]
     checkEnrollment(userId: ID!, courseId: ID!): Boolean
+    getEnrolledCoursesCount(userId: ID!): Int
     checkCourseCompleted(userId: ID!, courseId: ID!): Boolean
     checkLessonCompleted(userId: ID!, courseId: ID!, lessonSlug: String!): Boolean
     findCoursesByInstructor(instructorId: ID!): [Course]
