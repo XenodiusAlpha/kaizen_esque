@@ -18,6 +18,11 @@ const typeDefs = `
     passwordResetCode: String
   }
 
+  type CourseProgress {
+    slug: String,
+    percentage: Float
+  }
+
   type User {
     _id: ID!
     firstName: String!
@@ -29,6 +34,7 @@ const typeDefs = `
     courses: [Course]
     enrolled: [enrolledCourse]
     stripe: Stripe
+    percentageComplete: [CourseProgress]
   }
 
   type Lesson {
