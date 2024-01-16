@@ -27,6 +27,7 @@ const typeDefs = `
     _id: ID!
     firstName: String!
     lastName: String!
+    fullName: String
     email: String!
     password: String!
     picture: String
