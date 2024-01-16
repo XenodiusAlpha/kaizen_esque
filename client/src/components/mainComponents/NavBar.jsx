@@ -18,14 +18,11 @@ export default function NavBar() {
     });
     event.target.className.add("nav-active");
   };
+
+
   // Divider
   return (
     <div className="flex-container-row ">
-      {/* <div className="Profile-Icon">
-        <Link to="/" className="wt" onClick={handleLinkClick}>
-          <FontAwesomeIcon icon={faBars} />
-        </Link>
-      </div> */}
       <nav className="nav-style flex-container-row">
         <div className="nav-Button">
           <Link
@@ -33,6 +30,7 @@ export default function NavBar() {
             className={currentPage === "/" ? "nav-active" : "nav-link"}
             onClick={handleLinkClick}
           >
+
             <p>Home</p>
           </Link>
         </div>
@@ -42,77 +40,26 @@ export default function NavBar() {
             className={currentPage === "/Courses" ? "nav-active" : "nav-link"}
             onClick={handleLinkClick}
           >
+
             <p>Courses</p>
           </Link>
         </div>
-
         <div className="nav-Button dpl">
-                <LogoutComponent
+          <LogoutComponent
             loggedin={SetisLoggedIn}
             currentPage={currentPage}
             handleLinkClick={handleLinkClick}
               />
-
         </div>
-
-        {/* <div className="nav-Button dpl">
-          <Link
-            to="/Login"
-            className={currentPage === "/Login" ? "nav-active" : "nav-link"}
-            onClick={handleLinkClick}
-          >
-            <p>Login</p>
-          </Link>
-        </div> */}
       </nav>
       <div className="Profile-Icon dpl ">
-        <div className="dpr fa-2x">
-          <Link to="/Profile" className="wt" onClick={handleLinkClick}>
+        <div id="profileImageID" className="dpr fa-2x">
+          <Link to="/profile" className="wt" onClick={handleLinkClick}>
             <FontAwesomeIcon icon={faCircleUser} />
           </Link>
         </div>
-        {/* <div className="dpr fa-2x">
-          <Link to="/Checkout" className="wt" onClick={handleLinkClick}>
-            <FontAwesomeIcon icon={faCartShopping} />
-          </Link>
-        </div> */}
       </div>
     </div>
-    // <nav className="nav-style flex-container-row">
-    //   <div className="nav-Button">
-    //     <Link
-    //       to="/"
-    //       className={currentPage === "/" ? "nav-active" : "nav-link"}
-    //       onClick={handleLinkClick}
-    //     >
-    //       <p>Home</p>
-    //     </Link>
-    //   </div>
-    //   <div className="nav-Button dpl">
-    //     <Link
-    //       to="/Courses"
-    //       className={currentPage === "/Courses" ? "nav-active" : "nav-link"}
-    //       onClick={handleLinkClick}
-    //     >
-    //       <p>Courses</p>
-    //     </Link>
-    //   </div>
-
-    //   <div className="nav-Button dpl">
-    //     <Link
-    //       to="/Login"
-    //       className={currentPage === "/Login" ? "nav-active" : "nav-link"}
-    //       onClick={handleLinkClick}
-    //     >
-    //       <p>Login</p>
-    //     </Link>
-    //   </div>
-    // </nav>
-    // <div className="Profile-Icon">
-    //   <Link to="/Profile" className="wt" onClick={handleLinkClick}>
-    //     <FontAwesomeIcon icon={faCircleUser} />
-    //   </Link>
-    // </div>
   );
 }
 

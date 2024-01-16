@@ -78,23 +78,6 @@ const Login = () => {
     setIsChecked(!isChecked);
   };
 
-  // const handleBlurName = () => {
-  //   var inputElement = document.getElementById("warningTextNameID");
-  //   if (formInput.Username.trim() === "") {
-  //     inputElement.classList.remove("hidden-element");
-  //   } else {
-  //     inputElement.classList.add("hidden-element");
-  //   }
-  // };
-
-  // const handleBlurPassword = () => {
-  //   var inputElement = document.getElementById("warningTextpassword");
-  //   if (formInput.Password.trim() === "") {
-  //     inputElement.classList.remove("hidden-element");
-  //   } else {
-  //     inputElement.classList.add("hidden-element");
-  //   }
-  // };
 
   return (
     <div className=" flex-container-row center-content">

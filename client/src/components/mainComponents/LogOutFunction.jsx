@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const LogoutComponent = ({ loggedin, currentPage, handleLinkClick }) => {
-    
+
   return (
     <div className="nav-Button dpl">
       <Link
@@ -11,6 +11,7 @@ const LogoutComponent = ({ loggedin, currentPage, handleLinkClick }) => {
         onClick={handleLinkClick}
       >
         <p>{loggedin ? "Login" : "Logout"}</p>
+        
       </Link>
     </div>
   );
