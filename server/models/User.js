@@ -137,6 +137,12 @@ userSchema
     return result;
   });
 
+userSchema
+  .virtual('fullName')
+  .get(function () {
+    return `${this.firstName} ${this.lastName}`
+  });
+
 const User = mongoose.model('User', userSchema);
 // exports the user model to be used in the project
 module.exports = User;
