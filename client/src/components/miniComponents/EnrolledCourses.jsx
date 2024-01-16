@@ -7,11 +7,12 @@ import {
   QUERY_ENROLLED_COURSES,
   QUERY_ALL_COURSE,
 } from "../../GraphQL/queries";
+import { useWatchQueryOptions } from "@apollo/client/react/hooks/useSuspenseQuery";
 
 export default function EnrolledCourses(props) {
   const [userId] = useState(JSON.parse(sessionStorage.getItem("user")).id);
 
-  const [courses, setCourses] = useState();
+  // const [courses, setCourses] = useState();
 
   const { error, loading, data } = useQuery(QUERY_ENROLLED_COURSES, {
     skip: !userId,
@@ -20,24 +21,28 @@ export default function EnrolledCourses(props) {
     },
   });
 
-  useEffect(() => {
+  function EnrolledInfo() {
     if (data) {
-      setCourses(data.user.coursesInfo);
-      console.log(data.user.courses);
+      let courses = data.user.courses;
+      console.log("Courses", courses);
+      return (
+        <>
+          {courses.map((course, key) => (
+            <CourseCards
+              key={key}
+              title={course.name}
+              desc={course.description}
+              price={course.price}
+            />
+          ))}
+        </>
+      );
     }
-  }, [data, loading]);
+  }
 
   return (
     <div className="EnrolledCourses" id={props.id}>
-      {coursesInfo.map((course, key) => (
-        <CourseCards
-          key={key}
-          title={course.name}
-          desc={course.description}
-          price={course.price}
-          className={props.className}
-        />
-      ))}
+      <EnrolledInfo />
     </div>
   );
 }
