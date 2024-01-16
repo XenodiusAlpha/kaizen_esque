@@ -76,6 +76,7 @@ const typeDefs = `
     course(_id: ID!): Course
     publishedCourses: [Course]
     checkEnrollment(userId: ID!, courseId: ID!): Boolean
+    getEnrolledCoursesCount(userId: ID!): Int
     checkCourseCompleted(userId: ID!, courseId: ID!): Boolean
     checkLessonCompleted(userId: ID!, courseId: ID!, lessonSlug: String!): Boolean
     findCoursesByInstructor(instructorId: ID!): [Course]
