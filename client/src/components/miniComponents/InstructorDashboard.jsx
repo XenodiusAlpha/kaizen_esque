@@ -3,6 +3,7 @@ import EnrolledCourses from "../miniComponents/EnrolledCourses";
 import UserInfo from "../miniComponents/UserInfo";
 import SettingsPage from "../miniComponents/SettingsPage";
 import MyCreatedCourses from "./MyCreatedCourses";
+import createCourse from "./createCourse";
 import "../../assets/css/profile.css";
 import "../../assets/css/hidden.css";
 
@@ -11,30 +12,30 @@ export default function InstructorDashboard() {
   const SetVis = (name) => {
     const Dashboard = document.querySelector(".ProfileDash");
     const Settings = document.querySelector(".ProfileSettings");
-    const EnrolledCourses = document.querySelector(".EnrolledCourses");
+    const EnrolledCourse = document.querySelector(".ProfileEnrolled");
     const MyCourses = document.querySelector(".MyCourses");
     if (name === "dash") {
       Dashboard.setAttribute("id", "Vis");
       Settings.setAttribute("id", "hidden");
-      EnrolledCourses.setAttribute("id", "hidden");
+      EnrolledCourse.setAttribute("id", "hidden");
       MyCourses.setAttribute("id", "hidden");
       console.log("Dash");
     } else if (name === "settings") {
       Dashboard.setAttribute("id", "hidden");
       Settings.setAttribute("id", "Vis");
-      EnrolledCourses.setAttribute("id", "hidden");
+      EnrolledCourse.setAttribute("id", "hidden");
       MyCourses.setAttribute("id", "hidden");
       console.log("settings");
     } else if (name === "Enrolled-courses") {
       Dashboard.setAttribute("id", "hidden");
       Settings.setAttribute("id", "hidden");
-      EnrolledCourses.setAttribute("id", "Vis");
+      EnrolledCourse.setAttribute("id", "Vis");
       MyCourses.setAttribute("id", "hidden");
       console.log("Enrolled Courses");
     } else if (name === "MyCourses") {
       Dashboard.setAttribute("id", "hidden");
       Settings.setAttribute("id", "hidden");
-      EnrolledCourses.setAttribute("id", "hidden");
+      EnrolledCourse.setAttribute("id", "hidden");
       MyCourses.setAttribute("id", "Vis");
       console.log("My Courses");
     }

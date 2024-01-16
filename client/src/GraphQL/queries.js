@@ -57,4 +57,19 @@ export const QUERY_SINGLE_COURSE = gql`
   }
 `;
 
+export const QUERY_ENROLLED_COURSES = gql`
+  query courses($id: ID!) {
+    user(_id: $id) {
+      firstName
+      lastName
+      _id
+      courses {
+        name
+        description
+        price
+      }
+    }
+  }
+`;
+
 // UserActivation, USERID, COURSES, COURSESID, LESSONS, LESSONID

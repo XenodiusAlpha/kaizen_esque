@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-const CourseForm = () => {
-  const [courseTitle, setCourseTitle] = useState('');
-  const [courseDescription, setCourseDescription] = useState('');
+const createCourse = () => {
+  const [courseTitle, setCourseTitle] = useState("");
+  const [courseDescription, setCourseDescription] = useState("");
   const [lessons, setLessons] = useState([
-    { title: '', description: '', thumbnail: '', hyperlink: '' }
+    { title: "", description: "", thumbnail: "", hyperlink: "" },
   ]);
 
   const handleLessonChange = (index, key, value) => {
@@ -14,7 +14,10 @@ const CourseForm = () => {
   };
 
   const handleAddLesson = () => {
-    setLessons([...lessons, { title: '', description: '', thumbnail: '', hyperlink: '' }]);
+    setLessons([
+      ...lessons,
+      { title: "", description: "", thumbnail: "", hyperlink: "" },
+    ]);
   };
 
   const handleRemoveLesson = (index) => {
@@ -23,12 +26,11 @@ const CourseForm = () => {
     setLessons(newLessons);
   };
 
-
   const handleSubmit = () => {
     const submitPackageNewCourse = {
       courseTitle,
       courseDescription,
-      lessons
+      lessons,
     };
     const jsonData = JSON.stringify(submitPackageNewCourse);
     sendDataToDatabase(jsonData);
@@ -39,18 +41,24 @@ const CourseForm = () => {
     console.log(jsonData);
   };
 
-
   return (
-    <div className='ccbox-style'>
+    <div className="ccbox-style">
       <h2>Course Information</h2>
-      <label className='flex-container-columns'>
+      <label className="flex-container-columns">
         Course Title:
-        <input type="text" value={courseTitle} onChange={(e) => setCourseTitle(e.target.value)} />
+        <input
+          type="text"
+          value={courseTitle}
+          onChange={(e) => setCourseTitle(e.target.value)}
+        />
       </label>
       <br />
-      <label className='flex-container-columns'>
+      <label className="flex-container-columns">
         Course Description:
-        <textarea value={courseDescription} onChange={(e) => setCourseDescription(e.target.value)} />
+        <textarea
+          value={courseDescription}
+          onChange={(e) => setCourseDescription(e.target.value)}
+        />
       </label>
       <hr />
 
@@ -58,20 +66,24 @@ const CourseForm = () => {
       {lessons.map((lesson, index) => (
         <div key={index}>
           <h3>Lesson {index + 1}</h3>
-          <label className='flex-container-columns'>
+          <label className="flex-container-columns">
             Title:
             <input
               type="text"
               value={lesson.title}
-              onChange={(e) => handleLessonChange(index, 'title', e.target.value)}
+              onChange={(e) =>
+                handleLessonChange(index, "title", e.target.value)
+              }
             />
           </label>
           <br />
-          <label className='flex-container-columns'>
+          <label className="flex-container-columns">
             Description:
             <textarea
               value={lesson.description}
-              onChange={(e) => handleLessonChange(index, 'description', e.target.value)}
+              onChange={(e) =>
+                handleLessonChange(index, "description", e.target.value)
+              }
             />
           </label>
           <br />
@@ -80,7 +92,9 @@ const CourseForm = () => {
             <input
               type="text"
               value={lesson.thumbnail}
-              onChange={(e) => handleLessonChange(index, 'thumbnail', e.target.value)}
+              onChange={(e) =>
+                handleLessonChange(index, "thumbnail", e.target.value)
+              }
             />
           </label>
           <br />
@@ -89,11 +103,15 @@ const CourseForm = () => {
             <input
               type="text"
               value={lesson.hyperlink}
-              onChange={(e) => handleLessonChange(index, 'hyperlink', e.target.value)}
+              onChange={(e) =>
+                handleLessonChange(index, "hyperlink", e.target.value)
+              }
             />
           </label>
           <br />
-          <button onClick={() => handleRemoveLesson(index)}>Remove Lesson</button>
+          <button onClick={() => handleRemoveLesson(index)}>
+            Remove Lesson
+          </button>
           <hr />
         </div>
       ))}
@@ -105,4 +123,4 @@ const CourseForm = () => {
   );
 };
 
-export default CourseForm;
+export default createCourse;
