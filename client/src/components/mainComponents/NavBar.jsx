@@ -6,6 +6,8 @@ import {
   faCircleUser,
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
+import LogoutComponent from "./LogOutFunction";
+import SetisLoggedIn from "./Login";
 
 export default function NavBar() {
   const currentPage = useLocation().pathname;
@@ -45,6 +47,15 @@ export default function NavBar() {
         </div>
 
         <div className="nav-Button dpl">
+                <LogoutComponent
+            loggedin={SetisLoggedIn}
+            currentPage={currentPage}
+            handleLinkClick={handleLinkClick}
+              />
+
+        </div>
+
+        {/* <div className="nav-Button dpl">
           <Link
             to="/Login"
             className={currentPage === "/Login" ? "nav-active" : "nav-link"}
@@ -52,7 +63,7 @@ export default function NavBar() {
           >
             <p>Login</p>
           </Link>
-        </div>
+        </div> */}
       </nav>
       <div className="Profile-Icon dpl ">
         <div className="dpr fa-2x">

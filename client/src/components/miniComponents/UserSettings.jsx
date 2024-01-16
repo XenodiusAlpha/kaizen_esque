@@ -1,9 +1,10 @@
 //Need import of assets from back-end to construct front end here. Create function to pull Json
 
 import React, { useState } from 'react';
-import thumbnail from '../../assets/img/PlaceholderImage.png';
+import thumbnail from '../../assets/img/UserImg.png';
 import { Link } from 'react-router-dom';
 import '../../assets/css/usersettings.css'
+
 
 export default function UserSettings(props) {
   const [isEditing, setIsEditing] = useState(false);
