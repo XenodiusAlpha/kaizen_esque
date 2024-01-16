@@ -100,14 +100,14 @@ const Login = () => {
     <div className=" flex-container-row center-content">
       <div className="lbox-style flex-container-columns Outlet-Style center-content background">
         <div className="flex-container-columns center-content">
-          <h2 className="wt">Login</h2>
+          <h2>Login</h2>
         </div>
 
         <form
           className="flex-container-columns center-content dpb dpt"
           onSubmit={handleSubmit}
         >
-          <p className="wt">Email:</p>
+          <p>Email:</p>
           <label>
             <input
               id="userInputEmail"
@@ -126,10 +126,10 @@ const Login = () => {
             </h4>
           </label>
 
-          <p className="wt">Password:</p>
+          <p>Password:</p>
           <label id="userInputPassword">
             <input
-              type="text"
+              type="password"
               name="password"
               // value={formInput.Password}
               onChange={handleChange}
@@ -153,7 +153,7 @@ const Login = () => {
               checked={isChecked}
               onChange={handleOnChange}
             />
-            <div className="result dpl dpb wt">
+            <div className="result dpl dpb">
               Log in as instructor {isChecked}
             </div>
           </div>

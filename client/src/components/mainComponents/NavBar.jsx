@@ -19,11 +19,11 @@ export default function NavBar() {
   // Divider
   return (
     <div className="flex-container-row ">
-      <div className="Profile-Icon">
+      {/* <div className="Profile-Icon">
         <Link to="/" className="wt" onClick={handleLinkClick}>
           <FontAwesomeIcon icon={faBars} />
         </Link>
-      </div>
+      </div> */}
       <nav className="nav-style flex-container-row">
         <div className="nav-Button">
           <Link
@@ -60,11 +60,11 @@ export default function NavBar() {
             <FontAwesomeIcon icon={faCircleUser} />
           </Link>
         </div>
-        <div className="dpr fa-2x">
+        {/* <div className="dpr fa-2x">
           <Link to="/Checkout" className="wt" onClick={handleLinkClick}>
             <FontAwesomeIcon icon={faCartShopping} />
           </Link>
-        </div>
+        </div> */}
       </div>
     </div>
     // <nav className="nav-style flex-container-row">
