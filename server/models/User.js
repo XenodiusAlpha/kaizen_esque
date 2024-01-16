@@ -102,6 +102,9 @@ const userSchema = new Schema({
 // timestamp used for whenever something is created
 {
     timestamps: true,
+    toJSON: {
+      virtuals: true
+    },
     toObject: {
       virtuals: true
     }
@@ -134,13 +137,18 @@ userSchema
       let percentage = Math.round(numberCompleted / enrolledCourse.lessons.length * 100);
       return { slug: enrolledCourse.slug, percentage };
     });
-    return result;
   });
 
 userSchema
   .virtual('fullName')
   .get(function () {
     return `${this.firstName} ${this.lastName}`
+  });
+
+userSchema
+  .virtual('signupDate')
+  .get(function () {
+    return new Date().toLocaleDateString('en-us', this.createdAt);
   });
 
 const User = mongoose.model('User', userSchema);

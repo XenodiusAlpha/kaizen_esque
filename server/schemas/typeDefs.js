@@ -36,6 +36,7 @@ const typeDefs = `
     enrolled: [enrolledCourse]
     stripe: Stripe
     percentageComplete: [CourseProgress]
+    signupDate: String
   }
 
   type Lesson {
