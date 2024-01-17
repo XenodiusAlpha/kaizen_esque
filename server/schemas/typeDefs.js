@@ -87,7 +87,8 @@ const typeDefs = `
       firstName: String!,
       lastName: String!,
       email: String!,
-      password: String!
+      password: String!,
+      role: Boolean!
     ): Auth
 
     editUser( 
