@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { LOGIN_USER } from "../../GraphQL/mutations";
 import { useMutation } from "@apollo/client";
+import "../../assets/css/background.css";
 
 const Login = () => {
   const [isLoggedIn, SetisLoggedIn] = useState(false);
@@ -17,6 +18,7 @@ const Login = () => {
     typename: "",
     id: "",
     token: "",
+    role: "",
   });
 
   const [formInput, setformInput] = useState({
@@ -24,20 +26,18 @@ const Login = () => {
     password: "",
   });
 
+  const [login, { error }] = useMutation(LOGIN_USER);
+
   useEffect(() => {
     if (isLoggedIn === true) {
       let userInfoJSON = JSON.stringify(userInfo);
-      console.log(userInfoJSON);
       window.sessionStorage.setItem("user", userInfoJSON);
       window.sessionStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
     }
   }, [userInfo, isLoggedIn]);
 
-  const [login, { error }] = useMutation(LOGIN_USER);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
     setformInput((prevData) => ({ ...prevData, [name]: value }));
   };
 
@@ -61,7 +61,10 @@ const Login = () => {
         typename: data.login.user.__typename,
         id: data.login.user._id,
         token: data.login.token,
+        role: data.login.user.role,
       });
+
+      console.log(data.login.user.role);
       //if data is presented to us from a successfull login, we will change the localstorage login var to true
       //and navigate to the /profile page
 
@@ -103,10 +106,7 @@ const Login = () => {
           <h2 className="wt">Login</h2>
         </div>
 
-        <form
-          className="flex-container-columns center-content dpb dpt"
-          onSubmit={handleSubmit}
-        >
+        <form className="flex-container-columns" onSubmit={handleSubmit}>
           <p className="wt">Email:</p>
           <label>
             <input

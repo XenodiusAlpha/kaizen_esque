@@ -57,3 +57,33 @@ export const QUERY_SINGLE_COURSE = gql`
   }
 `;
 
+export const QUERY_ENROLLED_COURSES = gql`
+  query courses($id: ID!) {
+    user(_id: $id) {
+      firstName
+      lastName
+      _id
+      courses {
+        name
+        description
+        price
+      }
+    }
+  }
+`;
+
+export const MY_CREATED_COURSES = gql`
+  query FindMyCreatedCourses($instructorId: ID!) {
+    findCoursesByInstructor(instructorId: $instructorId) {
+      _id
+      name
+      slug
+      description
+      price
+      paid
+      instructor {
+        fullName
+      }
+    }
+  }
+`;

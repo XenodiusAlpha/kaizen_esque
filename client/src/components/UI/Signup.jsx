@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { useNavigate, Link } from 'react-router-dom';
-import { ADD_USER_MUTATION } from '../../GraphQL/mutations';
-
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { useNavigate, Link } from "react-router-dom";
+import { ADD_USER_MUTATION } from "../../GraphQL/mutations";
 
 // Signup component
 const Signup = () => {
   const [formInput, setFormInput] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    role: 'user', // Default role set to 'user'
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+    role: "user", // Default role set to 'user'
   });
 
   const [addUser] = useMutation(ADD_USER_MUTATION);
@@ -20,27 +19,26 @@ const Signup = () => {
 
   const handleChange = (e) => {
     const { name, value, type } = e.target;
-    setFormInput(prevData => ({
+    setFormInput((prevData) => ({
       ...prevData,
-      [name]: type === 'radio' ? value : e.target.value
+      [name]: type === "radio" ? value : e.target.value,
     }));
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+
     if (formInput.password !== formInput.confirmPassword) {
       console.error("Passwords do not match");
 
       window.alert("Passwords do not match");
-      
+
       return;
     }
-  
+
     try {
-      const isRoleInstructor = formInput.role === 'instructor';
-  
+      const isRoleInstructor = formInput.role === "instructor";
+
       const { data } = await addUser({
         variables: {
           firstName: formInput.firstName,
@@ -50,71 +48,73 @@ const Signup = () => {
           role: isRoleInstructor,
         },
       });
-  
+
       if (isRoleInstructor) {
-        navigate('/instructor-dashboard');
+        navigate("/instructor-dashboard");
       } else {
-        navigate('/user-dashboard');
+        navigate("/user-dashboard");
       }
     } catch (error) {
-      console.error('Error creating user:', error);
+      console.error("Error creating user:", error);
     }
   };
 
-
   return (
-    <div className='flex-container-row center-content'>
-      <div className='subox-style flex-container-columns Outlet-Style center-content'>
-        <div className='flex-container-columns center-content'>
-          <h2 className='wt'>Sign up</h2>
+    <div className="flex-container-row center-content">
+      <div className="subox-style flex-container-columns Outlet-Style center-content">
+        <div className="flex-container-columns center-content">
+          <h2 className="wt">Sign up</h2>
         </div>
 
-        <form className='flex-container-columns center-content dpb dpt' onSubmit={handleSubmit}>
+        <form
+          className="flex-container-columns center-content dpb dpt"
+          onSubmit={handleSubmit}
+        >
           {/* First Name Input */}
-          <label className='wt'>First Name:</label>
+          <label className="wt">First Name:</label>
           <input
-            type='text'
-            name='firstName'
+            type="text"
+            name="firstName"
             value={formInput.firstName}
             onChange={handleChange}
             placeholder="Enter your First Name"
           />
 
           {/* Last Name Input */}
-          <label className='wt'>Last Name:</label>
+          <label className="wt">Last Name:</label>
           <input
-            type='text'
-            name='lastName'
+            type="text"
+            name="lastName"
             value={formInput.lastName}
             onChange={handleChange}
             placeholder="Enter your Last Name"
           />
 
           {/* Email Input */}
-          <label className='wt'>Email:</label>
+          <label className="wt">Email:</label>
           <input
-            type='email'
-            name='email'
+            type="email"
+            name="email"
             value={formInput.email}
             onChange={handleChange}
             placeholder="Enter your Email"
           />
 
           {/* Password Input */}
-          <label className='wt'>Password:</label>
+          <label className="wt">Password:</label>
           <input
-            type='password'
-            name='password'
+            type="password"
+            name="password"
             value={formInput.password}
             onChange={handleChange}
             placeholder="Enter your Password"
           />
 
           {/* Confirm Password Input */}
-          <label className='wt'>Confirm Password:</label>
+          <label className="wt">Confirm Password:</label>
           <input
-            type='password'
-            name='confirmPassword'
+            type="password"
+            name="confirmPassword"
             value={formInput.confirmPassword}
             onChange={handleChange}
             placeholder="Confirm your Password"
@@ -128,7 +128,7 @@ const Signup = () => {
                 type="radio"
                 name="role"
                 value="user"
-                checked={formInput.role === 'user'}
+                checked={formInput.role === "user"}
                 onChange={handleChange}
               />
               Sign up as User
@@ -139,20 +139,25 @@ const Signup = () => {
                 type="radio"
                 name="role"
                 value="instructor"
-                checked={formInput.role === 'instructor'}
+                checked={formInput.role === "instructor"}
                 onChange={handleChange}
               />
               Sign up as Instructor
             </label>
           </div>
+          <hr></hr>
 
           {/* Submit Button */}
 
-          <button className='button-Style' type='submit'>Sign up</button>
+          <button className="button-Style" type="submit">
+            Sign up
+          </button>
         </form>
 
         <Link to="/Login">
-          <p className='signUp_Link dpl dpt wt'>Already have an account? Sign in!</p>
+          <p className="signUp_Link dpl dpt wt">
+            Already have an account? Sign in!
+          </p>
         </Link>
       </div>
     </div>
@@ -160,4 +165,3 @@ const Signup = () => {
 };
 
 export default Signup;
-

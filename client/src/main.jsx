@@ -80,27 +80,30 @@ const router = createBrowserRouter([
         element: <Checkout />,
       },
       {
-        path: 'createCourse',
+        path: "createCourse",
         element: <CreateCourse />,
       },
       {
-        path: 'LessonsComponent',
+        path: "LessonsComponent",
         element: <LessonsComponent />,
       },
       {
-        path: 'UserSettings',
+        path: "UserSettings",
         element: <UserSettings />,
-
       },
 
       {
         path: "User-dashboard",
-        element: <UserDashboard/>,
+        element: <UserDashboard />,
       },
 
       {
         path: "Instructor-dashboard",
-        element: <InstructorDashboard/>,
+        element: <InstructorDashboard />,
+      },
+      {
+        path: `CreateCourse`,
+        element: <createCourse />,
       },
     ],
   },

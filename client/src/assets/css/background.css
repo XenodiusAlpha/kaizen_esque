@@ -1,0 +1,22 @@
+.background {
+  background-color: rgb(39, 141, 74);
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  border-radius: 3px;
+  margin: 0;
+  padding: 16px;
+}
+
+.background form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#topping {
+  box-shadow: 0 0;
+}
