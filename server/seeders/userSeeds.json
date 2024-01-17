@@ -5,7 +5,7 @@
         "email": "joshuajordyn@hotmail.com",
         "password": "password",
         "picture": "/avatar1.png",
-        "role": "user",
+        "role": "instructor",
         "enrolled": [
             {
                 "slug": "intro-to-programming",
@@ -32,7 +32,7 @@
         "email": "janesmith@example.com",
         "password": "Test1234!",
         "picture": "/avatar2.png",
-        "role": "instructor",
+        "role":  "instructor",
         "enrolled": [
             {
                 "slug": "data-science-fundamentals",
@@ -112,7 +112,7 @@
         "email": "charliebrown@example.com",
         "password": "Pass123Word!",
         "picture": "/avatar6.png",
-        "role": "instructor",
+        "role":  "instructor",
         "enrolled": []
     },
     {
@@ -142,3 +142,8 @@
         ]
     }
 ]
+
+
+
+
+

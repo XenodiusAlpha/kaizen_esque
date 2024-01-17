@@ -4,16 +4,15 @@ import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_SINGLE_COURSE } from "../../GraphQL/queries";
 import { ENROLL_USER } from "../../GraphQL/mutations";
 import { useState, useEffect } from "react";
-import LessonCard from "../miniComponents/LessonCard";
+import EnrolledLessonCard from "../miniComponents/EnrolledLessonCard";
 import { useLocation, useNavigate } from "react-router-dom";
 
-export default function CoursePage() {
+export default function EnrolledCoursePage() {
   const [userId, setUserId] = useState(
     JSON.parse(sessionStorage.getItem("user")).id
   );
   const [courseId, setCourseId] = useState();
   // const navigate = new Navigate();
-  const [Enroll, { err }] = useMutation(ENROLL_USER);
 
   useEffect(() => {
     let x = location.pathname.split("/")[2];
@@ -40,27 +39,29 @@ export default function CoursePage() {
 
   const CourseInfo = () => {
     if (data) {
-      console.log(data);
+   
 
       let lessons = data.course.lessons;
-      console.log(lessons);
+        console.log(data)
 
       return (
-        <div>
+        <div id="HIYAYAYA">
           <div className="CoursePage">
             <h1>{data.course.name}</h1>
 
             <img src={image} className="CourseImg"></img>
             <h2>{data.course.instructor.fullName}</h2>
             <p>{data.course.description}</p>
-            <p>${data.course.price}</p>
-            <button onClick={EnrollNow}>Enroll Now</button>
+
           </div>
           {lessons.map((lesson, key) => (
-            <LessonCard
+            <EnrolledLessonCard
               key={key}
               title={lesson.title}
               content={lesson.content}
+              courseId={courseId}
+              courseSlug={data.course.slug}
+              lessonSlug={lesson.slug}
             />
           ))}
         </div>

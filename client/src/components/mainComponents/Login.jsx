@@ -18,7 +18,7 @@ const Login = () => {
     email: "",
     typename: "",
     id: "",
-    token: "",
+    token: "",  
     role: "",
   });
 
@@ -67,10 +67,10 @@ const Login = () => {
         id: data.login.user._id,
         token: data.login.token,
         role: data.login.user.role,
-        signupDate: data.login.user.signupDate,
+        signupDate:data.login.user.signupDate
       });
 
-      console.log(data.login.user.role);
+      console.log(data);
       //if data is presented to us from a successfull login, we will change the localstorage login var to true
       //and navigate to the /profile page
 
