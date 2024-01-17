@@ -78,7 +78,8 @@ const Signup = () => {
           lastname: data.addUser.user.lastName,
           id: data.addUser.user._id,
           token: data.addUser.token,
-          role: data.addUser.role,
+          role: data.addUser.user.role,
+          signupDate: data.addUser.user.signupDate,
         });
 
         SetisLoggedIn(true);
