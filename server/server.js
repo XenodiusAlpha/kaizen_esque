@@ -7,9 +7,7 @@ const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
 const { expressMiddleware } = require("@apollo/server/express4");
 const cors = require("cors");
-
-const PORT = process.env.PORT || 3003
-;
+const PORT = process.env.PORT || 3003;
 const app = express();
 
 const server = new ApolloServer({
