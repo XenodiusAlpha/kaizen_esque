@@ -3,35 +3,64 @@
 import React, { useState, useEffect } from "react";
 import thumbnail from "../../assets/img/PlaceholderImage.png";
 import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
+import { EDIT_USER } from "../../GraphQL/mutations";
 import "../../assets/css/usersettings.css";
 
 export default function UserSettings(props) {
   const [isEditing, setIsEditing] = useState(false);
-  const [editedUsername, setEditedUsername] = useState();
-  const [currentUsername, setCurrentUsername] = useState(
+
+  // useStates for firstname, lastname, and email
+  const [firstname, setFirstname] = useState(
     JSON.parse(sessionStorage.getItem("user")).firstname
   );
-
-  const [editedDescription, setEditedDescription] = useState(
-    props.userDescription
+  const [lastname, setLastname] = useState(
+    JSON.parse(sessionStorage.getItem("user")).lastname
+  );
+  const [email, setEmail] = useState(
+    JSON.parse(sessionStorage.getItem("user")).email
   );
 
+  const [editUser] = useMutation(EDIT_USER);
+
+  // Toggles editing mode
   const handleEditClick = () => {
     setIsEditing(true);
   };
-  //Above toggles editing mode
 
-  const handleSaveClick = () => {
-    let data = JSON.parse(sessionStorage.getItem("user"));
-    data.firstname = editedUsername;
-    // Need to understand how to pass info. JSON?
-    // console.log("Edited name:", editedUsername);
-    // console.log("Edited Description:", editedDescription);
+  const handleSaveClick = async () => {
+    let id = JSON.parse(sessionStorage.getItem("user")).id;
+    let firstName = document.querySelector("#firstName").value;
+    let lastName = document.querySelector("#lastName").value;
+    let email = document.querySelector("#email").value;
+    let password = document.querySelector("#password").value;
 
+    setFirstname(firstName);
     setIsEditing(false);
-    sessionStorage.setItem("user", JSON.stringify(data));
-    console.log("Edited DATA", sessionStorage.getItem("user"));
-    setCurrentUsername(editedUsername);
+
+    if (password) {
+      const { data } = await editUser({
+        variables: {
+          id,
+          firstName,
+          lastName,
+          email,
+          password
+        }
+      });
+      console.log(data.editUser);
+    }
+    else {
+      const { data } = await editUser({
+        variables: {
+          id,
+          firstName,
+          lastName,
+          email
+        }
+      });
+      console.log(data.editUser);
+    }
   };
 
   const handleCancelClick = () => {
@@ -44,23 +73,42 @@ export default function UserSettings(props) {
         <div className="flex-container-columns profilebox-style">
           {isEditing ? (
             <>
+              <label htmlFor="firstName">First Name</label>
               <input
                 type="text"
-                value={editedUsername}
-                onChange={(e) => setEditedUsername(e.target.value)}
+                name="firstName"
+                id="firstName"
+                value={firstname}
+                onChange={(e) => setFirstname(e.target.value)}
               />
-              <textarea
-                value={editedDescription}
-                onChange={(e) => setEditedDescription(e.target.value)}
+              <label htmlFor="lastName">Last Name</label>
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                value={lastname}
+                onChange={(e) => setLastname(e.target.value)}
+              />
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
               />
             </>
           ) : (
             <>
-              <h2 className="Username">{currentUsername}</h2>
+              <h2 className="Username">{firstname}</h2>
             </>
           )}
-          <p>props.AccountType</p>
-          <p>{isEditing ? editedDescription : "props.userDescription"}</p>
           {isEditing ? (
             <>
               <button onClick={handleSaveClick}>Save</button>
