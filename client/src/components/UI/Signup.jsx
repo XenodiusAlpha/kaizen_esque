@@ -1,6 +1,8 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { ADD_USER } from '../../GraphQL/mutations'
+import { useMutation } from "@apollo/client";
 
 const Signup = () => {
   const [formInput, setformInput] = useState({
@@ -62,7 +64,7 @@ const Signup = () => {
     }
   };
 
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
@@ -73,6 +75,7 @@ const Signup = () => {
       confirmPassword: formInput.confirmPassword,
     };
     console.log(formData)
+    navigate("/Profile");
     return formData
   };
 
