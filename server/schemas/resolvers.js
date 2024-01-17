@@ -145,6 +145,23 @@ const resolvers = {
       }
     },
 
+    editUser: async (_, { _id, firstName, lastName, email, password }) => {
+      try {
+        const user = await User.findById(_id);
+        if (!user) {
+          throw new Error('User not found');
+        }
+        user.firstName = firstName;
+        user.lastName = lastName;
+        user.email = email;
+        user.password = password;
+        await user.save();
+        return user;
+      } catch (error) {
+        throw new Error(`Failed to edit user. ${error.message}`);
+      }
+    },
+
     // Login a user by email and password and assigning a token to them
     login: async (_, { email, password }) => {
       try {
@@ -159,7 +176,7 @@ const resolvers = {
         const token = signToken(user);
         return { token, user };
       } catch (error) {
-        throw new Error(`Failed to login a user. ${error.message}`);        
+        throw new Error(`Failed to login a user. ${error.message}`);
       }
     },
 
