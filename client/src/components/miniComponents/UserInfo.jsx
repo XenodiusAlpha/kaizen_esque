@@ -1,26 +1,23 @@
+import React, { useEffect, useState } from 'react';
 import placeHolder from "../../assets/img/UserImg.png";
 import "../../assets/css/profile.css";
-import { useState, useEffect } from "react";
 
 export default function UserInfo(props) {
   const [username, setUsername] = useState('');
+  const [signUpDate, setSignUpDate] = useState('');
 
   useEffect(() => {
-    let data = sessionStorage.getItem('user');
+    // Retrieve user data from sessionStorage
+    const userData = sessionStorage.getItem('user');
+    
+    if (userData) {
+      const user = JSON.parse(userData);
 
-    // Check if data is not null and is a valid JSON string
-    if (data) {
-      try {
-        let dataJson = JSON.parse(data);
-        if (dataJson && dataJson.firstname && dataJson.lastname) {
-          let fullName = `${dataJson.firstname} ${dataJson.lastname}`;
-          setUsername(fullName);
-        }
-      } catch (error) {
-        console.error('Error parsing user data from sessionStorage:', error);
-      }
+      // Set user information
+      setUsername(`${user.firstname} ${user.lastname}`);
+      setSignUpDate(user.signupDate);
     }
-  }, []); // Removed username from dependency array
+  }, []);
 
   return (
     <div className={props.className} id={props.id}>
@@ -28,10 +25,7 @@ export default function UserInfo(props) {
         <img className="UserPic" src={placeHolder} alt="UserPicture" />
         <figcaption>{username}</figcaption>
       </figure>
-      <h2>SignUp date:</h2>
-      <h2>Number of enrolled Courses</h2>
+      <h2>SignUp date: {signUpDate}</h2>
     </div>
   );
 }
-
-
