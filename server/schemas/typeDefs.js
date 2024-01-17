@@ -90,6 +90,14 @@ const typeDefs = `
       password: String!
     ): Auth
 
+    editUser( 
+      _id: ID!,
+      firstName: String,
+      lastName: String,
+      email: String,
+      password: String,
+    ): User 
+
     login(
       email: String!,
       password: String!

@@ -79,48 +79,8 @@ export default function NavBar() {
         <div className="dpr fa-2x">
           <Profile />
         </div>
-        <div className="dpr fa-2x">
-          <Link to="/Checkout" className="wt" onClick={handleLinkClick}>
-            <FontAwesomeIcon icon={faCartShopping} />
-          </Link>
-        </div>
       </div>
     </div>
-    // <nav className="nav-style flex-container-row">
-    //   <div className="nav-Button">
-    //     <Link
-    //       to="/"
-    //       className={currentPage === "/" ? "nav-active" : "nav-link"}
-    //       onClick={handleLinkClick}
-    //     >
-    //       <p>Home</p>
-    //     </Link>
-    //   </div>
-    //   <div className="nav-Button dpl">
-    //     <Link
-    //       to="/Courses"
-    //       className={currentPage === "/Courses" ? "nav-active" : "nav-link"}
-    //       onClick={handleLinkClick}
-    //     >
-    //       <p>Courses</p>
-    //     </Link>
-    //   </div>
-
-    //   <div className="nav-Button dpl">
-    //     <Link
-    //       to="/Login"
-    //       className={currentPage === "/Login" ? "nav-active" : "nav-link"}
-    //       onClick={handleLinkClick}
-    //     >
-    //       <p>Login</p>
-    //     </Link>
-    //   </div>
-    // </nav>
-    // <div className="Profile-Icon">
-    //   <Link to="/Profile" className="wt" onClick={handleLinkClick}>
-    //     <FontAwesomeIcon icon={faCircleUser} />
-    //   </Link>
-    // </div>
   );
 }
 

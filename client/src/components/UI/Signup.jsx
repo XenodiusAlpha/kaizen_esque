@@ -1,6 +1,8 @@
 import React from 'react';
-import { useState } from "react";
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Link, useNavigate } from 'react-router-dom';
+import { ADD_USER } from '../../GraphQL/mutations'
+import { useMutation } from "@apollo/client";
 
 const Signup = () => {
   const [formInput, setformInput] = useState({
@@ -17,11 +19,9 @@ const Signup = () => {
     setformInput((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submit button pressed')
-    // Add logic for passing data here. 1. Pass user input 2. Switch user to logged in status. 2.5: Logged in status removes login option and replaces it with logout. Shows Profile option. Gives access to dashboards.
-
+  const [isChecked, setIsChecked] = useState(false);
+  const handleOnChange = () => {
+    setIsChecked(!isChecked);
   };
 
   const handleBlurFirstName = () => {
@@ -68,6 +68,24 @@ const Signup = () => {
       inputElement.classList.remove("hidden-element");
     }
   };
+
+  
+  const navigate = useNavigate();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      firstname: formInput.firstName,
+      lastname: formInput.lastName,
+      email: formInput.email,
+      password: formInput.password,
+      confirmPassword: formInput.confirmPassword,
+      role: isChecked,
+    };
+    console.log(formData)
+    navigate("/Profile");
+    return formData
+  };
+
 
   return (
     <div className=' flex-container-row center-content'>
@@ -149,6 +167,20 @@ const Signup = () => {
               <h4 id='warningTextConfirmPasswordID' className='wt warningTextForm hidden-element'>*Passwords need to match</h4>
           </label>
 
+          <div id='role' className="flex-container-row">
+            <input 
+              type="checkbox"
+              id="topping"
+              name="topping"
+              value="Paneer"
+              checked={isChecked}
+              onChange={handleOnChange}
+            />
+            <div className="result dpl dpb wt">
+              Sign up as instructor {isChecked}
+            </div>
+          </div>
+
           <button className='button-Style' type='submit'>Sign up</button>
         </form>
         <Link to="/Login">
@@ -160,3 +192,4 @@ const Signup = () => {
 };
 
 export default Signup;
+// 2
