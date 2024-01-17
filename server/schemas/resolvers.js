@@ -151,10 +151,18 @@ const resolvers = {
         if (!user) {
           throw new Error('User not found');
         }
-        user.firstName = firstName;
-        user.lastName = lastName;
-        user.email = email;
-        user.password = password;
+        if (firstName) {
+          user.firstName = firstName;
+        }
+        if (lastName) {
+          user.lastName = lastName;
+        }
+        if (email) {
+          user.email = email;
+        }
+        if (password) {
+          user.password = password;
+        }
         await user.save();
         return user;
       } catch (error) {
