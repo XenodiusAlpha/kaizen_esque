@@ -103,7 +103,10 @@ const userSchema = new Schema({
 {
     timestamps: true,
     toJSON: {
-        getters: true
+      virtuals: true
+    },
+    toObject: {
+      virtuals: true
     }
 });
 
@@ -119,6 +122,35 @@ userSchema.pre('save', async function(next) {
 userSchema.methods.isCorrectPassword = async function(password) {
   return await bcrypt.compare(password, this.password);
 };
+
+userSchema
+  .virtual('percentageComplete')
+  .get(function () {
+    return this.enrolled.map((enrolledCourse) => {
+      let numberCompleted = 0;
+      for (let lesson of enrolledCourse.lessons) {
+        if (lesson.completed) {
+          numberCompleted++;
+        }
+      }
+
+      let percentage = Math.round(numberCompleted / enrolledCourse.lessons.length * 100);
+      return { slug: enrolledCourse.slug, percentage };
+    });
+  });
+
+userSchema
+  .virtual('fullName')
+  .get(function () {
+    return `${this.firstName} ${this.lastName}`
+  });
+
+userSchema
+  .virtual('signupDate')
+  .get(function () {
+    return new Date().toLocaleDateString('en-us', this.createdAt);
+  });
+
 const User = mongoose.model('User', userSchema);
 // exports the user model to be used in the project
 module.exports = User;

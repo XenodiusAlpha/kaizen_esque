@@ -67,6 +67,20 @@ const resolvers = {
       }
     },
 
+    // Querying the count of enrolled courses the user has
+    getEnrolledCoursesCount: async (_, { userId }) => {
+      try {
+        const user = await User.findById(userId).populate('enrolled');
+        if (!user) {
+          throw new AuthenticationError('User not found');
+        }
+        // Return the count of enrolled courses
+        return user.enrolled.length;
+      } catch (error) {
+        throw new Error(`Failed to find enrolled courses count for specified user. ${error.message}`);        
+      }
+  },
+
     // Verifies if course is completed by user
     checkCourseCompleted: async (_, { userId, courseId }) => {
       try {

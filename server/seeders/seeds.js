@@ -18,11 +18,12 @@ db.once('open', async () => {
 
     // Seed the data
     let users = await User.create(userSeeds);
+    let instructors = users.filter((user) => user.role.includes('instructor'));
 
     courseSeeds = courseSeeds.map((course) => {
       return ({
         ...course,
-        instructor: users[Math.floor(Math.random() * users.length)]._id
+        instructor: instructors[Math.floor(Math.random() * instructors.length)]._id
       })
     });
 
