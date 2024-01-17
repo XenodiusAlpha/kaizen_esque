@@ -23,6 +23,8 @@ import Checkout from "./components/UI/Checkout.jsx";
 import CreateCourse from "./components/miniComponents/createCourse.jsx";
 import LessonsComponent from "./components/miniComponents/LessonsComponent.jsx";
 import UserSettings from "./components/miniComponents/UserSettings.jsx";
+import InstructorDashboard from "./components/miniComponents/InstructorDashboard.jsx";
+import UserDashboard from "./components/miniComponents/UserDashboard.jsx";
 // const errorLink = onError(({ graphqlErrors, networkError }) => {
 //   if (graphqlErrors) {
 //     graphqlErrors.map(({ message, location, path }) => {
@@ -88,6 +90,17 @@ const router = createBrowserRouter([
       {
         path: 'UserSettings',
         element: <UserSettings />,
+
+      },
+
+      {
+        path: "User-dashboard",
+        element: <UserDashboard/>,
+      },
+
+      {
+        path: "Instructor-dashboard",
+        element: <InstructorDashboard/>,
       },
     ],
   },

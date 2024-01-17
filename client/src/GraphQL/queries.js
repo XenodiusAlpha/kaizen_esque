@@ -57,4 +57,3 @@ export const QUERY_SINGLE_COURSE = gql`
   }
 `;
 
-// UserActivation, USERID, COURSES, COURSESID, LESSONS, LESSONID

@@ -33,14 +33,17 @@ export const ADD_COURSE = gql`
   }
 `;
 
-export const LOGIN_USER = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
+
+export const ADD_USER_MUTATION = gql`
+  mutation AddUser($firstName: String!, $lastName: String!, $email: String!, $password: String!, $role: Boolean!) {
+    addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password, role: $role) {
       token
       user {
         _id
         firstName
         lastName
+        email
+        role
       }
     }
   }
@@ -52,6 +55,20 @@ export const REMOVE_COURSE = gql`
       _id
       name
       enrolled_course
+    }
+  }
+`;
+
+export const LOGIN_USER = gql`
+  mutation Login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        _id
+        firstName
+        lastName
+        email
+      }
     }
   }
 `;
