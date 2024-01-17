@@ -79,7 +79,7 @@ const Signup = () => {
       email: formInput.email,
       password: formInput.password,
       confirmPassword: formInput.confirmPassword,
-      isInstructor: isChecked,
+      role: isChecked,
     };
     console.log(formData)
     navigate("/Profile");
@@ -167,7 +167,7 @@ const Signup = () => {
               <h4 id='warningTextConfirmPasswordID' className='wt warningTextForm hidden-element'>*Passwords need to match</h4>
           </label>
 
-          <div id='isInstructor' className="flex-container-row">
+          <div id='role' className="flex-container-row">
             <input 
               type="checkbox"
               id="topping"
@@ -192,3 +192,4 @@ const Signup = () => {
 };
 
 export default Signup;
+// 2
