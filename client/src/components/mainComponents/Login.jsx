@@ -33,6 +33,9 @@ const Login = () => {
       let userInfoJSON = JSON.stringify(userInfo);
       window.sessionStorage.setItem("user", userInfoJSON);
       window.sessionStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
+      if (isLoggedIn) {
+        navigate("/Profile");
+      }
     }
   }, [userInfo, isLoggedIn]);
 
@@ -69,10 +72,6 @@ const Login = () => {
       //and navigate to the /profile page
 
       SetisLoggedIn(true);
-
-      if (isLoggedIn) {
-        navigate("/Profile");
-      }
     }
   };
 
