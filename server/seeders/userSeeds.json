@@ -5,7 +5,7 @@
         "email": "joshuajordyn@hotmail.com",
         "password": "password",
         "picture": "/avatar1.png",
-        "role": ["user"],
+        "role": "user",
         "enrolled": [
             {
                 "slug": "intro-to-programming",
@@ -32,7 +32,7 @@
         "email": "janesmith@example.com",
         "password": "Test1234!",
         "picture": "/avatar2.png",
-        "role": ["user", "instructor"],
+        "role": "instructor",
         "enrolled": [
             {
                 "slug": "data-science-fundamentals",
@@ -51,7 +51,7 @@
         "email": "alicejohnson@example.com",
         "password": "Password123!",
         "picture": "/avatar3.png",
-        "role": ["user"],
+        "role": "user",
         "enrolled": [
             {
                 "slug": "game-development-fundamentals",
@@ -77,7 +77,7 @@
         "email": "bobanderson@example.com",
         "password": "SecurePass456!",
         "picture": "/avatar4.png",
-        "role": ["user", "instructor"],
+        "role": "instructor",
         "enrolled": []
     },
     {
@@ -86,7 +86,7 @@
         "email": "evamiller@example.com",
         "password": "SecretPass789!",
         "picture": "/avatar5.png",
-        "role": ["user"],
+        "role": "user",
         "enrolled": [
             {
                 "slug": "data-science-fundamentals",
@@ -112,7 +112,7 @@
         "email": "charliebrown@example.com",
         "password": "Pass123Word!",
         "picture": "/avatar6.png",
-        "role": ["user", "instructor"],
+        "role": "instructor",
         "enrolled": []
     },
     {
@@ -121,7 +121,7 @@
         "email": "gracedavis@example.com",
         "password": "SecurePassword789!",
         "picture": "/avatar7.png",
-        "role": ["user"],
+        "role": "user",
         "enrolled": [
             {
                 "slug": "game-development-fundamentals",
