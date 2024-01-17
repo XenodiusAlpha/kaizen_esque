@@ -1,7 +1,7 @@
 import "../../assets/css/courseCard.css";
 import placeholder from "../../assets/img/CookingCourse.png";
 
-export default function CourseCards(props) {
+export default function EnrolledCourseCards(props) {
   return (
     <div className={`CourseCard ${props.className}`}>
       <h1>{props.title}</h1>
@@ -9,7 +9,9 @@ export default function CourseCards(props) {
       {/* This is just a placeholder picture until we can get the database setup */}
       <p>{props.desc}</p>
       <p>{props.price}</p>
-      <a>learn More!</a>
+      <div>
+        <a>learn More!</a> <button>Enroll Now</button>
+      </div>
     </div>
   );
 }

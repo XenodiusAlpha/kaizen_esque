@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import EnrolledCourses from "../miniComponents/EnrolledCourses";
 import UserInfo from "../miniComponents/UserInfo";
-import SettingsPage from "../miniComponents/SettingsPage";
 import "../../assets/css/profile.css";
 import "../../assets/css/hidden.css";
-import UserSettings from "../miniComponents/UserSettings.jsx"
+import UserSettings from "../miniComponents/UserSettings.jsx";
 export default function UserDashboard() {
   //This function is just for setting the visibility of each area of the dashboard -JKD
   const SetVis = (name) => {

@@ -17,6 +17,7 @@ const Login = () => {
     typename: "",
     id: "",
     token: "",
+    role: "",
   });
 
   const [formInput, setformInput] = useState({
@@ -24,20 +25,18 @@ const Login = () => {
     password: "",
   });
 
+  const [login, { error }] = useMutation(LOGIN_USER);
+
   useEffect(() => {
     if (isLoggedIn === true) {
       let userInfoJSON = JSON.stringify(userInfo);
-      console.log(userInfoJSON);
       window.sessionStorage.setItem("user", userInfoJSON);
       window.sessionStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
     }
   }, [userInfo, isLoggedIn]);
 
-  const [login, { error }] = useMutation(LOGIN_USER);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(name, value);
     setformInput((prevData) => ({ ...prevData, [name]: value }));
   };
 
@@ -61,6 +60,7 @@ const Login = () => {
         typename: data.login.user.__typename,
         id: data.login.user._id,
         token: data.login.token,
+        role: data.login.user.role,
       });
       //if data is presented to us from a successfull login, we will change the localstorage login var to true
       //and navigate to the /profile page

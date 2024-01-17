@@ -1,11 +1,18 @@
 import React, { useState } from "react";
+import { ADD_COURSE, ADD_LESSON } from "../../GraphQL/mutations";
+import { useMutation } from "@apollo/client";
 
-const createCourse = () => {
+const CreateCourse = (props) => {
+  const [CreateCourse, { error }] = useMutation(ADD_COURSE);
+  const [CreateLesson, { err }] = useMutation(ADD_LESSON);
+
   const [courseTitle, setCourseTitle] = useState("");
   const [courseDescription, setCourseDescription] = useState("");
   const [lessons, setLessons] = useState([
     { title: "", description: "", thumbnail: "", hyperlink: "" },
   ]);
+  const [coursePrice, setCoursePrice] = useState("");
+  const [courseCategory, setCourseCategory] = useState("");
 
   const handleLessonChange = (index, key, value) => {
     const newLessons = [...lessons];
@@ -31,18 +38,53 @@ const createCourse = () => {
       courseTitle,
       courseDescription,
       lessons,
+      coursePrice,
+      courseCategory,
     };
-    const jsonData = JSON.stringify(submitPackageNewCourse);
+    const jsonData = submitPackageNewCourse;
     sendDataToDatabase(jsonData);
     return jsonData;
   };
-  const sendDataToDatabase = (jsonData) => {
+  const sendDataToDatabase = async (jsonData) => {
     //Need database logic here to recieve json. How do I pass this?
-    console.log(jsonData);
+    const { data } = await CreateCourse({
+      variables: {
+        name: jsonData.courseTitle,
+        description: jsonData.courseDescription,
+        price: parseFloat(jsonData.coursePrice),
+        category: jsonData.courseCategory,
+        instructorId: JSON.parse(sessionStorage.getItem("user")).id,
+      },
+    });
+
+    for (let i = 0; i < jsonData.lessons.length; i++) {
+      const { lessonData } = await CreateLesson({
+        variables: {
+          courseId: data.addCourse._id,
+          title: jsonData.lessons[i].title,
+          content: jsonData.lessons[i].description,
+        },
+      });
+      console.log("Lessons", lessonData);
+    }
+
+    console.log("Courses", data);
   };
 
+  //ADDlESSON
+  //  {  "courseId": null,
+  //   "title": null,
+  //   "content": nulll
+  // }
+
+  // "instructorId": "65a72700d51ec8766318b4d1",
+  // "name":"GraphQl Course",
+  // "description":"This course will trach you how to make a database in GraphQl",
+  // "price": 10.99,
+  // "category": "databases"
+
   return (
-    <div className="ccbox-style">
+    <div className={`ccbox-style ${props.className}`} id={props.id}>
       <h2>Course Information</h2>
       <label className="flex-container-columns">
         Course Title:
@@ -58,6 +100,22 @@ const createCourse = () => {
         <textarea
           value={courseDescription}
           onChange={(e) => setCourseDescription(e.target.value)}
+        />
+      </label>
+      <br />
+      <label className="flex-container-columns">
+        Course Category:
+        <textarea
+          value={courseCategory}
+          onChange={(e) => setCourseCategory(e.target.value)}
+        />
+      </label>
+      <br />
+      <label className="flex-container-columns">
+        Course Price:
+        <textarea
+          value={coursePrice}
+          onChange={(e) => setCoursePrice(e.target.value)}
         />
       </label>
       <hr />
@@ -123,4 +181,4 @@ const createCourse = () => {
   );
 };
 
-export default createCourse;
+export default CreateCourse;

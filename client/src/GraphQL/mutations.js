@@ -23,12 +23,28 @@ export const ADD_PROFILE = gql`
 `;
 
 export const ADD_COURSE = gql`
-  mutation addCourse($profileId: ID!, $enrolled_course: String!) {
-    addcourse(profileId: $profileId, course: $enrolled_course) {
-      _id
+  mutation createCourse(
+    $name: String!
+    $description: String!
+    $price: Float!
+    $category: String!
+    $instructorId: ID!
+  ) {
+    addCourse(
+      name: $name
+      description: $description
+      price: $price
+      category: $category
+      instructorId: $instructorId
+    ) {
       name
-      enrolled_course
-      createdAt
+      description
+      price
+      instructor {
+        _id
+        fullName
+      }
+      _id
     }
   }
 `;
@@ -41,6 +57,7 @@ export const LOGIN_USER = gql`
         _id
         firstName
         lastName
+        role
       }
     }
   }
@@ -52,6 +69,16 @@ export const REMOVE_COURSE = gql`
       _id
       name
       enrolled_course
+    }
+  }
+`;
+
+export const ADD_LESSON = gql`
+  mutation addlesson($courseId: ID!, $title: String!, $content: String!) {
+    addLesson(courseId: $courseId, title: $title, content: $content) {
+      name
+      slug
+      _id
     }
   }
 `;

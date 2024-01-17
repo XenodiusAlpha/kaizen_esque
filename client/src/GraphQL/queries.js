@@ -72,4 +72,20 @@ export const QUERY_ENROLLED_COURSES = gql`
   }
 `;
 
+export const MY_CREATED_COURSES = gql`
+  query FindMyCreatedCourses($instructorId: ID!) {
+    findCoursesByInstructor(instructorId: $instructorId) {
+      _id
+      name
+      slug
+      description
+      price
+      paid
+      instructor {
+        fullName
+      }
+    }
+  }
+`;
+
 // UserActivation, USERID, COURSES, COURSESID, LESSONS, LESSONID

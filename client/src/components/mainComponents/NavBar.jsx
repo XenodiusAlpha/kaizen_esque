@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -10,12 +10,33 @@ import {
 export default function NavBar() {
   const currentPage = useLocation().pathname;
 
+  const [loggedIn, SetisLoggedIn] = useState(
+    sessionStorage.getItem("isLoggedIn")
+  );
+
+  const Profile = (e) => {
+    if (loggedIn === null) {
+      return (
+        <Link to={"/Login"} className="wt PROFILEICON">
+          <FontAwesomeIcon icon={faCircleUser} />
+        </Link>
+      );
+    } else if (loggedIn === "true") {
+      return (
+        <Link to={"/Profile"} className="wt PROFILEICON">
+          <FontAwesomeIcon icon={faCircleUser} />
+        </Link>
+      );
+    }
+  };
+
   const handleLinkClick = (event) => {
     document.querySelectorAll("nav").forEach((link) => {
       link.className.remove("nav-active");
     });
     event.target.className.add("nav-active");
   };
+
   // Divider
   return (
     <div className="flex-container-row ">
@@ -56,9 +77,7 @@ export default function NavBar() {
       </nav>
       <div className="Profile-Icon dpl ">
         <div className="dpr fa-2x">
-          <Link to="/Profile" className="wt" onClick={handleLinkClick}>
-            <FontAwesomeIcon icon={faCircleUser} />
-          </Link>
+          <Profile />
         </div>
         <div className="dpr fa-2x">
           <Link to="/Checkout" className="wt" onClick={handleLinkClick}>

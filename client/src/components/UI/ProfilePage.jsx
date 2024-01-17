@@ -7,16 +7,15 @@ import "../../assets/css/hidden.css";
 import UserDashboard from "../miniComponents/UserDashboard";
 import InstructorDashboard from "../miniComponents/InstructorDashboard";
 
-function IsInstructor({ IsInstructor }) {
-  if (IsInstructor) {
-    console.log("Is instructor");
-    return <InstructorDashboard />;
-  } else if (!IsInstructor) {
-    console.log("Not Instructor");
+function IsInstructor() {
+  const role = JSON.parse(sessionStorage.getItem("user")).typename;
+  if (role === "User") {
     return <UserDashboard />;
+  } else {
+    return <InstructorDashboard />;
   }
 }
 
 export default function ProfilePage() {
-  return <IsInstructor IsInstructor={false} />;
+  return <IsInstructor />;
 }

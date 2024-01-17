@@ -1,5 +1,5 @@
 import { React, useEffect, useState } from "react";
-import CourseCards from "../miniComponents/CourseCards";
+import EnrolledCourseCards from "../miniComponents/EnrolledCourseCards";
 import "../../assets/css/CourseContainer.css";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_COURSE } from "../../GraphQL/queries";
@@ -8,10 +8,10 @@ export default function CoursesContainer() {
   const { error, loading, data } = useQuery(QUERY_ALL_COURSE);
 
   const [courses, setCourses] = useState();
+
   useEffect(() => {
     if (data) {
       setCourses(data.courses);
-      console.log(data.courses);
     }
   }, [data]);
 
@@ -19,7 +19,7 @@ export default function CoursesContainer() {
     return (
       <div className="CourseContainer">
         {courses.map((course, key) => (
-          <CourseCards
+          <EnrolledCourseCards
             key={key}
             title={course.name}
             desc={course.description}
