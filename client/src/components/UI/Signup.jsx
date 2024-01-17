@@ -1,8 +1,8 @@
-// React and Apollo Client imports
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { useNavigate, Link } from 'react-router-dom';
 import { ADD_USER_MUTATION } from '../../GraphQL/mutations';
+
 
 // Signup component
 const Signup = () => {
@@ -25,6 +25,7 @@ const Signup = () => {
       [name]: type === 'radio' ? value : e.target.value
     }));
   };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -59,6 +60,7 @@ const Signup = () => {
       console.error('Error creating user:', error);
     }
   };
+
 
   return (
     <div className='flex-container-row center-content'>
@@ -145,6 +147,7 @@ const Signup = () => {
           </div>
 
           {/* Submit Button */}
+
           <button className='button-Style' type='submit'>Sign up</button>
         </form>
 
@@ -157,3 +160,4 @@ const Signup = () => {
 };
 
 export default Signup;
+
