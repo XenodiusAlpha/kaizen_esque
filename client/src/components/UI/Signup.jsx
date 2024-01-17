@@ -19,6 +19,11 @@ const Signup = () => {
     setformInput((prevData) => ({ ...prevData, [name]: value }));
   };
 
+  const [isChecked, setIsChecked] = useState(false);
+  const handleOnChange = () => {
+    setIsChecked(!isChecked);
+  };
+
   const handleBlurFirstName = () => {
     var inputElement = document.getElementById("warningTextFirstNameID");
     if (formInput.firstname.trim() === '') {
@@ -64,6 +69,7 @@ const Signup = () => {
     }
   };
 
+  
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -73,6 +79,7 @@ const Signup = () => {
       email: formInput.email,
       password: formInput.password,
       confirmPassword: formInput.confirmPassword,
+      role: isChecked,
     };
     console.log(formData)
     navigate("/Profile");
@@ -160,6 +167,20 @@ const Signup = () => {
               <h4 id='warningTextConfirmPasswordID' className='wt warningTextForm hidden-element'>*Passwords need to match</h4>
           </label>
 
+          <div id='role' className="flex-container-row">
+            <input 
+              type="checkbox"
+              id="topping"
+              name="topping"
+              value="Paneer"
+              checked={isChecked}
+              onChange={handleOnChange}
+            />
+            <div className="result dpl dpb wt">
+              Sign up as instructor {isChecked}
+            </div>
+          </div>
+
           <button className='button-Style' type='submit'>Sign up</button>
         </form>
         <Link to="/Login">
@@ -171,3 +192,4 @@ const Signup = () => {
 };
 
 export default Signup;
+// 2
