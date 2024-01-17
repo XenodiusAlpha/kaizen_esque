@@ -89,7 +89,7 @@ const userSchema = new Schema({
     type: String,
     default: '/avatar.png',
   },
-  // defining if the user has just one role, or multiple roles
+  // defining the choices of a user's' role
   role: {
     type: [String],
     default: ['user'],

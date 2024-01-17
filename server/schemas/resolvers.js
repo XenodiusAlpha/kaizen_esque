@@ -134,9 +134,11 @@ const resolvers = {
   Mutation: {
     
     // Adding a user and assigning a token to them
-    addUser: async (_, { firstName, lastName, email, password }) => {
+    addUser: async (_, { firstName, lastName, email, password, role }) => {
       try {
-        const user = new User({ firstName, lastName, email, password });
+        let userRole = (role) ? 'instructor' : 'user';
+
+        const user = new User({ firstName, lastName, email, password, role: userRole });
         const token = signToken(user);
         await user.save();
         return { token, user };
@@ -145,6 +147,7 @@ const resolvers = {
       }
     },
 
+    // Update a user from the parameters pushed in
     editUser: async (_, { _id, firstName, lastName, email, password }) => {
       try {
         const user = await User.findById(_id);
