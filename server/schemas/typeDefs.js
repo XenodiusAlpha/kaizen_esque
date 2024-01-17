@@ -31,7 +31,7 @@ const typeDefs = `
     email: String!
     password: String!
     picture: String
-    role: [String]
+    role: String
     courses: [Course]
     enrolled: [enrolledCourse]
     stripe: Stripe
@@ -87,7 +87,8 @@ const typeDefs = `
       firstName: String!,
       lastName: String!,
       email: String!,
-      password: String!
+      password: String!,
+      role: Boolean!
     ): Auth
 
     editUser( 

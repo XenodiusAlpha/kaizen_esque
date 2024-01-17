@@ -1,219 +1,159 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { ADD_USER } from "../../GraphQL/mutations";
+import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
+import { useNavigate, Link } from "react-router-dom";
+import { ADD_USER_MUTATION } from "../../GraphQL/mutations";
 
-import "../../assets/css/background.css";
-
+// Signup component
 const Signup = () => {
-  const [formInput, setformInput] = useState({
-    firstname: "",
-    lastname: "",
+  const [formInput, setFormInput] = useState({
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
     confirmPassword: "",
+    role: "user", // Default role set to 'user'
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setformInput((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const [isChecked, setIsChecked] = useState(false);
-  const handleOnChange = () => {
-    setIsChecked(!isChecked);
-  };
-
-  const handleBlurFirstName = () => {
-    var inputElement = document.getElementById("warningTextFirstNameID");
-    if (formInput.firstname.trim() === "") {
-      inputElement.classList.remove("hidden-element");
-    } else {
-      inputElement.classList.add("hidden-element");
-    }
-  };
-
-  const handleBlurLastName = () => {
-    var inputElement = document.getElementById("warningTextLastNameID");
-    if (formInput.lastname.trim() === "") {
-      inputElement.classList.remove("hidden-element");
-    } else {
-      inputElement.classList.add("hidden-element");
-    }
-  };
-
-  const handleBlurEmail = () => {
-    var inputElement = document.getElementById("warningTextEmailID");
-    if (formInput.email.trim() === "") {
-      inputElement.classList.remove("hidden-element");
-    } else {
-      inputElement.classList.add("hidden-element");
-    }
-  };
-
-  const handleBlurPassWord = () => {
-    var inputElement = document.getElementById("warningTextPasswordID");
-    if (formInput.password.trim() === "") {
-      inputElement.classList.remove("hidden-element");
-    } else {
-      inputElement.classList.add("hidden-element");
-    }
-  };
-
-  const handleBlurConfirmPassWord = () => {
-    var inputElement = document.getElementById("warningTextConfirmPasswordID");
-    if (formInput.confirmPassword.trim() === formInput.password.trim()) {
-      inputElement.classList.add("hidden-element");
-    } else {
-      inputElement.classList.remove("hidden-element");
-    }
-  };
-
+  const [addUser] = useMutation(ADD_USER_MUTATION);
   const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    const { name, value, type } = e.target;
+    setFormInput((prevData) => ({
+      ...prevData,
+      [name]: type === "radio" ? value : e.target.value,
+    }));
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = {
-      firstname: formInput.firstName,
-      lastname: formInput.lastName,
-      email: formInput.email,
-      password: formInput.password,
-      confirmPassword: formInput.confirmPassword,
-      role: isChecked,
-    };
-    console.log(formData);
-    navigate("/Profile");
-    return formData;
+
+    if (formInput.password !== formInput.confirmPassword) {
+      console.error("Passwords do not match");
+
+      window.alert("Passwords do not match");
+
+      return;
+    }
+
+    try {
+      const isRoleInstructor = formInput.role === "instructor";
+
+      const { data } = await addUser({
+        variables: {
+          firstName: formInput.firstName,
+          lastName: formInput.lastName,
+          email: formInput.email,
+          password: formInput.password,
+          role: isRoleInstructor,
+        },
+      });
+
+      if (isRoleInstructor) {
+        navigate("/instructor-dashboard");
+      } else {
+        navigate("/user-dashboard");
+      }
+    } catch (error) {
+      console.error("Error creating user:", error);
+    }
   };
 
   return (
-    <div className=" flex-container-row center-content">
-      <div className="subox-style flex-container-columns Outlet-Style center-content background">
+    <div className="flex-container-row center-content">
+      <div className="subox-style flex-container-columns Outlet-Style center-content">
         <div className="flex-container-columns center-content">
           <h2 className="wt">Sign up</h2>
         </div>
 
-        <form className="flex-container-columns " onSubmit={handleSubmit}>
-          <p className="wt">First Name:</p>
+        <form
+          className="flex-container-columns center-content dpb dpt"
+          onSubmit={handleSubmit}
+        >
+          {/* First Name Input */}
+          <label className="wt">First Name:</label>
+          <input
+            type="text"
+            name="firstName"
+            value={formInput.firstName}
+            onChange={handleChange}
+            placeholder="Enter your First Name"
+          />
 
-          <label>
-            <input
-              id="userInputFirstName"
-              type="text"
-              name="firstName"
-              value={formInput.Firstname}
-              onChange={handleChange}
-              placeholder="Enter your First Name"
-              onBlur={handleBlurFirstName}
-            />
-            <h4
-              id="warningTextFirstNameID"
-              className="wt warningTextForm hidden-element"
-            >
-              *Please insert a first name
-            </h4>
-          </label>
+          {/* Last Name Input */}
+          <label className="wt">Last Name:</label>
+          <input
+            type="text"
+            name="lastName"
+            value={formInput.lastName}
+            onChange={handleChange}
+            placeholder="Enter your Last Name"
+          />
 
-          <p className="wt">Last Name:</p>
+          {/* Email Input */}
+          <label className="wt">Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={formInput.email}
+            onChange={handleChange}
+            placeholder="Enter your Email"
+          />
 
-          <label>
-            <input
-              id="userInputLastName"
-              type="text"
-              name="lastName"
-              value={formInput.Lastname}
-              onChange={handleChange}
-              placeholder="Enter your Last Name"
-              onBlur={handleBlurLastName}
-            />
-            <h4
-              id="warningTextLastNameID"
-              className="wt warningTextForm hidden-element"
-            >
-              *Please insert a last name
-            </h4>
-          </label>
+          {/* Password Input */}
+          <label className="wt">Password:</label>
+          <input
+            type="password"
+            name="password"
+            value={formInput.password}
+            onChange={handleChange}
+            placeholder="Enter your Password"
+          />
 
-          <p className="wt">Email:</p>
+          {/* Confirm Password Input */}
+          <label className="wt">Confirm Password:</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            value={formInput.confirmPassword}
+            onChange={handleChange}
+            placeholder="Confirm your Password"
+          />
 
-          <label>
-            <input
-              id="userInputEmailSignup"
-              type="text"
-              name="email"
-              value={formInput.Email}
-              onChange={handleChange}
-              placeholder="Enter your Email"
-              onBlur={handleBlurEmail}
-            />
-            <h4
-              id="warningTextEmailID"
-              className="wt warningTextForm hidden-element"
-            >
-              *Please insert a Email
-            </h4>
-          </label>
-
-          <p className="wt">Password:</p>
-
-          <label>
-            <input
-              id="userInputPasswordSignup"
-              type="password"
-              name="password"
-              value={formInput.Password}
-              onChange={handleChange}
-              placeholder="Enter your Password"
-              onBlur={handleBlurPassWord}
-            />
-            <h4
-              id="warningTextPasswordID"
-              className="wt warningTextForm hidden-element"
-            >
-              *Please insert a password
-            </h4>
-          </label>
-
-          <p className="wt">Confirm Password:</p>
-
-          <label>
-            <input
-              id="userInputPasswordSignupConfirmation"
-              type="password"
-              name="confirmPassword"
-              value={formInput.ConfirmPassword}
-              onChange={handleChange}
-              placeholder="Confirm Password"
-              onBlur={handleBlurConfirmPassWord}
-            />
-            <h4
-              id="warningTextConfirmPasswordID"
-              className="wt warningTextForm hidden-element"
-            >
-              *Passwords need to match
-            </h4>
-          </label>
-
-          <div id="role" className="flex-container-row">
-            <input
-              type="checkbox"
-              id="topping"
-              name="topping"
-              value="Paneer"
-              checked={isChecked}
-              onChange={handleOnChange}
-            />
-            <div className="result dpl dpb wt">
-              Sign up as instructor {isChecked}
-            </div>
+          {/* Role Selection */}
+          <div className="role-selection radio-group">
+            <label className="radio-label">
+              <input
+                className="radio-input"
+                type="radio"
+                name="role"
+                value="user"
+                checked={formInput.role === "user"}
+                onChange={handleChange}
+              />
+              Sign up as User
+            </label>
+            <label className="radio-label">
+              <input
+                className="radio-input"
+                type="radio"
+                name="role"
+                value="instructor"
+                checked={formInput.role === "instructor"}
+                onChange={handleChange}
+              />
+              Sign up as Instructor
+            </label>
           </div>
           <hr></hr>
+
+          {/* Submit Button */}
 
           <button className="button-Style" type="submit">
             Sign up
           </button>
         </form>
-        <hr></hr>
+
         <Link to="/Login">
           <p className="signUp_Link dpl dpt wt">
             Already have an account? Sign in!
@@ -225,4 +165,3 @@ const Signup = () => {
 };
 
 export default Signup;
-// 2

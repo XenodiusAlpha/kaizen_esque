@@ -1,23 +1,26 @@
 import placeHolder from "../../assets/img/UserImg.png";
 import "../../assets/css/profile.css";
 import { useState, useEffect } from "react";
-import {useQuery} from '@apollo/client'
 
 export default function UserInfo(props) {
-  const [username, setUsername] = useState();
+  const [username, setUsername] = useState('');
 
   useEffect(() => {
     let data = sessionStorage.getItem('user');
-    let dataJson = JSON.parse(data)
-    let firstName = dataJson.firstname
-    let lastName = dataJson.lastname
-    let fullName = `${firstName} ${lastName}`
-    setUsername(
-      fullName
-    )
-  },[
-    username
-  ]);
+
+    // Check if data is not null and is a valid JSON string
+    if (data) {
+      try {
+        let dataJson = JSON.parse(data);
+        if (dataJson && dataJson.firstname && dataJson.lastname) {
+          let fullName = `${dataJson.firstname} ${dataJson.lastname}`;
+          setUsername(fullName);
+        }
+      } catch (error) {
+        console.error('Error parsing user data from sessionStorage:', error);
+      }
+    }
+  }, []); // Removed username from dependency array
 
   return (
     <div className={props.className} id={props.id}>
@@ -30,3 +33,5 @@ export default function UserInfo(props) {
     </div>
   );
 }
+
+

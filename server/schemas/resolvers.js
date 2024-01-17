@@ -132,16 +132,16 @@ const resolvers = {
 
 
   Mutation: {
-    
     // Adding a user and assigning a token to them
-    addUser: async (_, { firstName, lastName, email, password }) => {
+    addUser: async (_, { firstName, lastName, email, password, role }) => {
       try {
-        const user = new User({ firstName, lastName, email, password });
+        let userRole = (role) ? 'instructor' : 'user';
+        const user = new User({ firstName, lastName, email, password, role: userRole });
         const token = signToken(user);
         await user.save();
         return { token, user };
       } catch (error) {
-        throw new Error(`Failed to add a user. ${error.message}`);        
+        throw new Error(`Failed to add a user. ${error.message}`);
       }
     },
 

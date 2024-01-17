@@ -106,10 +106,7 @@ const Login = () => {
           <h2 className="wt">Login</h2>
         </div>
 
-        <form
-          className="flex-container-columns center-content dpb dpt"
-          onSubmit={handleSubmit}
-        >
+        <form className="flex-container-columns" onSubmit={handleSubmit}>
           <p className="wt">Email:</p>
           <label>
             <input

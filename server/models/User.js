@@ -91,8 +91,8 @@ const userSchema = new Schema({
   },
   // defining if the user has just one role, or multiple roles
   role: {
-    type: [String],
-    default: ['user'],
+    type: String,
+    default: 'user',
     enum: ['user', 'instructor', 'admin'],
   },
   courses: [{ type: ObjectId, ref: 'Course' }],

@@ -87,5 +87,3 @@ export const MY_CREATED_COURSES = gql`
     }
   }
 `;
-
-// UserActivation, USERID, COURSES, COURSESID, LESSONS, LESSONID

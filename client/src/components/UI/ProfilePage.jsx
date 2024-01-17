@@ -8,7 +8,7 @@ import UserDashboard from "../miniComponents/UserDashboard";
 import InstructorDashboard from "../miniComponents/InstructorDashboard";
 
 function IsInstructor() {
-  const role = JSON.parse(sessionStorage.getItem("user")).role[1];
+  const role = JSON.parse(sessionStorage.getItem("user")).role;
   if (role === "instructor") {
     return <InstructorDashboard />;
   } else {
