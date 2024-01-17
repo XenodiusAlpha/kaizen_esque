@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import { LOGIN_USER } from "../../GraphQL/mutations";
 import { useMutation } from "@apollo/client";
+import "../../assets/css/background.css";
 
 const Login = () => {
   const [isLoggedIn, SetisLoggedIn] = useState(false);
