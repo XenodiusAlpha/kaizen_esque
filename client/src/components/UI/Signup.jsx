@@ -31,6 +31,9 @@ const Signup = () => {
   
     if (formInput.password !== formInput.confirmPassword) {
       console.error("Passwords do not match");
+
+      window.alert("Passwords do not match");
+      
       return;
     }
   
