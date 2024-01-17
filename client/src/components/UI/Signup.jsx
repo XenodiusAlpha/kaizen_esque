@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
@@ -15,13 +15,6 @@ const Signup = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setformInput((prevData) => ({ ...prevData, [name]: value }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Submit button pressed')
-    // Add logic for passing data here. 1. Pass user input 2. Switch user to logged in status. 2.5: Logged in status removes login option and replaces it with logout. Shows Profile option. Gives access to dashboards.
-
   };
 
   const handleBlurFirstName = () => {
@@ -68,6 +61,21 @@ const Signup = () => {
       inputElement.classList.remove("hidden-element");
     }
   };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formData = {
+      firstname: formInput.firstName,
+      lastname: formInput.lastName,
+      email: formInput.email,
+      password: formInput.password,
+      confirmPassword: formInput.confirmPassword,
+    };
+    console.log(formData)
+    return formData
+  };
+
 
   return (
     <div className=' flex-container-row center-content'>
