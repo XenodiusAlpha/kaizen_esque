@@ -78,7 +78,7 @@ const typeDefs = `
     checkEnrollment(userId: ID!, courseId: ID!): Boolean
     getEnrolledCoursesCount(userId: ID!): Int
     checkCourseCompleted(userId: ID!, courseId: ID!): Boolean
-    checkLessonCompleted(userId: ID!, courseId: ID!, lessonSlug: String!): Boolean
+    checkLessonCompleted(userId: ID!, courseSlug: String!, lessonSlug: String!): Boolean
     findCoursesByInstructor(instructorId: ID!): [Course]
   }
 

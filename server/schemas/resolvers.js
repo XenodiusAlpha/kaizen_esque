@@ -100,17 +100,17 @@ const resolvers = {
     },
 
     // Verifies if lesson is completed by user, and if the course is completed due to the last lesson being completed
-    checkLessonCompleted: async (_, { userId, courseId, lessonSlug }) => {
+    checkLessonCompleted: async (_, { userId, courseSlug, lessonSlug }) => {
       try {
         const user = await User.findById(userId);
         if (!user) {
           throw new AuthenticationError('User not found');
         }
-        const courseEnrollment = user.enrolled.find(enrolledCourse => enrolledCourse.slug === courseId);
+        const courseEnrollment = user.enrolled.find(enrolledCourse => enrolledCourse.slug === courseSlug);
         if (!courseEnrollment) {
           return false; // User is not enrolled in the course
         }
-        const lesson = courseEnrollment.lessons.some(lesson => lesson.slug === lessonSlug);
+        const lesson = courseEnrollment.lessons.find(lesson => lesson.slug === lessonSlug);
         if (!lesson) {
           return false; // Lesson not found in the course enrollment
         }
