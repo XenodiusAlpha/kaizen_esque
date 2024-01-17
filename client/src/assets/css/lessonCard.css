@@ -1,13 +1,18 @@
 .LessonCard {
-  background-color: blue;
+  background-color: darkgreen;
+  border-radius: 30px;
+  box-shadow: -15px 15px 10px 0 black;
   display: flex;
   margin: 100px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 50vh;
+  color:white;
 }
 
 .LessonCard * {
   margin: 15px;
 }
+
+

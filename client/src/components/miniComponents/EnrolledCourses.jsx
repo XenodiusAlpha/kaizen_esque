@@ -1,5 +1,5 @@
 import coursesInfo from "../../GraphQL/courseTest";
-import CourseCards from "./EnrolledCourseCards";
+import EnrolledCourseCards from "./EnrolledCourseCards";
 import "../../assets/css/EnrolledCourses.css";
 import { useEffect, useState, useParams } from "react";
 import { useQuery } from "@apollo/client";
@@ -24,15 +24,16 @@ export default function EnrolledCourses(props) {
   function EnrolledInfo() {
     if (data) {
       let courses = data.user.courses;
-      console.log(data);
+      console.log("data", data);
       return (
         <>
           {courses.map((course, key) => (
-            <CourseCards
+            <EnrolledCourseCards
               key={key}
               title={course.name}
               desc={course.description}
               price={course.price}
+              id={course._id}
             />
           ))}
         </>

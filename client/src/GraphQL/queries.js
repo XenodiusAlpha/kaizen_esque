@@ -27,6 +27,7 @@ export const QUERY_SINGLE_COURSE = gql`
       lessons {
         title
         content
+        slug
       }
     }
   }
@@ -52,11 +53,19 @@ export const QUERY_ENROLLED_COURSES = gql`
       lastName
       _id
       courses {
+        slug
+        _id
         name
         description
         price
       }
     }
+  }
+`;
+
+export const CHECK_ENROLLMENT = gql`
+  query checkEnrollment($userId: ID!, $courseId: ID!) {
+    checkEnrollment(userId: $userId, courseId: $courseId)
   }
 `;
 
@@ -73,5 +82,15 @@ export const MY_CREATED_COURSES = gql`
         fullName
       }
     }
+  }
+`;
+
+export const CHECK_LESSON_COMPLETE = gql`
+  query lesson($userId: ID!, $courseId: ID!, $lessonSlug: String!) {
+    checkLessonCompleted(
+      userId: $userId
+      courseId: $courseId
+      lessonSlug: $lessonSlug
+    )
   }
 `;

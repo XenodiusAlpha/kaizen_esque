@@ -26,6 +26,7 @@ import UserSettings from "./components/miniComponents/UserSettings.jsx";
 import InstructorDashboard from "./components/miniComponents/InstructorDashboard.jsx";
 import UserDashboard from "./components/miniComponents/UserDashboard.jsx";
 import CoursePage from "./components/mainComponents/CoursePage.jsx";
+import EnrolledCoursePage from "./components/mainComponents/EnrolledCoursePage.jsx"
 // const errorLink = onError(({ graphqlErrors, networkError }) => {
 //   if (graphqlErrors) {
 //     graphqlErrors.map(({ message, location, path }) => {
@@ -110,6 +111,7 @@ const router = createBrowserRouter([
         path: `Course/:id`,
         element: <CoursePage />,
       },
+      { path: "EnrolledCourse/:id", element:<EnrolledCoursePage/>  },
     ],
   },
 ]);

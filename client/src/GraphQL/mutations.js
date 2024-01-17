@@ -27,6 +27,20 @@ export const ADD_COURSE = gql`
   }
 `;
 
+export const DELETE_COURSE = gql`
+  mutation deleteCourse($courseId: ID!) {
+    deleteCourse(courseId: $courseId)
+  }
+`;
+
+export const ENROLL_USER = gql`
+  mutation enrollUser($userId: ID!, $courseId: ID!) {
+    enrollInCourse(userId: $userId, courseId: $courseId) {
+      fullName
+    }
+  }
+`;
+
 export const ADD_USER_MUTATION = gql`
   mutation AddUser(
     $firstName: String!
@@ -85,7 +99,24 @@ export const LOGIN_USER = gql`
         lastName
         email
         signupDate
+        role
       }
+    }
+  }
+`;
+
+export const MARK_LESSON_COMPLETE = gql`
+  mutation completeLesson(
+    $userId: ID!
+    $courseSlug: String!
+    $lessonSlug: String!
+  ) {
+    markLessonCompleted(
+      userId: $userId
+      courseSlug: $courseSlug
+      lessonSlug: $lessonSlug
+    ) {
+      fullName
     }
   }
 `;
