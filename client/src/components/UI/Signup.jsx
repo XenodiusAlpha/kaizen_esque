@@ -61,7 +61,7 @@ const Signup = () => {
 
   return (
     <div className="flex-container-row center-content">
-      <div className="subox-style flex-container-columns Outlet-Style center-content">
+      <div className="subox-style flex-container-columns Outlet-Style center-content background">
         <div className="flex-container-columns center-content">
           <h2 className="wt">Sign up</h2>
         </div>

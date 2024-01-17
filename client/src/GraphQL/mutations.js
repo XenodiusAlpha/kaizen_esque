@@ -1,27 +1,5 @@
 import { gql } from "@apollo/client";
 
-export const ADD_PROFILE = gql`
-  mutation addProfile(
-    $firstname: String!
-    $lastname: String!
-    $email: String!
-    $password: String!
-  ) {
-    addProfile(
-      firstname: $firstname
-      lastname: $lastname
-      email: $email
-      password: $password
-    ) {
-      token
-      profile {
-        _id
-        name
-      }
-    }
-  }
-`;
-
 export const ADD_COURSE = gql`
   mutation createCourse(
     $name: String!
@@ -49,36 +27,27 @@ export const ADD_COURSE = gql`
   }
 `;
 
-
 export const ADD_USER_MUTATION = gql`
-  mutation AddUser($firstName: String!, $lastName: String!, $email: String!, $password: String!, $role: Boolean!) {
-    addUser(firstName: $firstName, lastName: $lastName, email: $email, password: $password, role: $role) {
-      token
-      user {
-        _id
-        firstName
-        lastName
-<<<<<<< HEAD
-=======
-        email
->>>>>>> 5857aaec921d6b8fe79530100edd06929074b1c0
-        role
-      }
-    }
-  }
-`;
-
-export const ADD_USER = gql`
-  mutation addUser($firstName: String!,$lastName: String!, $email: String!, $password: String! $confirmPassword: String! $role: boolean!) {
-    login(firstName: $firstName, lastName: $lastName, email: $email, password: $password confirmPassword: $confirmPassword role: $role) {
+  mutation AddUser(
+    $firstName: String!
+    $lastName: String!
+    $email: String!
+    $password: String!
+    $role: Boolean!
+  ) {
+    addUser(
+      firstName: $firstName
+      lastName: $lastName
+      email: $email
+      password: $password
+      role: $role
+    ) {
       token
       user {
         _id
         firstName
         lastName
         email
-        password
-        confirmPassword
         role
       }
     }
@@ -95,7 +64,6 @@ export const REMOVE_COURSE = gql`
   }
 `;
 
-<<<<<<< HEAD
 export const ADD_LESSON = gql`
   mutation addlesson($courseId: ID!, $title: String!, $content: String!) {
     addLesson(courseId: $courseId, title: $title, content: $content) {
@@ -105,7 +73,7 @@ export const ADD_LESSON = gql`
     }
   }
 `;
-=======
+
 export const LOGIN_USER = gql`
   mutation Login($email: String!, $password: String!) {
     login(email: $email, password: $password) {
@@ -119,4 +87,3 @@ export const LOGIN_USER = gql`
     }
   }
 `;
->>>>>>> 5857aaec921d6b8fe79530100edd06929074b1c0
