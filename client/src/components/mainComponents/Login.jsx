@@ -65,6 +65,7 @@ const Login = () => {
         id: data.login.user._id,
         token: data.login.token,
         role: data.login.user.role,
+        signupDate: data.login.user.signupDate,
       });
 
       console.log(data.login.user.role);

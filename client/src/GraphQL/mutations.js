@@ -49,6 +49,7 @@ export const ADD_USER_MUTATION = gql`
         lastName
         email
         role
+        signupDate
       }
     }
   }
@@ -83,6 +84,7 @@ export const LOGIN_USER = gql`
         firstName
         lastName
         email
+        signupDate
       }
     }
   }
