@@ -31,7 +31,7 @@ const typeDefs = `
     email: String!
     password: String!
     picture: String
-    role: [String]
+    role: String
     courses: [Course]
     enrolled: [enrolledCourse]
     stripe: Stripe

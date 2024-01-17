@@ -132,7 +132,6 @@ const resolvers = {
 
 
   Mutation: {
-    
     // Adding a user and assigning a token to them
     addUser: async (_, { firstName, lastName, email, password, role }) => {
       try {
