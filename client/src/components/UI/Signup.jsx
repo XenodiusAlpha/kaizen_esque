@@ -1,10 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { useNavigate, Link } from "react-router-dom";
 import { ADD_USER_MUTATION } from "../../GraphQL/mutations";
 
 // Signup component
 const Signup = () => {
+  const [userInfo, SetUserInfo] = useState({
+    firstname: "",
+    lastname: "",
+    typename: "",
+    id: "",
+    token: "",
+    role: "",
+  });
+
+  const [isLoggedIn, SetisLoggedIn] = useState(false);
+
   const [formInput, setFormInput] = useState({
     firstName: "",
     lastName: "",
@@ -13,6 +24,17 @@ const Signup = () => {
     confirmPassword: "",
     role: "user", // Default role set to 'user'
   });
+
+  useEffect(() => {
+    if (isLoggedIn === true) {
+      let userInfoJSON = JSON.stringify(userInfo);
+      window.sessionStorage.setItem("user", userInfoJSON);
+      window.sessionStorage.setItem("isLoggedIn", JSON.stringify(isLoggedIn));
+      if (isLoggedIn) {
+        navigate("/Profile");
+      }
+    }
+  }, [userInfo, isLoggedIn]);
 
   const [addUser] = useMutation(ADD_USER_MUTATION);
   const navigate = useNavigate();
@@ -49,10 +71,17 @@ const Signup = () => {
         },
       });
 
-      if (isRoleInstructor) {
-        navigate("/instructor-dashboard");
-      } else {
-        navigate("/user-dashboard");
+      if (data) {
+        console.log(data);
+        SetUserInfo({
+          firstname: data.addUser.user.firstName,
+          lastname: data.addUser.user.lastName,
+          id: data.addUser.user._id,
+          token: data.addUser.token,
+          role: data.addUser.role,
+        });
+
+        SetisLoggedIn(true);
       }
     } catch (error) {
       console.error("Error creating user:", error);
