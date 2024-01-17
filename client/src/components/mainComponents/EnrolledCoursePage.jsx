@@ -42,7 +42,7 @@ export default function EnrolledCoursePage() {
    
 
       let lessons = data.course.lessons;
-     
+        console.log(data)
 
       return (
         <div id="HIYAYAYA">

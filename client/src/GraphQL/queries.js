@@ -86,10 +86,14 @@ export const MY_CREATED_COURSES = gql`
 `;
 
 export const CHECK_LESSON_COMPLETE = gql`
-  query lesson($userId: ID!, $courseId: ID!, $lessonSlug: String!) {
+  query lessoncomplete(
+    $userId: ID!
+    $courseSlug: String!
+    $lessonSlug: String!
+  ) {
     checkLessonCompleted(
       userId: $userId
-      courseId: $courseId
+      courseSlug: $courseSlug
       lessonSlug: $lessonSlug
     )
   }

@@ -19,7 +19,7 @@ export default function EnrolledLessonCard(props) {
   const { err, loading, data } = useQuery(CHECK_LESSON_COMPLETE, {
     variables: {
       userId: userId,
-      courseId: courseId,
+      courseSlug: courseSlug,
       lessonSlug: lessonSlug,
     },
   });
@@ -34,7 +34,8 @@ export default function EnrolledLessonCard(props) {
     });
     
   };
- console.log(userId, courseId, lessonSlug)
+//  console.log(userId, courseSlug, lessonSlug)
+ console.log(data)
   return (
     <div className="LessonCard">
       <h2>{props.title}</h2>

@@ -105,6 +105,17 @@ export const LOGIN_USER = gql`
   }
 `;
 
+export const EDIT_USER = gql`
+  mutation editUser($id: ID!, $firstName: String, $lastName: String, $email: String, $password: String) {
+    editUser(_id: $id, firstName: $firstName, lastName: $lastName, email: $email, password: $password) {
+      _id
+      firstName
+      lastName
+      email
+    }
+  }
+`;
+
 export const MARK_LESSON_COMPLETE = gql`
   mutation completeLesson(
     $userId: ID!

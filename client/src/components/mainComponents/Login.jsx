@@ -15,6 +15,7 @@ const Login = () => {
   const [userInfo, SetUserInfo] = useState({
     firstname: "",
     lastname: "",
+    email: "",
     typename: "",
     id: "",
     token: "",  
@@ -61,6 +62,7 @@ const Login = () => {
         ...userInfo,
         firstname: data.login.user.firstName,
         lastname: data.login.user.lastName,
+        email: data.login.user.email,
         typename: data.login.user.__typename,
         id: data.login.user._id,
         token: data.login.token,
