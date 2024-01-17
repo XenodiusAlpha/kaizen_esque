@@ -46,6 +46,22 @@ export const LOGIN_USER = gql`
   }
 `;
 
+export const ADD_USER = gql`
+  mutation addUser($firstName: String!,$lastName: String!, $email: String!, $password: String! $confirmPassword: String!) {
+    login(firstName: $firstName, lastName: $lastName, email: $email, password: $password confirmPassword: $confirmPassword) {
+      token
+      user {
+        _id
+        firstName
+        lastName
+        email
+        password
+        confirmPassword
+      }
+    }
+  }
+`;
+
 export const REMOVE_COURSE = gql`
   mutation removecourse($enrolled_course: String!) {
     removecourse(course: $enrolled_course) {
