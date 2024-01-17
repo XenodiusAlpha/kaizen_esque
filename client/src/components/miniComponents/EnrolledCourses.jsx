@@ -24,6 +24,7 @@ export default function EnrolledCourses(props) {
   function EnrolledInfo() {
     if (data) {
       let courses = data.user.courses;
+      console.log(data);
       return (
         <>
           {courses.map((course, key) => (

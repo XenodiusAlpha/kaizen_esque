@@ -12,6 +12,7 @@ export default function CoursesContainer() {
   useEffect(() => {
     if (data) {
       setCourses(data.courses);
+      console.log(data);
     }
   }, [data]);
 
@@ -24,6 +25,7 @@ export default function CoursesContainer() {
             title={course.name}
             desc={course.description}
             price={course.price}
+            id={course._id}
           />
         ))}
       </div>
