@@ -62,6 +62,8 @@ const Login = () => {
         token: data.login.token,
         role: data.login.user.role,
       });
+
+      console.log(data.login.user.role);
       //if data is presented to us from a successfull login, we will change the localstorage login var to true
       //and navigate to the /profile page
 
