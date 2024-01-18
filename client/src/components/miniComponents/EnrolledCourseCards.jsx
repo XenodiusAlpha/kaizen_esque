@@ -10,7 +10,7 @@ export default function EnrolledCourseCards(props) {
       <p>{props.desc}</p>
       <p>{props.price}</p>
       <div>
-        <a href={`/EnrolledCourse/${props.id}`}>Go To Lesson</a>{" "}
+        <a href={`/EnrolledCourse/${props.id}`}>Go To Course</a>{" "}
       </div>
     </div>
   );

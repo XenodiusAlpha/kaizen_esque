@@ -34,8 +34,9 @@ export default function EnrolledLessonCard(props) {
     });
     
   };
-//  console.log(userId, courseSlug, lessonSlug)
- console.log(data.checkLessonCompleted)
+
+  
+ 
   return (
     <div className="LessonCard">
       <h2>{props.title}</h2>
