@@ -19,47 +19,38 @@ export default function InstructorDashboard() {
     const createCourse = document.querySelector(".createCourse");
 
     if (name === "dash") {
-      Dashboard.setAttribute("id", "");
+
       Settings.setAttribute("id", "hidden");
       Courses.setAttribute("id", "hidden");
       MyCourses.setAttribute("id", "hidden");
       createCourse.setAttribute("id", "hidden");
-      console.log("Dash");
     } else if (name === "settings") {
-      Dashboard.setAttribute("id", "hidden");
       Settings.setAttribute("id", "");
       Courses.setAttribute("id", "hidden");
       MyCourses.setAttribute("id", "hidden");
       createCourse.setAttribute("id", "hidden");
-      console.log("settings");
     } else if (name === "courses") {
-      Dashboard.setAttribute("id", "hidden");
       Settings.setAttribute("id", "hidden");
       Courses.setAttribute("id", "Vis");
       createCourse.setAttribute("id", "hidden");
-      console.log("courses");
       MyCourses.setAttribute("id", "hidden");
     } else if (name === "Mycourses") {
-      Dashboard.setAttribute("id", "hidden");
       Settings.setAttribute("id", "hidden");
       Courses.setAttribute("id", "hidden");
       MyCourses.setAttribute("id", "Vis");
       createCourse.setAttribute("id", "hidden");
-      console.log("Mycourses");
     } else if (name === "createCourse") {
-      Dashboard.setAttribute("id", "hidden");
       Settings.setAttribute("id", "hidden");
       Courses.setAttribute("id", "hidden");
       MyCourses.setAttribute("id", "hidden");
       createCourse.setAttribute("id", "vis");
-      console.log("Mycourses");
     }
   };
 
   return (
     <div className="ProfileContainer">
       <div className="SideMenu">
-        <button onClick={() => SetVis("dash")}>Dashboard</button>
+        <UserInfo className="ProfileDash" id="" />
         <button onClick={() => SetVis("settings")}>Settings </button>
         <button onClick={() => SetVis("courses")}>Enrolled Courses</button>
         <button onClick={() => SetVis("Mycourses")}>My Courses</button>
@@ -67,7 +58,6 @@ export default function InstructorDashboard() {
       </div>
       <div className="ContentArea">
         <EnrolledCourses className="ProfileEnrolled" id="hidden" />
-        <UserInfo className="ProfileDash" id="" />
         <UserSettings className="ProfileSettings" id="hidden" />
         <MyCourses className="MyCourses" id="hidden" />
         <CreateCourse className="createCourse" id="hidden" />

@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { EDIT_USER } from "../../GraphQL/mutations";
 import "../../assets/css/usersettings.css";
+import UserInfo from "../miniComponents/UserInfo";
 
 export default function UserSettings(props) {
   const [isEditing, setIsEditing] = useState(false);
@@ -37,6 +38,7 @@ export default function UserSettings(props) {
 
     setFirstname(firstName);
     setIsEditing(false);
+
 
     if (password) {
       const { data } = await editUser({
@@ -105,9 +107,17 @@ export default function UserSettings(props) {
               />
             </>
           ) : (
-            <>
-              <h2 className="Username">{firstname}</h2>
-            </>
+            <div className="parentContainer">
+            <div className="addbg">
+              <UserInfo/>
+              <div className="flex-container-row">
+              <h2 className="dpl wt">{firstname}</h2>
+              <hr  />
+              <h2 className="dpl wt">{lastname}</h2>
+              </div>
+              <p className="dpl wt">{email}</p>
+            </div>
+            </div>
           )}
           {isEditing ? (
             <>

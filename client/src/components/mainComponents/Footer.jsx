@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../assets/img/LogoNew.png";
+import image from "../../assets/img/KaizenEsqueLogo.png";
 import { Link } from "react-router-dom";
 import "../../assets/css/footer.css";
 
@@ -13,9 +13,9 @@ export default function Footer() {
       <div className="flex-container-columns center-content">
         <p className="header-Text dpl">Copyright Kaizen-Esque 2024©</p>
 
-        <Link to="/LearnMore">
+        {/* <Link to="/LearnMore">
           <h4 className="learnMore_Link dpl">Learn More</h4>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

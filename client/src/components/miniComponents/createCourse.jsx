@@ -46,7 +46,6 @@ const CreateCourse = (props) => {
     return jsonData;
   };
   const sendDataToDatabase = async (jsonData) => {
-    //Need database logic here to recieve json. How do I pass this?
     const { data } = await CreateCourse({
       variables: {
         name: jsonData.courseTitle,
@@ -145,7 +144,7 @@ const CreateCourse = (props) => {
             />
           </label>
           <br />
-          <label>
+          {/* <label>
             Thumbnail:
             <input
               type="text"
@@ -154,9 +153,9 @@ const CreateCourse = (props) => {
                 handleLessonChange(index, "thumbnail", e.target.value)
               }
             />
-          </label>
+          </label> */}
           <br />
-          <label>
+          {/* <label>
             Hyperlink:
             <input
               type="text"
@@ -165,7 +164,7 @@ const CreateCourse = (props) => {
                 handleLessonChange(index, "hyperlink", e.target.value)
               }
             />
-          </label>
+          </label> */}
           <br />
           <button onClick={() => handleRemoveLesson(index)}>
             Remove Lesson
