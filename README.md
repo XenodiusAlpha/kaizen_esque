@@ -51,7 +51,7 @@ To get started with Kaizen-esque:
 
 Our LMS is cloud-hosted for convenience and security. Access Kaizen-esque directly from your browser at:
 
-[kaizen-esque](url)
+[kaizen-esque](https://kaizen-esque.onrender.com)
 
 No downloads or installations required—just sign in and start your journey of continuous learning and teaching.
 
