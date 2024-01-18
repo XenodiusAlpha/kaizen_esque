@@ -42,7 +42,7 @@ import EnrolledCoursePage from "./components/mainComponents/EnrolledCoursePage.j
 // ]);
 
 const client = new ApolloClient({
-  uri: "https://kaizen-esque.onrender.com/",
+  uri: "https://kaizen-esque.onrender.com/graphql",
   cache: new InMemoryCache(),
   name: "web-workshop-client",
   version: "0.1",

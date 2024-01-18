@@ -35,7 +35,7 @@ const startApolloServer = async () => {
   // Apply Apollo server middleware
   app.use(
     "/graphql",
-    cors({ origin: ["http://localhost:3000", "https://kaizen-esque.onrender.com/"] }),
+    cors({ origin: ["http://localhost:3000"] }),
     expressMiddleware(server, {
       context: authMiddleware,
     })
