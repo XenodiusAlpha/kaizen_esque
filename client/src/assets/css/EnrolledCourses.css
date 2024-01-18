@@ -1,7 +1,8 @@
 .EnrolledCourses {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 100px;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  
+  gap: 20px;
   padding: 50px;
   height: fit-content;
   z-index: 5;

@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../assets/img/LogoNew.png";
+import image from "../../assets/img/KaizenEsqueLogo.png";
 
 export default function Header() {
   return (

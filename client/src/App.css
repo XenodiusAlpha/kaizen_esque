@@ -6,7 +6,7 @@
   --mainThemeColor: #ffffff;
   --mainBodyColor: #67a86a;
   --WhiteText: #fafafa;
-  --navBarColor: rgba(17, 12, 12, 0.404);
+  --navBarColor: #94ca86;
   --Black: #000000;
 }
 
@@ -49,6 +49,10 @@
   padding-right: 10px;
 }
 
+.bold{
+  font-weight: bolder;
+}
+
 /* ----------------------Flex & Directions---------------------- */
 .center-content {
   justify-content: center;
@@ -63,8 +67,6 @@
 .flex-container-columns {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .keepLeft {

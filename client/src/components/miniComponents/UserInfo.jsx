@@ -20,12 +20,14 @@ export default function UserInfo(props) {
   }, []);
 
   return (
+    <div className='figurebox'>
     <div className={props.className} id={props.id}>
       <figure>
         <img className="UserPic" src={placeHolder} alt="UserPicture" />
-        <figcaption>{username}</figcaption>
+        <figcaption className='wt'>{username}</figcaption>
+        <p className='wt'>Sign-Up date: {signUpDate}</p>
       </figure>
-      <h2>SignUp date: {signUpDate}</h2>
+    </div>
     </div>
   );
 }

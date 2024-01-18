@@ -131,7 +131,7 @@ const Login = () => {
           <p className="wt">Password:</p>
           <label id="userInputPassword">
             <input
-              type="text"
+              type="password"
               name="password"
               // value={formInput.Password}
               onChange={handleChange}

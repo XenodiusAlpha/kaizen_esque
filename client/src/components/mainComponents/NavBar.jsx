@@ -40,11 +40,11 @@ export default function NavBar() {
   // Divider
   return (
     <div className="flex-container-row ">
-      <div className="Profile-Icon">
+      {/* <div className="Profile-Icon">
         <Link to="/" className="wt" onClick={handleLinkClick}>
           <FontAwesomeIcon icon={faBars} />
         </Link>
-      </div>
+      </div> */}
       <nav className="nav-style flex-container-row">
         <div className="nav-Button">
           <Link
@@ -52,7 +52,7 @@ export default function NavBar() {
             className={currentPage === "/" ? "nav-active" : "nav-link"}
             onClick={handleLinkClick}
           >
-            <p>Home</p>
+            <p className="bold">Home</p>
           </Link>
         </div>
         <div className="nav-Button dpl">
@@ -61,11 +61,11 @@ export default function NavBar() {
             className={currentPage === "/Courses" ? "nav-active" : "nav-link"}
             onClick={handleLinkClick}
           >
-            <p>Courses</p>
+            <p className="bold">Courses</p>
           </Link>
         </div>
 
-        <div className="nav-Button dpl">
+        {/* <div className="nav-Button dpl">
           <Link
             to="/Login"
             className={currentPage === "/Login" ? "nav-active" : "nav-link"}
@@ -73,7 +73,7 @@ export default function NavBar() {
           >
             <p>Login</p>
           </Link>
-        </div>
+        </div> */}
       </nav>
       <div className="Profile-Icon dpl ">
         <div className="dpr fa-2x">
