@@ -23,8 +23,12 @@ export default function EnrolledCourses(props) {
 
   function EnrolledInfo() {
     if (data) {
-      let courses = data.user.courses;
-      console.log("data", data);
+      let courses = data.user.courses.map((course) => {
+        return {
+          ...course,
+          progress: (data.user.coursesProgress.find((courseProgress) => courseProgress.slug == course.slug)).percentage
+        }
+      });
       return (
         <>
           {courses.map((course, key) => (
@@ -34,6 +38,7 @@ export default function EnrolledCourses(props) {
               desc={course.description}
               price={course.price}
               id={course._id}
+              progress={course.progress}
             />
           ))}
         </>
