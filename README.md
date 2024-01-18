@@ -1,10 +1,10 @@
 # Kaizen-esque Learning Management Service
 
-:sunrise: ## Overview
+## Overview :sunrise:
 
 Welcome to Kaizen-esque our Learning Management Service (LMS) website, your go-to platform for efficient and effective management of learning resources. Our LMS is designed to streamline the process of creating, delivering, and tracking educational content, providing a seamless experience for educators and learners alike.
 
-:sparkles: ## Table of Contents
+## Table of Contents :sparkles:
 
 - [Features](#features)
 - [Upcoming Enhancements](#upcoming-enhancements)
@@ -15,7 +15,7 @@ Welcome to Kaizen-esque our Learning Management Service (LMS) website, your go-t
 - [License](#license)
 - [Contact](#contact)
 
-:clipboard: ## Features
+## Features :clipboard:
 
 - **Intuitive Interface:** A clean, accessible interface that diminishes the learning curve for both educators and learners.
 
@@ -26,7 +26,7 @@ Welcome to Kaizen-esque our Learning Management Service (LMS) website, your go-t
 - **Device Friendly:** A responsive design that ensures functionality across a range of devices, from desktops to mobile phones.
 
 
-:roller_coaster: ## Upcoming Enhancements
+## Upcoming Enhancements :roller_coaster:
 
 - **Multimedia Content:** Future updates will introduce multimedia integration, allowing for a richer course experience.
 
@@ -35,7 +35,7 @@ Welcome to Kaizen-esque our Learning Management Service (LMS) website, your go-t
 - **Collaborative Learning:** Tools to foster collaborative learning, including forums and group projects.
 
 
-:bookmark_tabs: ## Getting Started
+## Getting Started :bookmark_tabs:
 
 To get started with Kaizen-esque:
 
@@ -47,7 +47,7 @@ To get started with Kaizen-esque:
 
 4. **Explore Courses:** Users can browse through the many courses offered (free or paid) by our certified instructors.
 
-:lock: ## Access
+## Access :lock:
 
 Our LMS is cloud-hosted for convenience and security. Access Kaizen-esque directly from your browser at:
 
@@ -56,7 +56,7 @@ Our LMS is cloud-hosted for convenience and security. Access Kaizen-esque direct
 No downloads or installations required—just sign in and start your journey of continuous learning and teaching.
 
 
-:pencil: ## Usage Tips
+## Usage Tips :pencil:
 
 - **Instructors:** Leverage the course creation section to quickly design your curriculum.
 
@@ -65,7 +65,7 @@ No downloads or installations required—just sign in and start your journey of 
 - **All Users:** Regularly check the announcements for updates on new features and resources.
 
 
-:fist: ## Contribution Guidelines
+## Contribution Guidelines :fist:
 
 We embrace contributions that drive the platform forward. To contribute:
 
@@ -77,7 +77,7 @@ We embrace contributions that drive the platform forward. To contribute:
 
 
 
-:page_with_curl: ## License
+## License :page_with_curl:
 
 Kaizen-esque is made available under the [MIT License](https://github.com/XenodiusAlpha/kaizen_esque/blob/main/LICENSE). This license permits reuse within proprietary software provided all copies of the licensed software include a copy of the MIT License terms.
 
