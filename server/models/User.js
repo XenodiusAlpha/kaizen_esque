@@ -124,7 +124,7 @@ userSchema.methods.isCorrectPassword = async function(password) {
 };
 
 userSchema
-  .virtual('percentageComplete')
+  .virtual('coursesProgress')
   .get(function () {
     return this.enrolled.map((enrolledCourse) => {
       let numberCompleted = 0;
