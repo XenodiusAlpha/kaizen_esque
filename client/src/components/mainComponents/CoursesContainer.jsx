@@ -48,7 +48,7 @@ export default function CoursesContainer() {
       console.log("all courses", enrollData);
       console.log("enrolled", enrolledCourses);
 
-      if (allCourses) {
+      if (allCourses && enrolledCourses) {
         const containsAny = allCourses.filter(
           (Enrolled) => !enrolledCourses.find((all) => all._id === Enrolled._id)
         );
