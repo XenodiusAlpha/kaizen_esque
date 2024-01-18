@@ -59,6 +59,10 @@ export const QUERY_ENROLLED_COURSES = gql`
         description
         price
       }
+      coursesProgress {
+        slug
+        percentage
+      }
     }
   }
 `;
