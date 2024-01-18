@@ -9,6 +9,7 @@ export default function EnrolledCourseCards(props) {
       {/* This is just a placeholder picture until we can get the database setup */}
       <p>{props.desc}</p>
       <p>{props.price}</p>
+      <p>{props.progress}% Complete</p>
       <div>
         <a href={`/EnrolledCourse/${props.id}`}>Go To Course</a>{" "}
       </div>
