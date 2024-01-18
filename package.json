@@ -1,7 +1,7 @@
 {
   "name": "kaizen_esque",
   "version": "1.0.0",
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "description": "A LMS platform that encourages community.",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
