@@ -8,13 +8,18 @@ import {
 } from "../../GraphQL/queries";
 
 export default function CoursesContainer() {
-  const [userId] = useState(JSON.parse(sessionStorage.getItem("user")).id);
+  const [isLoggedIn] = useState(
+    JSON.parse(sessionStorage.getItem("isLoggedIn"))
+  );
+  const [userId, setUserId] = useState();
+
   const { error, loading, data: data } = useQuery(QUERY_ALL_COURSE);
   const {
     err,
     load,
     data: enrollData,
   } = useQuery(QUERY_ENROLLED_COURSES, {
+    skip: !userId,
     variables: {
       id: userId,
     },
@@ -25,26 +30,36 @@ export default function CoursesContainer() {
   const [courses, setCourses] = useState();
 
   useEffect(() => {
+    if (isLoggedIn) {
+      setUserId(JSON.parse(sessionStorage.getItem("user")).id);
+    }
     if (data) {
+      console.log(isLoggedIn);
       setAllCourses(data.courses);
     }
     if (enrollData) {
       setEnrolledCourses(enrollData.user.courses);
     }
     checkEnrollment();
-  }, [data, enrollData, enrolledCourses]);
+  }, [data, enrollData, enrolledCourses,allCourses]);
 
   const checkEnrollment = () => {
-    console.log("all courses", allCourses);
-    console.log("enrolled", enrolledCourses);
-    
-    if (allCourses && enrolledCourses){
-    const containsAny = allCourses.filter(Enrolled =>
-      !enrolledCourses.find(all => all._id === Enrolled._id)
-    );
-    console.log(containsAny);
-    setCourses(containsAny)
-  }
+    if (isLoggedIn === true) {
+      console.log("all courses", enrollData);
+      console.log("enrolled", enrolledCourses);
+
+      if (allCourses) {
+        const containsAny = allCourses.filter(
+          (Enrolled) => !enrolledCourses.find((all) => all._id === Enrolled._id)
+        );
+
+        setCourses(containsAny);
+        
+      } 
+    } else if (isLoggedIn === null) {
+      setCourses(allCourses);
+      console.log("hiya");
+    }
   };
 
   if (courses) {
