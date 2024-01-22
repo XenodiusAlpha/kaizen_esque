@@ -1,7 +1,9 @@
 @import "../../App.css";
 
 .nav-style {
+  display: flex;
   padding: 8px;
+  flex-direction: row;
   color: white;
   max-height: 5.5vh;
   width: 100%;
@@ -41,12 +43,12 @@
   background-color: var(--navBarColor);
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 300px) {
   .nav-style {
     display: flex;
+    flex-direction: row;
     color: white;
     max-height: 4vh;
-    padding-right: 62%;
     padding-bottom: 12%;
     width: 0%;
     background-color: var(--navBarColor);
