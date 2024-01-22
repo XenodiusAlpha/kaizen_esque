@@ -4,7 +4,7 @@ export default function HomeDefault() {
   return (
     <div className="sbox-style addToFront scale-home">
       <div>
-        <div className="flex-container-columns center-content ">
+        <div className="flex-container-columns">
           <h2>Join a community of learners with Kaizen-Esque.</h2>
           <div className="center-content">
           <hr/>

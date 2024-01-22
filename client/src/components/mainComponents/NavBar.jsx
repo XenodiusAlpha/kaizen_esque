@@ -45,7 +45,7 @@ export default function NavBar() {
           <FontAwesomeIcon icon={faBars} />
         </Link>
       </div> */}
-      <nav className="nav-style flex-container-row">
+      <nav className="nav-style">
         <div className="nav-Button">
           <Link
             to="/"
